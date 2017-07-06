@@ -12,6 +12,8 @@
 		FD1A90521F0EEB0E005EDBC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */; };
 		FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */; };
 		FD1A90561F0EEB1C005EDBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */; };
+		FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */; };
+		FD1A905C1F0EF25E005EDBC9 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Storyboards/Welcome.storyboard; sourceTree = "<group>"; };
+		FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = Controllers/WelcomePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		FD1A90571F0EEB26005EDBC9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */,
 				FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */,
 			);
 			name = Controllers;
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */,
+				FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */,
 				FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -141,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1A90561F0EEB1C005EDBC9 /* Main.storyboard in Resources */,
+				FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */,
 				FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */,
 				FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -154,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1A90521F0EEB0E005EDBC9 /* ViewController.swift in Sources */,
+				FD1A905C1F0EF25E005EDBC9 /* WelcomePageViewController.swift in Sources */,
 				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
