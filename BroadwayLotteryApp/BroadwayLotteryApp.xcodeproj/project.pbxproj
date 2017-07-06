@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A903F1F0EEA6F005EDBC9 /* AppDelegate.swift */; };
+		FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90461F0EEA6F005EDBC9 /* Assets.xcassets */; };
+		FD1A90521F0EEB0E005EDBC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */; };
+		FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */; };
+		FD1A90561F0EEB1C005EDBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FD1A903C1F0EEA6F005EDBC9 /* BroadwayLotteryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroadwayLotteryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1A903F1F0EEA6F005EDBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD1A90461F0EEA6F005EDBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD1A904B1F0EEA6F005EDBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
+		FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD1A90391F0EEA6F005EDBC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD1A90331F0EEA6F005EDBC9 = {
+			isa = PBXGroup;
+			children = (
+				FD1A903E1F0EEA6F005EDBC9 /* BroadwayLotteryApp */,
+				FD1A903D1F0EEA6F005EDBC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD1A903D1F0EEA6F005EDBC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A903C1F0EEA6F005EDBC9 /* BroadwayLotteryApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD1A903E1F0EEA6F005EDBC9 /* BroadwayLotteryApp */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A903F1F0EEA6F005EDBC9 /* AppDelegate.swift */,
+				FD1A90571F0EEB26005EDBC9 /* Controllers */,
+				FD1A90581F0EEB2D005EDBC9 /* Storyboards */,
+				FD1A90461F0EEA6F005EDBC9 /* Assets.xcassets */,
+				FD1A904B1F0EEA6F005EDBC9 /* Info.plist */,
+			);
+			path = BroadwayLotteryApp;
+			sourceTree = "<group>";
+		};
+		FD1A90571F0EEB26005EDBC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A90511F0EEB0E005EDBC9 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FD1A90581F0EEB2D005EDBC9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A90541F0EEB1C005EDBC9 /* Main.storyboard */,
+				FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD1A903B1F0EEA6F005EDBC9 /* BroadwayLotteryApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD1A904E1F0EEA6F005EDBC9 /* Build configuration list for PBXNativeTarget "BroadwayLotteryApp" */;
+			buildPhases = (
+				FD1A90381F0EEA6F005EDBC9 /* Sources */,
+				FD1A90391F0EEA6F005EDBC9 /* Frameworks */,
+				FD1A903A1F0EEA6F005EDBC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BroadwayLotteryApp;
+			productName = BroadwayLotteryApp;
+			productReference = FD1A903C1F0EEA6F005EDBC9 /* BroadwayLotteryApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD1A90341F0EEA6F005EDBC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Eleanor Murguia";
+				TargetAttributes = {
+					FD1A903B1F0EEA6F005EDBC9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = MC46RY65PT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FD1A90371F0EEA6F005EDBC9 /* Build configuration list for PBXProject "BroadwayLotteryApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD1A90331F0EEA6F005EDBC9;
+			productRefGroup = FD1A903D1F0EEA6F005EDBC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD1A903B1F0EEA6F005EDBC9 /* BroadwayLotteryApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD1A903A1F0EEA6F005EDBC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1A90561F0EEB1C005EDBC9 /* Main.storyboard in Resources */,
+				FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */,
+				FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD1A90381F0EEA6F005EDBC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1A90521F0EEB0E005EDBC9 /* ViewController.swift in Sources */,
+				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FD1A904C1F0EEA6F005EDBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD1A904D1F0EEA6F005EDBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD1A904F1F0EEA6F005EDBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC46RY65PT;
+				INFOPLIST_FILE = BroadwayLotteryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.eleanormurguia.BroadwayLotteryApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FD1A90501F0EEA6F005EDBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC46RY65PT;
+				INFOPLIST_FILE = BroadwayLotteryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.eleanormurguia.BroadwayLotteryApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD1A90371F0EEA6F005EDBC9 /* Build configuration list for PBXProject "BroadwayLotteryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD1A904C1F0EEA6F005EDBC9 /* Debug */,
+				FD1A904D1F0EEA6F005EDBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD1A904E1F0EEA6F005EDBC9 /* Build configuration list for PBXNativeTarget "BroadwayLotteryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD1A904F1F0EEA6F005EDBC9 /* Debug */,
+				FD1A90501F0EEA6F005EDBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD1A90341F0EEA6F005EDBC9 /* Project object */;
+}
