@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="1888.8" y="151.57421289355324"/>
         </scene>
-        <!--View Controller-->
+        <!--Get Started View Controller-->
         <scene sceneID="dFm-ce-UNf">
             <objects>
-                <viewController storyboardIdentifier="WelcomeFourViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZF-mk-F4U" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeFourViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZF-mk-F4U" customClass="GetStartedViewController" customModule="BroadwayLotteryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r3S-W5-5bM"/>
                         <viewControllerLayoutGuide type="bottom" id="FG9-PY-8eZ"/>
@@ -191,6 +191,9 @@
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="getStartedButtonTapped:" destination="wZF-mk-F4U" eventType="touchUpInside" id="oiT-m7-n1f"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up to Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhB-ap-cHU">
                                 <rect key="frame" x="0.0" y="100" width="375" height="45"/>
@@ -223,6 +226,9 @@
                             <constraint firstItem="QhB-ap-cHU" firstAttribute="centerX" secondItem="0G6-i7-o7G" secondAttribute="centerX" id="tqb-Ge-5gP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="Jgr-Uo-hvl" id="g90-zK-FoW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj2-TN-Fuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
