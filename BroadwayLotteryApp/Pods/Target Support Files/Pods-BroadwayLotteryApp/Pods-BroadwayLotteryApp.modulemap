@@ -1,0 +1,6 @@
+framework module Pods_BroadwayLotteryApp {
+  umbrella header "Pods-BroadwayLotteryApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

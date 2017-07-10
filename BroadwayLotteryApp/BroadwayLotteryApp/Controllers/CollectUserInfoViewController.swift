@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectUserInfoViewController: UIViewController {
+class CollectUserInfoViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
