@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,12 +29,47 @@
                     <view key="view" contentMode="scaleToFill" id="Pj9-RX-CRw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99262373100000001" green="0.36774733430000001" blue="0.79285784020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to BroadwayLotteryApp!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IT-zd-yZD">
+                                <rect key="frame" x="20" y="170" width="335" height="56"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to Learn More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-uv-UEZ">
+                                <rect key="frame" x="0.0" y="317" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Making it Easier to Enter Broadway Lotteries!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guB-Dj-7jj">
+                                <rect key="frame" x="0.0" y="246" width="375" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="X2m-0s-cWj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.067372511560000001" green="0.83833677029999998" blue="0.77993255859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" id="3rC-d9-ybH"/>
+                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="centerX" secondItem="Pj9-RX-CRw" secondAttribute="centerX" id="4w0-nd-7Ac"/>
+                            <constraint firstAttribute="trailing" secondItem="6kw-uv-UEZ" secondAttribute="trailing" id="6mf-WB-6SE"/>
+                            <constraint firstItem="guB-Dj-7jj" firstAttribute="leading" secondItem="6kw-uv-UEZ" secondAttribute="leading" id="AyK-DN-fut"/>
+                            <constraint firstItem="8IT-zd-yZD" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="20" id="Cf2-Cv-gUq"/>
+                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="top" secondItem="guB-Dj-7jj" secondAttribute="bottom" constant="28" id="RDp-i7-137"/>
+                            <constraint firstAttribute="trailing" secondItem="8IT-zd-yZD" secondAttribute="trailing" constant="20" id="gdO-Zz-Vzb"/>
+                            <constraint firstItem="guB-Dj-7jj" firstAttribute="trailing" secondItem="6kw-uv-UEZ" secondAttribute="trailing" id="tBJ-Xe-vTB"/>
+                            <constraint firstItem="8IT-zd-yZD" firstAttribute="top" secondItem="MOl-nr-1Pw" secondAttribute="bottom" constant="150" id="umO-CM-dsE"/>
+                            <constraint firstItem="guB-Dj-7jj" firstAttribute="top" secondItem="8IT-zd-yZD" secondAttribute="bottom" constant="20" id="yPD-XH-zFs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlK-GM-AvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="151"/>
+            <point key="canvasLocation" x="485.60000000000002" y="150.67466266866569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="n41-yR-oAc">
@@ -46,12 +82,41 @@
                     <view key="view" contentMode="scaleToFill" id="nKH-GT-EXE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Enter Lotteries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLu-oK-FA0">
+                                <rect key="frame" x="0.0" y="100" width="375" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a show from the Home screen, fill out the form, check the captcha, and hit submit!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avi-5o-1AM">
+                                <rect key="frame" x="10" y="426" width="355" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-iR-9hF">
+                                <rect key="frame" x="20" y="149" width="335" height="257"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.067372511560000001" green="0.83833677029999998" blue="0.77993255859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GIi-iR-9hF" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leadingMargin" constant="4" id="4a2-gO-PFl"/>
+                            <constraint firstAttribute="trailing" secondItem="gLu-oK-FA0" secondAttribute="trailing" id="5fG-Ew-ZiN"/>
+                            <constraint firstItem="gLu-oK-FA0" firstAttribute="top" secondItem="lxR-JW-9jw" secondAttribute="bottom" constant="80" id="9gA-Vi-G5w"/>
+                            <constraint firstItem="gLu-oK-FA0" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" id="X0L-ee-Lzy"/>
+                            <constraint firstItem="hpq-sV-yvF" firstAttribute="top" secondItem="avi-5o-1AM" secondAttribute="bottom" constant="200" id="XiU-GJ-4f3"/>
+                            <constraint firstItem="avi-5o-1AM" firstAttribute="top" secondItem="GIi-iR-9hF" secondAttribute="bottom" constant="20" id="kmu-AH-kwv"/>
+                            <constraint firstItem="avi-5o-1AM" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leadingMargin" constant="-6" id="o7S-c7-Wgx"/>
+                            <constraint firstItem="GIi-iR-9hF" firstAttribute="top" secondItem="gLu-oK-FA0" secondAttribute="bottom" constant="20" id="vB1-D9-OE5"/>
+                            <constraint firstItem="gLu-oK-FA0" firstAttribute="centerX" secondItem="GIi-iR-9hF" secondAttribute="centerX" id="yLQ-uH-T6Q"/>
+                            <constraint firstItem="GIi-iR-9hF" firstAttribute="centerX" secondItem="avi-5o-1AM" secondAttribute="centerX" id="yuy-sV-Fvu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="198-Mg-2cF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="153"/>
+            <point key="canvasLocation" x="1181.5999999999999" y="152.47376311844079"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4r4-wa-wV2">
@@ -64,12 +129,45 @@
                     <view key="view" contentMode="scaleToFill" id="4O7-1T-QcF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Set Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36o-gs-XEU">
+                                <rect key="frame" x="0.0" y="100" width="375" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXf-mc-19O">
+                                <rect key="frame" x="20" y="154" width="335" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYp-AR-EFF">
+                                <rect key="frame" x="10" y="438" width="355" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="jw7-ku-FI0"/>
+                                </constraints>
+                                <string key="text">Get notified when show lotteries (some or all) open and close. When a lottery closes, be sure to check your email within 60 minutes to check if you've won. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.067372511560000001" green="0.83833677029999998" blue="0.77993255859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iXf-mc-19O" firstAttribute="centerX" secondItem="CYp-AR-EFF" secondAttribute="centerX" id="0Ek-ee-EpH"/>
+                            <constraint firstItem="36o-gs-XEU" firstAttribute="centerX" secondItem="iXf-mc-19O" secondAttribute="centerX" id="1V9-W6-QLY"/>
+                            <constraint firstItem="CYp-AR-EFF" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leadingMargin" constant="-6" id="7H0-w3-BI4"/>
+                            <constraint firstAttribute="trailing" secondItem="36o-gs-XEU" secondAttribute="trailing" id="R00-n1-BZw"/>
+                            <constraint firstItem="iXf-mc-19O" firstAttribute="top" secondItem="36o-gs-XEU" secondAttribute="bottom" constant="25" id="RC0-aO-HJv"/>
+                            <constraint firstItem="CYp-AR-EFF" firstAttribute="top" secondItem="iXf-mc-19O" secondAttribute="bottom" constant="34" id="S55-w2-46N"/>
+                            <constraint firstItem="inL-Xn-P9O" firstAttribute="top" secondItem="CYp-AR-EFF" secondAttribute="bottom" constant="124" id="atV-zx-HUm"/>
+                            <constraint firstItem="36o-gs-XEU" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" id="gtC-u5-eT2"/>
+                            <constraint firstItem="36o-gs-XEU" firstAttribute="top" secondItem="sNu-lQ-ITi" secondAttribute="bottom" constant="80" id="mQt-3x-tXj"/>
+                            <constraint firstItem="iXf-mc-19O" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leadingMargin" constant="4" id="nUj-6h-n4z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yE-Xv-EGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890" y="152"/>
+            <point key="canvasLocation" x="1888.8" y="151.57421289355324"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dFm-ce-UNf">
@@ -82,12 +180,53 @@
                     <view key="view" contentMode="scaleToFill" id="b8r-CG-rQg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgr-Uo-hvl">
+                                <rect key="frame" x="138" y="309" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PHR-BZ-Mod"/>
+                                    <constraint firstAttribute="width" constant="100" id="mz3-FU-tne"/>
+                                </constraints>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up to Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhB-ap-cHU">
+                                <rect key="frame" x="0.0" y="100" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="QtK-lK-uPz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter some basic information so we can make it easier to enter daily lotteries!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G6-i7-o7G">
+                                <rect key="frame" x="10" y="153" width="355" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="v0R-IH-55Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.067372511560000001" green="0.83833677029999998" blue="0.77993255859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QhB-ap-cHU" firstAttribute="leading" secondItem="b8r-CG-rQg" secondAttribute="leading" id="E8O-lu-I6g"/>
+                            <constraint firstItem="0G6-i7-o7G" firstAttribute="top" secondItem="QhB-ap-cHU" secondAttribute="bottom" constant="8" symbolic="YES" id="GKv-dL-Hw2"/>
+                            <constraint firstItem="Jgr-Uo-hvl" firstAttribute="centerX" secondItem="0G6-i7-o7G" secondAttribute="centerX" id="KDu-wR-GlB"/>
+                            <constraint firstAttribute="trailing" secondItem="QhB-ap-cHU" secondAttribute="trailing" id="hAo-4U-amp"/>
+                            <constraint firstItem="QhB-ap-cHU" firstAttribute="top" secondItem="r3S-W5-5bM" secondAttribute="bottom" constant="80" id="ndC-ZG-4uX"/>
+                            <constraint firstItem="0G6-i7-o7G" firstAttribute="leading" secondItem="b8r-CG-rQg" secondAttribute="leadingMargin" constant="-6" id="p9j-yf-0lr"/>
+                            <constraint firstItem="Jgr-Uo-hvl" firstAttribute="centerY" secondItem="b8r-CG-rQg" secondAttribute="centerY" id="tON-tc-8qG"/>
+                            <constraint firstItem="QhB-ap-cHU" firstAttribute="centerX" secondItem="0G6-i7-o7G" secondAttribute="centerX" id="tqb-Ge-5gP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj2-TN-Fuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="150"/>
+            <point key="canvasLocation" x="2600.8000000000002" y="149.77511244377811"/>
         </scene>
     </scenes>
 </document>
