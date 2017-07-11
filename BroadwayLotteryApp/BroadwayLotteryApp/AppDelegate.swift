@@ -19,8 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
-        //show welcome view controller 
-        let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+        //initial view controller 
+        let defaults = UserDefaults.standard
+        var storyboard: UIStoryboard
+        if defaults.bool(forKey: Constants.UserDefaults.isLoggedIn) == true {
+            storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)
+        }else{
+            storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+        }
+        
         let initialViewController = storyboard.instantiateInitialViewController()
         
         window?.rootViewController = initialViewController

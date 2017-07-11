@@ -22,6 +22,10 @@ struct Constants{
         static let userAge = "userAge"
     }
     
+    struct UserDefaults{
+        static let isLoggedIn = "isLoggedIn"
+    }
+    
     
     
 }

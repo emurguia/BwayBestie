@@ -87,11 +87,18 @@ class CollectUserInfoViewController: UITableViewController {
             return
         }
         
-//        let testKeychain: String? = KeychainWrapper.standard.string(forKey: "firstName")
-//        
-//        if let test = testKeychain{
-//            print("firstname: \(test)")
-//        }
+        //set UserDefaults to logged in 
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: Constants.UserDefaults.isLoggedIn)
+        
+        //present Home storyboard 
+        let storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)
+        let initialViewController = storyboard.instantiateInitialViewController()
+        
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
+        
+
 
     }
 
