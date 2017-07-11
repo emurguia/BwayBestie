@@ -1,12 +1,15 @@
 PODS:
   - IQKeyboardManagerSwift (4.0.10)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (= 4.0.10)
+  - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 09bd4be9d325deef9134ea7fa6146243539572b9
+PODFILE CHECKSUM: 04389a5bda31c5ce07f3964dcfc2df3f78269b69
 
 COCOAPODS: 1.2.1
