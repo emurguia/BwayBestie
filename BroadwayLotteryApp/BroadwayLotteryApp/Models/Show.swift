@@ -22,5 +22,13 @@ class Show{
         self.lotteryClose = lotteryClose
     }
     
+    
+    
 
 }
+
+
+    
+
+    
+    
