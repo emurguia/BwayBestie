@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showCell" rowHeight="70" id="bY5-2g-Yll">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showCell" rowHeight="70" id="bY5-2g-Yll" customClass="ShowCell" customModule="BroadwayLotteryApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bY5-2g-Yll" id="Xe2-HY-fFs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyu-pW-UPy">
@@ -47,6 +47,9 @@
                                             <state key="normal" title="Enter Now">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="enterButtonPressed:" destination="bY5-2g-Yll" eventType="touchUpInside" id="NjQ-Ir-h6h"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-UG-p6F">
                                             <rect key="frame" x="93" y="37" width="44" height="21"/>
@@ -69,6 +72,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.067372511560000001" green="0.83833677029999998" blue="0.77993255859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="enterButton" destination="5re-f9-tQl" id="wPX-sy-6xy"/>
+                                    <outlet property="lotteryCloseLabel" destination="ubj-UG-p6F" id="Tff-7J-eGD"/>
+                                    <outlet property="lotteryOpenLabel" destination="vgo-KG-8Co" id="9Kl-Si-NmS"/>
+                                    <outlet property="showTitleLabel" destination="Cyu-pW-UPy" id="Hdj-50-PTM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
