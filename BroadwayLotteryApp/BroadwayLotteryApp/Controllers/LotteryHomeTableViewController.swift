@@ -43,8 +43,14 @@ class LotteryHomeTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath)
+        let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
+        let index = indexPath.row
+        let currentShow = shows[index]
         
+        //set labels of cell
+        cell.showTitleLabel.text = currentShow.title
+        cell.lotteryOpenLabel.text = currentShow.lotteryOpen
+        cell.lotteryCloseLabel.text = currentShow.lotteryClose
         
         return cell
     }
