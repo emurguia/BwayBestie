@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol ShowCellDelegate: class{
+    func didTapEnterButton(_ likeButton: UIButton, on cell: ShowCell)
+}
 class ShowCell: UITableViewCell{
     
     //Mark -- properties
@@ -16,6 +19,11 @@ class ShowCell: UITableViewCell{
     @IBOutlet weak var lotteryCloseLabel: UILabel!
     @IBOutlet weak var enterButton: UIButton!
     
+    weak var delegate: ShowCellDelegate?
+    
+    var index: Int = -1
+    
     @IBAction func enterButtonPressed(_ sender: UIButton) {
+         delegate?.didTapEnterButton(sender, on: self)
     }
 }

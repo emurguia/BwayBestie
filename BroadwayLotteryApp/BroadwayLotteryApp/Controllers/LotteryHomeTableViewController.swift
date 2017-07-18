@@ -50,8 +50,10 @@ class LotteryHomeTableViewController: UITableViewController {
         //set labels of cell
         cell.showTitleLabel.text = currentShow.title
         cell.lotteryOpenLabel.text = currentShow.lotteryOpen
-        cell.lotteryCloseLabel.text = currentShow.lotteryClose
+        cell.lotteryCloseLabel.text = currentShow.lotteryCloseEve
+        cell.delegate = self
         
+        cell.index = index
         return cell
     }
     
@@ -108,6 +110,16 @@ class LotteryHomeTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension LotteryHomeTableViewController: ShowCellDelegate{
+    
+    func didTapEnterButton(_ likeButton: UIButton, on cell: ShowCell){
+        let currentShow = shows[cell.index]
+        let webVC = SwiftWebVC(urlString: currentShow.lotteryURL)
+        self.navigationController?.pushViewController(webVC, animated: true)
+    }
+   
 }
 
 
