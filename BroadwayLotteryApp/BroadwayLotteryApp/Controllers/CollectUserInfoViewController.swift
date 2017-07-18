@@ -83,7 +83,7 @@ class CollectUserInfoViewController: UITableViewController {
         let saveTickets: Bool = KeychainWrapper.standard.set(numberTickets, forKey: Constants.Keychain.numberTickets)
         let saveAge: Bool = KeychainWrapper.standard.set(userAge, forKey: Constants.Keychain.userAge)
 
-        if saveFirst == false || saveLast  == false || saveZip == false || saveMonth == false || saveDate == false || saveYear == false || saveTickets == false || saveAge == false{
+        if saveFirst == false || saveLast  == false || saveZip == false || saveMonth == false || saveDate == false || saveYear == false || saveTickets == false || saveAge == false || saveEmail == false{
             print("User details not saved -- keychain save failed")
             return
         }

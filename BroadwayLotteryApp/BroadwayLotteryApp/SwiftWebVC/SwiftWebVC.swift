@@ -7,6 +7,7 @@
 //
 
 import WebKit
+import SwiftKeychainWrapper
 
 public protocol SwiftWebVCDelegate: class {
     func didStartLoading()
@@ -297,6 +298,41 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.navBarTitle.sizeToFit()
             self.updateToolbarItems()
         })
+        //can match webView.url against constants to check which javascript to inject
+        
+        //get user info from key chain
+        let firstName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
+        let lastName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.lastName)
+        let zipCode: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.zipCode)
+        let age: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.userAge)
+        let email: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.email)
+        let numberTickets: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.numberTickets)
+        
+        if let url = webView.url{
+            let urlString = String(describing: url)
+            if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
+                //print("book of mormon, ghog, or kinky")
+                
+                //fix force unwrapping?
+                webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName!)'; document.getElementById('lastname').value = '\(lastName!)'; document.getElementById('email').value = '\(email!)'; document.getElementById('zipcode').value = '\(zipCode!)'; document.getElementById('age').value = '\(age!)'; if(\(numberTickets!) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
+                    guard error == nil else{
+                        print ("Error executing JS")
+                        return
+                    }
+                }
+            }
+        }
+
+        
+        
+//        webView.evaluateJavaScript("var test = document.getElementsByTagName('h3'); test[0].style.color = 'red'") { (result, error) in
+//            guard error == nil else{
+//                print ("Error executing JS")
+//                return
+//            }
+//        }
+        
+
         
     }
     
