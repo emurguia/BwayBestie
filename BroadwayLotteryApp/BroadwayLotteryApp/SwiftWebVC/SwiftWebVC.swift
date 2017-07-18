@@ -298,7 +298,6 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.navBarTitle.sizeToFit()
             self.updateToolbarItems()
         })
-        //can match webView.url against constants to check which javascript to inject
         
         //get user info from key chain
         let firstName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
@@ -321,16 +320,19 @@ extension SwiftWebVC: WKNavigationDelegate {
                     }
                 }
             }
+            
+            if urlString == Constants.LotteryURLs.aladdinURL || urlString == Constants.LotteryURLs.catsURL || urlString == Constants.LotteryURLs.hamiltonURL || urlString == Constants.LotteryURLs.lionKingURL || urlString == Constants.LotteryURLs.onYourFeetURL || urlString == Constants.LotteryURLs.warPaintURL || urlString == Constants.LotteryURLs.wickedURL{
+                print("bway direct")
+                webView.evaluateJavaScript("var frame = document.querySelector('[id^=\"fancybox-frame\"]'); var innerDoc = frame.contentDocument || frame.contentWindow.document; innerDoc.getElementById('dlslot_name_first').value = firstName; innerDoc.getElementById('dlslot_name_last').value = lastName; innerDoc.getElementById('dlslot_email').value = email; innerDoc.getElementById('dlslot_dob_month').value = birthMonth; innerDoc.getElementById('dlslot_dob_day').value = birthDate; innerDoc.getElementById('dlslot_dob_year').value = birthYear; innerDoc.getElementById('dlslot_zip').value = zipcode; if(ticketNumber == 2){ innerDoc.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{innerDoc.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
+                    guard error == nil else{
+                        print ("Error executing JS")
+                        print(error!)
+                        return
+                    }
+                }
+            }
         }
 
-        
-        
-//        webView.evaluateJavaScript("var test = document.getElementsByTagName('h3'); test[0].style.color = 'red'") { (result, error) in
-//            guard error == nil else{
-//                print ("Error executing JS")
-//                return
-//            }
-//        }
         
 
         

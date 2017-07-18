@@ -94,7 +94,7 @@ struct Constants{
         static let groundhogDayCloseMat  = "11:00 am day prior"//
         static let hamiltonCloseMat  = "9:00 am"//
         static let kinkyBootsCloseMat  = "11 am day prior"//
-        static let lionKingCloseMat = "9:00 am"//
+        static let lionKingCloseMat = "9:00 am"
         static let greatCometCloseMat = "10:00 am"
         static let onYourFeetCloseMat = "3:00 pm"//
         static let osloCloseMat  = "10:00 am day prior"//
