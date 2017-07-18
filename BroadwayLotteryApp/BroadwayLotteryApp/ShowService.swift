@@ -10,7 +10,7 @@ import Foundation
 
 /*
  * To add new show: 
- * 1) add Title to Constants.ShowInformation
+ * 1) add Title and Lottery URL to Constants
  * 2) add lottery open/close times in fillLotteryTimes()
  * 3) add case to allShows enum 
  * 4) add to asShow() switch statement
@@ -26,45 +26,6 @@ struct ShowService{
     static var lotteryCloseEve = [String: String]()
     static var lotteryCloseMat = [String: String]()
     
-    static func fillLotteryTimes(){
-        //lottery open
-        lotteryOpen[Constants.ShowInformation.aladdin] = "7:00 pm"
-        lotteryOpen[Constants.ShowInformation.anastasia] = "Midnight"
-        lotteryOpen[Constants.ShowInformation.bookOfMormon] = "Week in Advance"
-        lotteryOpen[Constants.ShowInformation.cats] = "10:00 am"
-        lotteryOpen[Constants.ShowInformation.dearEvanHanson] = "10:00 am"
-        lotteryOpen[Constants.ShowInformation.groundhogDay] = "Week in Advance"
-        lotteryOpen[Constants.ShowInformation.hamilton] = "8:00 am"
-        lotteryOpen[Constants.ShowInformation.kinkyBoots] = "Week in Advance"
-        lotteryOpen[Constants.ShowInformation.lionKing] = "7:00 pm"
-        lotteryOpen[Constants.ShowInformation.greatComet] = "Midnight"
-        lotteryOpen[Constants.ShowInformation.onYourFeet] = "9:00 am"
-        lotteryOpen[Constants.ShowInformation.oslo] = "Week in Advance"
-        lotteryOpen[Constants.ShowInformation.phantom] = "9:00 am"
-        lotteryOpen[Constants.ShowInformation.schoolOfRock] = "10:00 am"
-        lotteryOpen[Constants.ShowInformation.warPaint] = "9:00 am"
-        lotteryOpen[Constants.ShowInformation.wicked] = "8:00 pm"
-        
-        
-        //lottery close -- evening
-        lotteryCloseEve[Constants.ShowInformation.aladdin] = "8:30 am"
-        lotteryCloseEve[Constants.ShowInformation.anastasia] = "2:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.bookOfMormon] = "11:00 am day prior"
-        lotteryCloseEve[Constants.ShowInformation.cats] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.dearEvanHanson] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.groundhogDay] = "11:00 am day prior"
-        lotteryCloseEve[Constants.ShowInformation.hamilton] = "9:00 am"
-        lotteryCloseEve[Constants.ShowInformation.kinkyBoots] = "11 am day prior"
-        lotteryCloseEve[Constants.ShowInformation.lionKing] = "9:00 am"
-        lotteryCloseEve[Constants.ShowInformation.greatComet] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.onYourFeet] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.oslo] = "10:00 am day prior"
-        lotteryCloseEve[Constants.ShowInformation.phantom] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.schoolOfRock] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.warPaint] = "3:00 pm"
-        lotteryCloseEve[Constants.ShowInformation.wicked] = "2:00 pm"
-        
-    }
     
     enum allShows:Int{
         case aladdin
@@ -95,46 +56,46 @@ struct ShowService{
         func asShow() -> Show{
             switch self{
             case .aladdin:
-                return Show(title: Constants.ShowInformation.aladdin, lotteryOpen: lotteryOpen[Constants.ShowInformation.aladdin]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.aladdin]!)
+                return Show(title: Constants.ShowTitle.aladdin, lotteryOpen: Constants.LotteryOpen.aladdinOpen, lotteryCloseEve: Constants.LotteryCloseEve.aladdinCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.aladdinCloseMat, lotteryURL: Constants.LotteryURLs.aladdinURL)
             case .anastasia:
-                return Show(title: Constants.ShowInformation.anastasia, lotteryOpen: lotteryOpen[Constants.ShowInformation.anastasia]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.anastasia]!)
+                return Show(title: Constants.ShowTitle.anastasia, lotteryOpen: Constants.LotteryOpen.anastasiaOpen, lotteryCloseEve: Constants.LotteryCloseEve.anastasiaCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.anastasiaCloseMat, lotteryURL: Constants.LotteryURLs.anastasiaURL)
             case .bookOfMormon:
-                return Show(title: Constants.ShowInformation.bookOfMormon, lotteryOpen: lotteryOpen[Constants.ShowInformation.bookOfMormon]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.bookOfMormon]!)
+                return Show(title: Constants.ShowTitle.bookOfMormon, lotteryOpen: Constants.LotteryOpen.bookOfMormonOpen, lotteryCloseEve: Constants.LotteryCloseEve.bookOfMormonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.bookOfMormonCloseMat, lotteryURL: Constants.LotteryURLs.bookOfMoromonURL)
             case .cats:
-                return Show(title: Constants.ShowInformation.cats, lotteryOpen: lotteryOpen[Constants.ShowInformation.cats]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.cats]!)
+                return Show(title: Constants.ShowTitle.cats, lotteryOpen: Constants.LotteryOpen.catsOpen, lotteryCloseEve: Constants.LotteryCloseEve.catsCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.catsCloseMat, lotteryURL: Constants.LotteryURLs.catsURL)
             case .dearEvanHanson:
-                return Show(title: Constants.ShowInformation.dearEvanHanson, lotteryOpen: lotteryOpen[Constants.ShowInformation.dearEvanHanson]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.dearEvanHanson]!)
+                return Show(title: Constants.ShowTitle.dearEvanHanson, lotteryOpen: Constants.LotteryOpen.dearEvanHansonOpen, lotteryCloseEve: Constants.LotteryCloseEve.dearEvanHansonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.dearEvanHansonCloseMat, lotteryURL: Constants.LotteryURLs.dearEvanHansonURL)
             case .greatComet:
-                return Show(title: Constants.ShowInformation.greatComet, lotteryOpen: lotteryOpen[Constants.ShowInformation.greatComet]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.greatComet]!)
+                return Show(title: Constants.ShowTitle.greatComet, lotteryOpen: Constants.LotteryOpen.greatCometOpen, lotteryCloseEve: Constants.LotteryCloseEve.greatCometCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.greatCometCloseMat, lotteryURL: Constants.LotteryURLs.greatCometURL)
             case .groundhogDay:
-                return Show(title: Constants.ShowInformation.groundhogDay, lotteryOpen: lotteryOpen[Constants.ShowInformation.groundhogDay]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.groundhogDay]!)
+                return Show(title: Constants.ShowTitle.groundhogDay, lotteryOpen: Constants.LotteryOpen.groundhogDayOpen, lotteryCloseEve: Constants.LotteryCloseEve.groundhogDayCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.groundhogDayCloseMat, lotteryURL: Constants.LotteryURLs.groundhogDayURL)
             case .hamilton:
-                return Show(title: Constants.ShowInformation.hamilton, lotteryOpen: lotteryOpen[Constants.ShowInformation.hamilton]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.hamilton]!)
+                return Show(title: Constants.ShowTitle.hamilton, lotteryOpen: Constants.LotteryOpen.hamiltonOpen, lotteryCloseEve: Constants.LotteryCloseEve.hamiltonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.hamiltonCloseMat, lotteryURL: Constants.LotteryURLs.hamiltonURL)
             case .kinkyBoots:
-                return Show(title: Constants.ShowInformation.kinkyBoots, lotteryOpen: lotteryOpen[Constants.ShowInformation.kinkyBoots]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.kinkyBoots]!)
+                return Show(title: Constants.ShowTitle.kinkyBoots, lotteryOpen: Constants.LotteryOpen.kinkyBootsOpen, lotteryCloseEve: Constants.LotteryCloseEve.kinkyBootsCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.kinkyBootsCloseMat, lotteryURL: Constants.LotteryURLs.kinkyBootsURL)
             case .lionKing:
-                return Show(title: Constants.ShowInformation.lionKing, lotteryOpen: lotteryOpen[Constants.ShowInformation.lionKing]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.lionKing]!)
+                return Show(title: Constants.ShowTitle.lionKing, lotteryOpen: Constants.LotteryOpen.lionKingOpen, lotteryCloseEve: Constants.LotteryCloseEve.lionKingCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.lionKingCloseMat, lotteryURL: Constants.LotteryURLs.lionKingURL)
             case .onYourFeet:
-                return Show(title: Constants.ShowInformation.onYourFeet, lotteryOpen: lotteryOpen[Constants.ShowInformation.onYourFeet]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.onYourFeet]!)
+                return Show(title: Constants.ShowTitle.onYourFeet, lotteryOpen: Constants.LotteryOpen.onYourFeetOpen, lotteryCloseEve: Constants.LotteryCloseEve.onYourFeetCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.onYourFeetCloseMat, lotteryURL: Constants.LotteryURLs.onYourFeetURL)
             case .oslo:
-                return Show(title: Constants.ShowInformation.oslo, lotteryOpen: lotteryOpen[Constants.ShowInformation.oslo]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.oslo]!)
+                return Show(title: Constants.ShowTitle.oslo, lotteryOpen: Constants.LotteryOpen.osloOpen, lotteryCloseEve: Constants.LotteryCloseEve.osloCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.osloCloseMat, lotteryURL: Constants.LotteryURLs.osloURL)
             case .phantom:
-                return Show(title: Constants.ShowInformation.phantom, lotteryOpen: lotteryOpen[Constants.ShowInformation.phantom]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.phantom]!)
+                return Show(title: Constants.ShowTitle.phantom, lotteryOpen: Constants.LotteryOpen.phantomOpen, lotteryCloseEve: Constants.LotteryCloseEve.phantomCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.phantomCloseMat, lotteryURL: Constants.LotteryURLs.phantomURL)
             case .schoolOfRock:
-                return Show(title: Constants.ShowInformation.schoolOfRock, lotteryOpen: lotteryOpen[Constants.ShowInformation.schoolOfRock]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.schoolOfRock]!)
+                return Show(title: Constants.ShowTitle.schoolOfRock, lotteryOpen: Constants.LotteryOpen.schoolOfRockOpen, lotteryCloseEve: Constants.LotteryCloseEve.schoolOfRockCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.schoolOfRockCloseMat, lotteryURL: Constants.LotteryURLs.schoolOfRockURL)
             case .warPaint:
-                return Show(title: Constants.ShowInformation.warPaint, lotteryOpen: lotteryOpen[Constants.ShowInformation.warPaint]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.warPaint]!)
+                return Show(title: Constants.ShowTitle.warPaint, lotteryOpen: Constants.LotteryOpen.warPaintOpen, lotteryCloseEve: Constants.LotteryCloseEve.warPaintCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.warPaintCloseMat, lotteryURL: Constants.LotteryURLs.warPaintURL)
             case .wicked:
-                return Show(title: Constants.ShowInformation.wicked, lotteryOpen: lotteryOpen[Constants.ShowInformation.wicked]!, lotteryClose: lotteryCloseEve[Constants.ShowInformation.wicked]!)
+                return Show(title: Constants.ShowTitle.wicked, lotteryOpen: Constants.LotteryOpen.wickedOpen, lotteryCloseEve: Constants.LotteryCloseEve.wickedCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.wickedCloseMat, lotteryURL: Constants.LotteryURLs.wickedURL)
             default:
-                return Show(title: "Amazing New Show", lotteryOpen: "AM", lotteryClose: "PM")
+                return Show(title: "Broadway Baby!", lotteryOpen: "AM", lotteryCloseEve: "PM", lotteryCloseMat: "AM", lotteryURL: "wwww.broadway.com")
             }
         }
     }
     
     //function to get all currently available shows
     static func getShows() -> [Show]{
-        fillLotteryTimes()
+        //fillLotteryTimes()
         var showArr = [Show]()
         for i in 0...allShows.count{
             if let currentShow = allShows(rawValue: i){
