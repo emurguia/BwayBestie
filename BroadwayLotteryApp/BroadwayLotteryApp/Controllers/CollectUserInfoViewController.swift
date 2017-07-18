@@ -45,7 +45,7 @@ class CollectUserInfoViewController: UITableViewController {
         
         //get values from textfields 
         //does NOT currently fail if not all fields filled out -- change this?
-        guard let firstName = firstNameField.text, let lastName = lastNameField.text, let zipCode = zipCodeField.text, let birthMonth = birthMonthField.text, let birthDate = birthDateField.text, let birthYear = birthYearField.text else{
+        guard let firstName = firstNameField.text, let lastName = lastNameField.text, let email = emailAddressField.text, let zipCode = zipCodeField.text, let birthMonth = birthMonthField.text, let birthDate = birthDateField.text, let birthYear = birthYearField.text else{
             //print("User details not saved -- all fields not filled out")
             return
         }
@@ -75,6 +75,7 @@ class CollectUserInfoViewController: UITableViewController {
         //save user details to keychain 
         let saveFirst: Bool = KeychainWrapper.standard.set(firstName, forKey: Constants.Keychain.firstName)
         let saveLast: Bool = KeychainWrapper.standard.set(lastName, forKey: Constants.Keychain.lastName)
+        let saveEmail: Bool = KeychainWrapper.standard.set(email, forKey: Constants.Keychain.email)
         let saveZip: Bool = KeychainWrapper.standard.set(zipCode, forKey: Constants.Keychain.zipCode)
         let saveMonth: Bool = KeychainWrapper.standard.set(birthMonth, forKey: Constants.Keychain.birthMonth)
         let saveDate: Bool = KeychainWrapper.standard.set(birthDate, forKey: Constants.Keychain.birthDate)

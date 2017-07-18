@@ -14,6 +14,7 @@ struct Constants{
     struct Keychain{
         static let firstName = "firstName"
         static let lastName = "lastName"
+        static let email = "email"
         static let zipCode = "zipCode"
         static let birthMonth = "birthMonth"
         static let birthDate = "birthDate"
