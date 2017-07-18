@@ -31,7 +31,7 @@ struct Constants{
         static let anastasia = "Anastasia"
         static let bookOfMormon = "Book of Mormon"
         static let cats = "Cats"
-        static let dearEvanHanson = "Dear Evan Hanson"
+        static let dearEvanHansen = "Dear Evan Hansen"
         static let groundhogDay = "Groundhog Day - The Musical"
         static let hamilton = "Hamilton - An American Musical"
         static let kinkyBoots = "Kinky Boots"
@@ -50,7 +50,7 @@ struct Constants{
         static let anastasiaOpen = "Midnight"
         static let bookOfMormonOpen = "Week in Advance"
         static let catsOpen = "10:00 am"
-        static let dearEvanHansonOpen = "10:00 am"
+        static let dearEvanHansenOpen = "10:00 am"
         static let groundhogDayOpen = "Week in Advance"
         static let hamiltonOpen = "8:00 am"
         static let kinkyBootsOpen = "Week in Advance"
@@ -69,7 +69,7 @@ struct Constants{
         static let anastasiaCloseEve = "2:00 pm"
         static let bookOfMormonCloseEve = "11:00 am day prior"
         static let catsCloseEve = "3:00 pm"
-        static let dearEvanHansonCloseEve = "3:00 pm"
+        static let dearEvanHansenCloseEve = "3:00 pm"
         static let groundhogDayCloseEve  = "11:00 am day prior"
         static let hamiltonCloseEve  = "9:00 am"
         static let kinkyBootsCloseEve  = "11 am day prior"
@@ -89,7 +89,7 @@ struct Constants{
         static let anastasiaCloseMat = "9:00 am"
         static let bookOfMormonCloseMat = "11:00 am day prior" //
         static let catsCloseMat = "11:00 am"
-        static let dearEvanHansonCloseMat = "10:00 am"
+        static let dearEvanHansenCloseMat = "10:00 am"
         static let groundhogDayCloseMat  = "11:00 am day prior"//
         static let hamiltonCloseMat  = "9:00 am"//
         static let kinkyBootsCloseMat  = "11 am day prior"//
@@ -109,7 +109,7 @@ struct Constants{
         static let anastasiaURL = "http://www.anastasiabroadwaylottery.com"
         static let bookOfMoromonURL = "http://www.luckyseat.com/book-of-mormon/"
         static let catsURL = "https://lottery.broadwaydirect.com/show/cats/"
-        static let dearEvanHansonURL = "http://www.dearevanhansenlottery.com"
+        static let dearEvanHansenURL = "http://www.dearevanhansenlottery.com"
         static let groundhogDayURL = "http://www.luckyseat.com/groundhog-day/"
         static let hamiltonURL = "https://lottery.broadwaydirect.com/show/hamilton/"
         static let kinkyBootsURL = "http://www.luckyseat.com/kinky-boots/"

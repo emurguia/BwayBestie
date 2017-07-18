@@ -32,7 +32,7 @@ struct ShowService{
         case anastasia
         case bookOfMormon
         case cats
-        case dearEvanHanson
+        case dearEvanHansen
         case greatComet
         case groundhogDay
         case hamilton
@@ -63,8 +63,8 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.bookOfMormon, lotteryOpen: Constants.LotteryOpen.bookOfMormonOpen, lotteryCloseEve: Constants.LotteryCloseEve.bookOfMormonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.bookOfMormonCloseMat, lotteryURL: Constants.LotteryURLs.bookOfMoromonURL)
             case .cats:
                 return Show(title: Constants.ShowTitle.cats, lotteryOpen: Constants.LotteryOpen.catsOpen, lotteryCloseEve: Constants.LotteryCloseEve.catsCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.catsCloseMat, lotteryURL: Constants.LotteryURLs.catsURL)
-            case .dearEvanHanson:
-                return Show(title: Constants.ShowTitle.dearEvanHanson, lotteryOpen: Constants.LotteryOpen.dearEvanHansonOpen, lotteryCloseEve: Constants.LotteryCloseEve.dearEvanHansonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.dearEvanHansonCloseMat, lotteryURL: Constants.LotteryURLs.dearEvanHansonURL)
+            case .dearEvanHansen:
+                return Show(title: Constants.ShowTitle.dearEvanHansen, lotteryOpen: Constants.LotteryOpen.dearEvanHansenOpen, lotteryCloseEve: Constants.LotteryCloseEve.dearEvanHansenCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.dearEvanHansenCloseMat, lotteryURL: Constants.LotteryURLs.dearEvanHansenURL)
             case .greatComet:
                 return Show(title: Constants.ShowTitle.greatComet, lotteryOpen: Constants.LotteryOpen.greatCometOpen, lotteryCloseEve: Constants.LotteryCloseEve.greatCometCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.greatCometCloseMat, lotteryURL: Constants.LotteryURLs.greatCometURL)
             case .groundhogDay:
