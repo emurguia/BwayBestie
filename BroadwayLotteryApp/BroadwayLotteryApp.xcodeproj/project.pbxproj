@@ -17,6 +17,7 @@
 		FD90A8A71F1572AB00914980 /* LotteryHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */; };
 		FD90A8A91F1583CB00914980 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8A81F1583CB00914980 /* Show.swift */; };
 		FD90A8AC1F158FBC00914980 /* LotteryHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */; };
+		FD9E9D811F1FDB17005083C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */; };
 		FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */; };
 		FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB231F1D2E740073FD3D /* ShowCell.swift */; };
 		FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB3FB281F1D7CF70073FD3D /* Media.xcassets */; };
@@ -48,6 +49,7 @@
 		FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LotteryHome.storyboard; sourceTree = "<group>"; };
 		FD90A8A81F1583CB00914980 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
 		FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryHomeTableViewController.swift; path = Controllers/LotteryHomeTableViewController.swift; sourceTree = "<group>"; };
+		FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Controllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		FDB3FB231F1D2E740073FD3D /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCell.swift; path = Views/ShowCell.swift; sourceTree = "<group>"; };
 		FDB3FB281F1D7CF70073FD3D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		FD1A90571F0EEB26005EDBC9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */,
 				FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */,
 				FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */,
 				FDFEE74A1F14324800FE59E4 /* ViewController.swift */,
@@ -375,6 +378,7 @@
 				FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */,
 				FD90A8A91F1583CB00914980 /* Show.swift in Sources */,
 				FDFEE74D1F14336900FE59E4 /* GetStartedViewController.swift in Sources */,
+				FD9E9D811F1FDB17005083C1 /* SettingsTableViewController.swift in Sources */,
 				FD90A8A41F15466000914980 /* Constants.swift in Sources */,
 				FDB3FB401F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift in Sources */,
 				FDB3FB3E1F1D7CF70073FD3D /* SwiftWebVC.swift in Sources */,

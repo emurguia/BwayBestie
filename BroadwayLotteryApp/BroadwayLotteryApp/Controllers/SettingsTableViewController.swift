@@ -1,23 +1,15 @@
 //
-//  LotteryHomeTableViewController.swift
+//  SettingsTableViewController.swift
 //  BroadwayLotteryApp
 //
-//  Created by Eleanor Murguia on 7/11/17.
+//  Created by Eleanor Murguia on 7/19/17.
 //  Copyright © 2017 Eleanor Murguia. All rights reserved.
 //
 
 import UIKit
 
-class LotteryHomeTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController {
 
-    //MARK -- Properties 
-    let shows = ShowService.getShows()
-
-    @IBAction func settingsBarButtonPressed(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "showSettings", sender: self)
-    }
-    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,33 +34,19 @@ class LotteryHomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return shows.count
+        return 2
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
-        let index = indexPath.row
-        let currentShow = shows[index]
-        
-        //set labels of cell
-        cell.showTitleLabel.text = currentShow.title
-        cell.lotteryOpenLabel.text = currentShow.lotteryOpen
-        cell.lotteryCloseLabel.text = currentShow.lotteryCloseEve
-        cell.delegate = self
-        
-        cell.index = index
+        let cell = tableView.dequeueReusableCell(withIdentifier: "temp", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-/*
-    func configureCell(_ cell: PostActionCell, with post: Post){
-        cell.timeAgoLabel.text = timestampFormatter.string(from:post.creationDate)
-        cell.likeButton.isSelected = post.isLiked
-        cell.likeCountLabel.text = "\(post.likeCount) likes"
-    }
-    
- */
+ 
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -104,29 +82,14 @@ class LotteryHomeTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //print("performing segue")
-        if segue.identifier == "showSettings" {
-            let destVC = segue.destination as! SettingsTableViewController
-            destVC.navigationItem.title = "Settings"
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
- 
+    */
 
 }
-
-extension LotteryHomeTableViewController: ShowCellDelegate{
-    
-    func didTapEnterButton(_ likeButton: UIButton, on cell: ShowCell){
-        let currentShow = shows[cell.index]
-        let webVC = SwiftWebVC(urlString: currentShow.lotteryURL)
-        self.navigationController?.pushViewController(webVC, animated: true)
-    }
-   
-}
-
-
