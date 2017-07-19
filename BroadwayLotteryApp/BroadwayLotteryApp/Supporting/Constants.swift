@@ -122,6 +122,9 @@ struct Constants{
         static let schoolOfRockURL = "http://schoolofrocklottery.com"
         static let warPaintURL = "https://lottery.broadwaydirect.com/show/war-paint/"
         static let wickedURL = "https://lottery.broadwaydirect.com/show/wicked/"
+        
+        //lottery entry page for broadway direct lotteries 
+        static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/"
     }
     
 }

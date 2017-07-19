@@ -110,6 +110,7 @@ public class SwiftWebVC: UIViewController {
     override public func loadView() {
         view = webView
         loadRequest(request)
+        print(webView.url as Any)
     }
     
     override public func viewDidLoad() {
@@ -299,6 +300,8 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.updateToolbarItems()
         })
         
+        print(webView.url! as Any)
+        
         //get user info from key chain
         let firstName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
         let lastName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.lastName)
@@ -306,6 +309,9 @@ extension SwiftWebVC: WKNavigationDelegate {
         let age: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.userAge)
         let email: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.email)
         let numberTickets: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.numberTickets)
+        let birthMonth: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthMonth)
+        let birthDate: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthDate)
+        let birthYear: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthYear)
         
         if let url = webView.url{
             let urlString = String(describing: url)
@@ -321,12 +327,14 @@ extension SwiftWebVC: WKNavigationDelegate {
                 }
             }
             
-            if urlString == Constants.LotteryURLs.aladdinURL || urlString == Constants.LotteryURLs.catsURL || urlString == Constants.LotteryURLs.hamiltonURL || urlString == Constants.LotteryURLs.lionKingURL || urlString == Constants.LotteryURLs.onYourFeetURL || urlString == Constants.LotteryURLs.warPaintURL || urlString == Constants.LotteryURLs.wickedURL{
+            
+            
+            if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
                 print("bway direct")
-                webView.evaluateJavaScript("var frame = document.querySelector('[id^=\"fancybox-frame\"]'); var innerDoc = frame.contentDocument || frame.contentWindow.document; innerDoc.getElementById('dlslot_name_first').value = firstName; innerDoc.getElementById('dlslot_name_last').value = lastName; innerDoc.getElementById('dlslot_email').value = email; innerDoc.getElementById('dlslot_dob_month').value = birthMonth; innerDoc.getElementById('dlslot_dob_day').value = birthDate; innerDoc.getElementById('dlslot_dob_year').value = birthYear; innerDoc.getElementById('dlslot_zip').value = zipcode; if(ticketNumber == 2){ innerDoc.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{innerDoc.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
+                webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName!)'; document.getElementById('dlslot_name_last').value = '\(lastName!)'; document.getElementById('dlslot_email').value = '\(email!)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth!)'; document.getElementById('dlslot_dob_day').value = '\(birthDate!)'; document.getElementById('dlslot_dob_year').value = '\(birthYear!)'; document.getElementById('dlslot_zip').value = '\(zipCode!)'; if(\(numberTickets!) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
                     guard error == nil else{
                         print ("Error executing JS")
-                        print(error!)
+                        print(error! as Any)
                         return
                     }
                 }
