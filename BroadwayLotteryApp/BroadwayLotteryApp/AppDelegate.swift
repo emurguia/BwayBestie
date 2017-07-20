@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
+        
+        //set up notifications
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if granted{
+                NotificationService.setAllNotifications()
+            }
+        }
         
         return true
     }

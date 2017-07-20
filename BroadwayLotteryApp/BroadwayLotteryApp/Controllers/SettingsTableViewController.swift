@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationService.setShowNotification(currentShow: shows[0])
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,11 +32,8 @@ class SettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-//        if notificationsSwitch.isOn{
-//            return 3
-//        }
+
         return 3
     }
 
@@ -56,7 +54,6 @@ class SettingsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let notifSwitch = UISwitch()
         switch indexPath.section{
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "editInfoCell", for: indexPath) as! EditInfoCell
@@ -68,26 +65,20 @@ class SettingsTableViewController: UITableViewController {
             cell.settingLabel.text = currentSetting
             cell.tableView = tableView
             
+            //display show notification cells
             if settings[index] == "Notifications" {
                 cell.delegate = self
                 notificationsSwitch.isOn = cell.settingSwitch.isOn
-                print(notificationsSwitch.isOn)
+                //print(notificationsSwitch.isOn)
             }
-            
             return cell
         case 2:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
                 print("notif on")
             let index = indexPath.row
             let currentShow = shows[index]
             cell.showTitleLabel.text = currentShow.title
             return cell
-            
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "editInfoCell", for: indexPath) as! EditInfoCell
-//            cell.editInfoLabel.text = ""
-//            cell.tapToEditButton.backgroundColor = UIColor.white
-//            return cell
         default:
             fatalError("Error: unexpected indexPath")
         }
