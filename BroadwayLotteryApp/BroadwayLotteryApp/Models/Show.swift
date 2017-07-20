@@ -15,13 +15,13 @@ class Show{
     //let lotteryOpen: String
 //    let lotteryCloseEve: String
 //    let lotteryCloseMat: String
-    let lotteryOpen: Double
-    let lotteryCloseEve: Double
-    let lotteryCloseMat: Double
+    let lotteryOpen: Date
+    let lotteryCloseEve: Date
+    let lotteryCloseMat: Date
     let lotteryURL: String
    // let lotteryCloseEvening: String
     
-    init(title: String, lotteryOpen: Double, lotteryCloseEve: Double, lotteryCloseMat: Double, lotteryURL: String) {
+    init(title: String, lotteryOpen: Date, lotteryCloseEve: Date, lotteryCloseMat: Date, lotteryURL: String) {
         self.title = title
         self.lotteryOpen = lotteryOpen
         self.lotteryCloseEve = lotteryCloseEve

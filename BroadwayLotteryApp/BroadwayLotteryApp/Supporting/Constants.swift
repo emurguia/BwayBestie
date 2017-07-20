@@ -45,65 +45,179 @@ struct Constants{
         static let warPaint = "War Paint"
         static let wicked = "Wicked"
     }
+    /* 
+     * lottery times
+     */
+    
+//    struct LotteryOpen{
+//        static let aladdinOpen = "7:00 pm"
+//        static let anastasiaOpen = "Midnight"
+//        static let bookOfMormonOpen = "Week in Advance"
+//        static let catsOpen = "10:00 am"
+//        static let dearEvanHansenOpen = "10:00 am"
+//        static let groundhogDayOpen = "Week in Advance"
+//        static let hamiltonOpen = "8:00 am"
+//        static let kinkyBootsOpen = "Week in Advance"
+//        static let lionKingOpen  = "7:00 pm"
+//        static let greatCometOpen = "Midnight"
+//        static let onYourFeetOpen = "9:00 am"
+//        static let osloOpen = "Week in Advance"
+//        static let phantomOpen = "9:00 am"
+//        static let schoolOfRockOpen = "10:00 am"
+//        static let warPaintOpen = "9:00 am"
+//        static let wickedOpen = "8:00 pm"
+//    }
+//
+//    
+//    struct LotteryCloseEve{
+//        static let aladdinCloseEve = "8:30 am"
+//        static let anastasiaCloseEve = "2:00 pm"
+//        static let bookOfMormonCloseEve = "11:00 am day prior"
+//        static let catsCloseEve = "3:00 pm"
+//        static let dearEvanHansenCloseEve = "3:00 pm"
+//        static let groundhogDayCloseEve  = "11:00 am day prior"
+//        static let hamiltonCloseEve  = "9:00 am"
+//        static let kinkyBootsCloseEve  = "11 am day prior"
+//        static let lionKingCloseEve = "9:00 am"
+//        static let greatCometCloseEve = "3:00 pm"
+//        static let onYourFeetCloseEve = "3:00 pm"
+//        static let osloCloseEve  = "10:00 am day prior"
+//        static let phantomCloseEve = "3:00 pm"
+//        static let schoolOfRockCloseEve = "3:00 pm"
+//        static let warPaintCloseEve  = "3:00 pm"
+//        static let wickedCloseEve = "2:00 pm"
+//
+//    }
+//    
+//    struct LotteryCloseMat{
+//        static let aladdinCloseMat = "8:30 am" //
+//        static let anastasiaCloseMat = "9:00 am"
+//        static let bookOfMormonCloseMat = "11:00 am day prior" //
+//        static let catsCloseMat = "11:00 am"
+//        static let dearEvanHansenCloseMat = "10:00 am"
+//        static let groundhogDayCloseMat  = "11:00 am day prior"//
+//        static let hamiltonCloseMat  = "9:00 am"//
+//        static let kinkyBootsCloseMat  = "11 am day prior"//
+//        static let lionKingCloseMat = "9:00 am"
+//        static let greatCometCloseMat = "10:00 am"
+//        static let onYourFeetCloseMat = "3:00 pm"//
+//        static let osloCloseMat  = "10:00 am day prior"
+//        static let phantomCloseMat = "10:00 am"
+//        static let schoolOfRockCloseMat = "10:00 am"
+//        static let warPaintCloseMat  = "3:00 pm"//
+//        static let wickedCloseMat = "10:30 am"
+//        
+//    }
+    
+    //for setting notifications - 24 hour
     
     struct LotteryOpen{
-        static let aladdinOpen = "7:00 pm"
-        static let anastasiaOpen = "Midnight"
-        static let bookOfMormonOpen = "Week in Advance"
-        static let catsOpen = "10:00 am"
-        static let dearEvanHansenOpen = "10:00 am"
-        static let groundhogDayOpen = "Week in Advance"
-        static let hamiltonOpen = "8:00 am"
-        static let kinkyBootsOpen = "Week in Advance"
-        static let lionKingOpen  = "7:00 pm"
-        static let greatCometOpen = "Midnight"
-        static let onYourFeetOpen = "9:00 am"
-        static let osloOpen = "Week in Advance"
-        static let phantomOpen = "9:00 am"
-        static let schoolOfRockOpen = "10:00 am"
-        static let warPaintOpen = "9:00 am"
-        static let wickedOpen = "8:00 pm"
+        
+        static let aladdinOpen: Date = setDate(hour: 19, minutes: 0)!
+        static let anastasiaOpen: Date  = setDate(hour: 0, minutes: 0)!
+        static let bookOfMormonOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
+        static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
+        static let dearEvanHansenOpen: Date  = setDate(hour: 10, minutes: 0)!//10
+        static let groundhogDayOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
+        static let hamiltonOpen: Date  = setDate(hour: 8, minutes: 0)!
+        static let kinkyBootsOpen: Date  = setDate(hour: 9, minutes: 0)! // week in advance
+        static let lionKingOpen: Date  = setDate(hour: 19, minutes: 0)!
+        static let greatCometOpen: Date  = setDate(hour: 0, minutes: 0)!
+        static let onYourFeetOpen: Date  = setDate(hour: 9, minutes: 0)!
+        static let osloOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
+        static let phantomOpen: Date  = setDate(hour: 9, minutes: 0)!
+        static let schoolOfRockOpen: Date  = setDate(hour: 10, minutes: 0)!
+        static let warPaintOpen: Date  = setDate(hour: 9, minutes: 0)!
+        static let wickedOpen: Date  = setDate(hour: 20, minutes: 0)!
+        
+        static func setDate(hour: Int, minutes: Int) -> Date?{
+            let calendar = Calendar.current
+            var dateComponents = DateComponents()
+            dateComponents.hour = hour
+            dateComponents.minute = minutes
+            
+            return calendar.date(from: dateComponents)
+        }
     }
     
     struct LotteryCloseEve{
-        static let aladdinCloseEve = "8:30 am"
-        static let anastasiaCloseEve = "2:00 pm"
-        static let bookOfMormonCloseEve = "11:00 am day prior"
-        static let catsCloseEve = "3:00 pm"
-        static let dearEvanHansenCloseEve = "3:00 pm"
-        static let groundhogDayCloseEve  = "11:00 am day prior"
-        static let hamiltonCloseEve  = "9:00 am"
-        static let kinkyBootsCloseEve  = "11 am day prior"
-        static let lionKingCloseEve = "9:00 am"
-        static let greatCometCloseEve = "3:00 pm"
-        static let onYourFeetCloseEve = "3:00 pm"
-        static let osloCloseEve  = "10:00 am day prior"
-        static let phantomCloseEve = "3:00 pm"
-        static let schoolOfRockCloseEve = "3:00 pm"
-        static let warPaintCloseEve  = "3:00 pm"
-        static let wickedCloseEve = "2:00 pm"
-
-    }
-    
-    struct LotteryCloseMat{
-        static let aladdinCloseMat = "8:30 am" //
-        static let anastasiaCloseMat = "9:00 am"
-        static let bookOfMormonCloseMat = "11:00 am day prior" //
-        static let catsCloseMat = "11:00 am"
-        static let dearEvanHansenCloseMat = "10:00 am"
-        static let groundhogDayCloseMat  = "11:00 am day prior"//
-        static let hamiltonCloseMat  = "9:00 am"//
-        static let kinkyBootsCloseMat  = "11 am day prior"//
-        static let lionKingCloseMat = "9:00 am"
-        static let greatCometCloseMat = "10:00 am"
-        static let onYourFeetCloseMat = "3:00 pm"//
-        static let osloCloseMat  = "10:00 am day prior"//
-        static let phantomCloseMat = "10:00 am"
-        static let schoolOfRockCloseMat = "10:00 am"
-        static let warPaintCloseMat  = "3:00 pm"//
-        static let wickedCloseMat = "10:30 am"
+        static let aladdinCloseEve: Date =  setDate(hour: 8, minutes: 30)! //8:30
+        static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 0)!
+        static let bookOfMormonCloseEve: Date = setDate(hour: 12, minutes: 30)!//12:30
+        static let catsCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let dearEvanHansenCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let groundhogDayCloseEve: Date = setDate(hour: 12, minutes: 30)!
+        static let hamiltonCloseEve: Date = setDate(hour: 9, minutes: 0)!
+        static let kinkyBootsCloseEve: Date   = setDate(hour: 12, minutes: 30)!
+        static let lionKingCloseEve: Date  = setDate(hour: 9, minutes: 0)!
+        static let greatCometCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let onYourFeetCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let osloCloseEve: Date   = setDate(hour: 10, minutes: 0)!
+        static let phantomCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let schoolOfRockCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let warPaintCloseEve: Date   = setDate(hour: 15, minutes: 0)!
+        static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
+        
+        static func setDate(hour: Int, minutes: Int) -> Date?{
+            let calendar = Calendar.current
+            var dateComponents = DateComponents()
+            dateComponents.hour = hour
+            dateComponents.minute = minutes
+            
+            return calendar.date(from: dateComponents)
+        }
         
     }
+    
+        struct LotteryCloseMat{
+            static let aladdinCloseMat: Date  = setDate(hour: 8, minutes: 30)!//
+            static let anastasiaCloseMat: Date  = setDate(hour: 9, minutes: 0)!
+            static let bookOfMormonCloseMat: Date  = setDate(hour: 12, minutes: 30)!//
+            static let catsCloseMat: Date  = setDate(hour: 11, minutes: 0)!
+            static let dearEvanHansenCloseMat: Date  = setDate(hour: 10, minutes: 0)!
+            static let groundhogDayCloseMat: Date   = setDate(hour: 12, minutes: 30)!//
+            static let hamiltonCloseMat: Date   = setDate(hour: 9, minutes: 0)!//
+            static let kinkyBootsCloseMat: Date   = setDate(hour: 12, minutes: 30)!//
+            static let lionKingCloseMat: Date  = setDate(hour: 9, minutes: 0)!
+            static let greatCometCloseMat: Date  = setDate(hour: 10, minutes: 0)!
+            static let onYourFeetCloseMat: Date  = setDate(hour: 15, minutes: 0)!//
+            static let osloCloseMat: Date   = setDate(hour: 10, minutes: 0)!
+            static let phantomCloseMat: Date  = setDate(hour: 10, minutes: 0)!
+            static let schoolOfRockCloseMat: Date  = setDate(hour: 10, minutes: 0)!
+            static let warPaintCloseMat: Date   = setDate(hour: 15, minutes: 0)!//
+            static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
+            
+            static func setDate(hour: Int, minutes: Int) -> Date?{
+                let calendar = Calendar.current
+                var dateComponents = DateComponents()
+                dateComponents.hour = hour
+                dateComponents.minute = minutes
+                
+                return calendar.date(from: dateComponents)
+            }
+            
+        }
+
+    
+//    struct LotteryCloseMat{
+//        static let aladdinCloseMat: Double  = 8.5 //
+//        static let anastasiaCloseMat: Double  = 9
+//        static let bookOfMormonCloseMat: Double  = 12.5 //
+//        static let catsCloseMat: Double  = 11
+//        static let dearEvanHansenCloseMat: Double  = 10
+//        static let groundhogDayCloseMat: Double   = 12.5//
+//        static let hamiltonCloseMat: Double   = 9 //
+//        static let kinkyBootsCloseMat: Double   = 12.5 //
+//        static let lionKingCloseMat: Double  = 9
+//        static let greatCometCloseMat: Double  = 10
+//        static let onYourFeetCloseMat: Double  = 15//
+//        static let osloCloseMat: Double   = 10
+//        static let phantomCloseMat: Double  = 10
+//        static let schoolOfRockCloseMat: Double  = 10
+//        static let warPaintCloseMat: Double   = 15//
+//        static let wickedCloseMat: Double  = 10.5 //10:30
+//        
+//    }
     
     struct LotteryURLs{
         static let aladdinURL = "https://lottery.broadwaydirect.com/show/aladdin/"

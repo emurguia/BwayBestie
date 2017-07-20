@@ -87,8 +87,8 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.warPaint, lotteryOpen: Constants.LotteryOpen.warPaintOpen, lotteryCloseEve: Constants.LotteryCloseEve.warPaintCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.warPaintCloseMat, lotteryURL: Constants.LotteryURLs.warPaintURL)
             case .wicked:
                 return Show(title: Constants.ShowTitle.wicked, lotteryOpen: Constants.LotteryOpen.wickedOpen, lotteryCloseEve: Constants.LotteryCloseEve.wickedCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.wickedCloseMat, lotteryURL: Constants.LotteryURLs.wickedURL)
-            default:
-                return Show(title: "Broadway Baby!", lotteryOpen: 0, lotteryCloseEve: 0, lotteryCloseMat: 0, lotteryURL: "wwww.broadway.com")
+//            default:
+//                return Show(title: "Broadway Baby!", lotteryOpen: 0, lotteryCloseEve: 0, lotteryCloseMat: 0, lotteryURL: "wwww.broadway.com")
             }
         }
     }

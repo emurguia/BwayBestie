@@ -49,24 +49,83 @@ class LotteryHomeTableViewController: UITableViewController {
         let index = indexPath.row
         let currentShow = shows[index]
         
-        //set labels of cell
         cell.showTitleLabel.text = currentShow.title
-        cell.lotteryOpenLabel.text = currentShow.lotteryOpen
-        cell.lotteryCloseLabel.text = currentShow.lotteryCloseEve
         cell.delegate = self
-        
         cell.index = index
+        
+        //set lottery time labels
+        configureLabel(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
+        
         return cell
     }
     
-/*
-    func configureCell(_ cell: PostActionCell, with post: Post){
-        cell.timeAgoLabel.text = timestampFormatter.string(from:post.creationDate)
-        cell.likeButton.isSelected = post.isLiked
-        cell.likeCountLabel.text = "\(post.likeCount) likes"
+    func configureLabel(openLabel: UILabel, closeLabel: UILabel, with show: Show){
+        
+        /*
+        * lottery open
+        */
+        var lotteryOpen = show.lotteryOpen
+        var timeModifierOpen: String = "a.m"
+        var printMinutesOpen: String = "0"
+        var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
+        let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
+        
+        if hourOpen >= 12{
+            timeModifierOpen = " p.m."
+            //convert from 24 hr
+            if hourOpen >= 13{
+                hourOpen = hourOpen - 12
+            }
+        }else{
+            timeModifierOpen = " a.m."
+            if hourOpen == 0{
+                hourOpen = 12
+            }
+        }
+        
+        if minutesOpen == 0{
+            printMinutesOpen = "00"
+        }else{
+            printMinutesOpen = String(minutesOpen)
+        }
+        
+        /*
+         * lottery close evening
+         */
+        let lotteryCloseEve = show.lotteryCloseEve
+        var timeModiferClose: String = " a.m."
+        var printMinutesCloseEve = "0"
+        var hourCloseEve = Calendar.current.component(.hour, from: lotteryCloseEve)
+        let minutesCloseEve = Calendar.current.component(.minute, from: lotteryCloseEve)
+        
+        if hourCloseEve >= 12{
+            timeModiferClose = " p.m."
+            //convert from 24 hr
+            if hourCloseEve >= 13{
+                hourCloseEve = hourCloseEve - 12
+            }
+        }else{
+            timeModiferClose = " a.m."
+            if hourCloseEve == 0{
+                hourCloseEve = 12
+            }
+        }
+        
+        if minutesCloseEve == 0{
+            printMinutesCloseEve = "00"
+        }else{
+            printMinutesCloseEve = String(minutesCloseEve)
+        }
+        
+        let openTime = String(hourOpen) + ":" + printMinutesOpen + timeModifierOpen
+        let closeTime = String(hourCloseEve) + ":" + printMinutesCloseEve + timeModiferClose
+        
+        openLabel.text = openTime
+        closeLabel.text = closeTime
+
     }
     
- */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
