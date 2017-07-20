@@ -23,8 +23,8 @@ import Foundation
 struct ShowService{
     
     static var lotteryOpen = [String: String]()
-    static var lotteryCloseEve = [String: String]()
-    static var lotteryCloseMat = [String: String]()
+//    static var lotteryCloseEve = [String: String]()
+//    static var lotteryCloseMat = [String: String]()
     
     
     enum allShows:Int{
@@ -88,7 +88,7 @@ struct ShowService{
             case .wicked:
                 return Show(title: Constants.ShowTitle.wicked, lotteryOpen: Constants.LotteryOpen.wickedOpen, lotteryCloseEve: Constants.LotteryCloseEve.wickedCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.wickedCloseMat, lotteryURL: Constants.LotteryURLs.wickedURL)
             default:
-                return Show(title: "Broadway Baby!", lotteryOpen: "AM", lotteryCloseEve: "PM", lotteryCloseMat: "AM", lotteryURL: "wwww.broadway.com")
+                return Show(title: "Broadway Baby!", lotteryOpen: 0, lotteryCloseEve: 0, lotteryCloseMat: 0, lotteryURL: "wwww.broadway.com")
             }
         }
     }
