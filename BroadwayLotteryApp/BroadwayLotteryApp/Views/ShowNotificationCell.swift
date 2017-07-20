@@ -14,6 +14,11 @@ class ShowNotificationCell: UITableViewCell {
     @IBOutlet weak var notificationSwitch: UISwitch!
     
     @IBAction func notificationSwitchValueDidChange(_ sender: UISwitch) {
+        if notificationSwitch.isOn{
+            //turn notifcation for show on
+        }else{
+            //turn notification for show off 
+        }
     }
     
     override func awakeFromNib() {

@@ -14,6 +14,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let notificationDelegate = UYLNotificationDelegate()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -36,9 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set up notifications
         let center = UNUserNotificationCenter.current()
+        center.delegate = notificationDelegate
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
                 NotificationService.setAllNotifications()
+            }else{
+                print("notifications not granted")
             }
         }
         
@@ -51,6 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(){ results in
+            for result in results{
+                print(result)
+            }
+        }
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
