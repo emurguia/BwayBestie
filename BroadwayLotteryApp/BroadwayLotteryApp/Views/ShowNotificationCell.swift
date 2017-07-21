@@ -8,17 +8,23 @@
 
 import UIKit
 
+protocol ShowNotificationCellDelegate: class{
+    func notificationSwitchValueChanged(_ switchToggle: UISwitch, on cell: ShowNotificationCell)
+}
+
 class ShowNotificationCell: UITableViewCell {
+    
     //MARK -- properties
+   
     @IBOutlet weak var showTitleLabel: UILabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
+    weak var delegate: ShowNotificationCellDelegate?
+
+    var index: Int = -1
+    
     @IBAction func notificationSwitchValueDidChange(_ sender: UISwitch) {
-        if notificationSwitch.isOn{
-            //turn notifcation for show on
-        }else{
-            //turn notification for show off 
-        }
+        delegate?.notificationSwitchValueChanged(notificationSwitch, on: self)
     }
     
     override func awakeFromNib() {

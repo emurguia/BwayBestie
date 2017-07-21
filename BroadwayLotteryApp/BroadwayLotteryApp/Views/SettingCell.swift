@@ -7,9 +7,11 @@
 //
 
 import UIKit
+
 protocol SettingCellDelegate: class{
     func settingSwitchValueChanged(_ switchToggle: UISwitch, on cell: SettingCell)
 }
+
 class SettingCell: UITableViewCell {
 
     //MARK -- properties
