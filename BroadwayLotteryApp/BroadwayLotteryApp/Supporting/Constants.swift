@@ -49,71 +49,12 @@ struct Constants{
      * lottery times
      */
     
-//    struct LotteryOpen{
-//        static let aladdinOpen = "7:00 pm"
-//        static let anastasiaOpen = "Midnight"
-//        static let bookOfMormonOpen = "Week in Advance"
-//        static let catsOpen = "10:00 am"
-//        static let dearEvanHansenOpen = "10:00 am"
-//        static let groundhogDayOpen = "Week in Advance"
-//        static let hamiltonOpen = "8:00 am"
-//        static let kinkyBootsOpen = "Week in Advance"
-//        static let lionKingOpen  = "7:00 pm"
-//        static let greatCometOpen = "Midnight"
-//        static let onYourFeetOpen = "9:00 am"
-//        static let osloOpen = "Week in Advance"
-//        static let phantomOpen = "9:00 am"
-//        static let schoolOfRockOpen = "10:00 am"
-//        static let warPaintOpen = "9:00 am"
-//        static let wickedOpen = "8:00 pm"
-//    }
-//
-//    
-//    struct LotteryCloseEve{
-//        static let aladdinCloseEve = "8:30 am"
-//        static let anastasiaCloseEve = "2:00 pm"
-//        static let bookOfMormonCloseEve = "11:00 am day prior"
-//        static let catsCloseEve = "3:00 pm"
-//        static let dearEvanHansenCloseEve = "3:00 pm"
-//        static let groundhogDayCloseEve  = "11:00 am day prior"
-//        static let hamiltonCloseEve  = "9:00 am"
-//        static let kinkyBootsCloseEve  = "11 am day prior"
-//        static let lionKingCloseEve = "9:00 am"
-//        static let greatCometCloseEve = "3:00 pm"
-//        static let onYourFeetCloseEve = "3:00 pm"
-//        static let osloCloseEve  = "10:00 am day prior"
-//        static let phantomCloseEve = "3:00 pm"
-//        static let schoolOfRockCloseEve = "3:00 pm"
-//        static let warPaintCloseEve  = "3:00 pm"
-//        static let wickedCloseEve = "2:00 pm"
-//
-//    }
-//    
-//    struct LotteryCloseMat{
-//        static let aladdinCloseMat = "8:30 am" //
-//        static let anastasiaCloseMat = "9:00 am"
-//        static let bookOfMormonCloseMat = "11:00 am day prior" //
-//        static let catsCloseMat = "11:00 am"
-//        static let dearEvanHansenCloseMat = "10:00 am"
-//        static let groundhogDayCloseMat  = "11:00 am day prior"//
-//        static let hamiltonCloseMat  = "9:00 am"//
-//        static let kinkyBootsCloseMat  = "11 am day prior"//
-//        static let lionKingCloseMat = "9:00 am"
-//        static let greatCometCloseMat = "10:00 am"
-//        static let onYourFeetCloseMat = "3:00 pm"//
-//        static let osloCloseMat  = "10:00 am day prior"
-//        static let phantomCloseMat = "10:00 am"
-//        static let schoolOfRockCloseMat = "10:00 am"
-//        static let warPaintCloseMat  = "3:00 pm"//
-//        static let wickedCloseMat = "10:30 am"
-//        
-//    }
     
     //for setting notifications - 24 hour
     
     struct LotteryOpen{
         
-        static let aladdinOpen: Date = setDate(hour: 19, minutes: 0)!
+        static let aladdinOpen: Date = setDate(hour: 14, minutes: 35)! //changed for test
         static let anastasiaOpen: Date  = setDate(hour: 0, minutes: 0)!
         static let bookOfMormonOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
@@ -135,7 +76,10 @@ struct Constants{
             dateComponents.hour = hour
             dateComponents.minute = minutes
             
-            dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+            //dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+            //print("time zone IN constants: ")
+            //print(dateComponents.timeZone as Any)
+            //dateComponents.timeZone = TimeZone(abbreviation: "EDT")
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
 
             return nextOccurance
@@ -144,7 +88,7 @@ struct Constants{
     
     struct LotteryCloseEve{
         static let aladdinCloseEve: Date =  setDate(hour: 8, minutes: 30)! //8:30
-        static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 0)!
+        static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 35)! //changed for test
         static let bookOfMormonCloseEve: Date = setDate(hour: 12, minutes: 30)!//12:30
         static let catsCloseEve: Date  = setDate(hour: 15, minutes: 0)!
         static let dearEvanHansenCloseEve: Date  = setDate(hour: 15, minutes: 0)!
@@ -165,7 +109,7 @@ struct Constants{
             dateComponents.hour = hour
             dateComponents.minute = minutes
 
-            dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+            //dateComponents.timeZone = TimeZone(identifier: "America/New_York")
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
             
             return nextOccurance

@@ -74,6 +74,8 @@ class LotteryHomeTableViewController: UITableViewController {
         print("minutesOpen: ")
         print(minutesOpen)
         
+        //add date formatter to display in EST 
+        
         if hourOpen >= 12{
             timeModifierOpen = " p.m."
             //convert from 24 hr
