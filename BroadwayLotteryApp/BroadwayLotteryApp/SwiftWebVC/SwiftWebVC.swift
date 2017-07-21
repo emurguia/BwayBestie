@@ -110,7 +110,7 @@ public class SwiftWebVC: UIViewController {
     override public func loadView() {
         view = webView
         loadRequest(request)
-        print(webView.url as Any)
+       // print(webView.url as Any)
     }
     
     override public func viewDidLoad() {
@@ -300,7 +300,7 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.updateToolbarItems()
         })
         
-        print(webView.url! as Any)
+        //print(webView.url! as Any)
         
         //get user info from key chain
         let firstName: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)

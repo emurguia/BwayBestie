@@ -13,6 +13,7 @@
 		FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */; };
 		FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */; };
 		FD1A905C1F0EF25E005EDBC9 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */; };
+		FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */; };
 		FD90A8A41F15466000914980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8A31F15466000914980 /* Constants.swift */; };
 		FD90A8A71F1572AB00914980 /* LotteryHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */; };
 		FD90A8A91F1583CB00914980 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8A81F1583CB00914980 /* Show.swift */; };
@@ -21,6 +22,7 @@
 		FD9E9D831F1FF2D8005083C1 /* ShowNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D821F1FF2D8005083C1 /* ShowNotificationCell.swift */; };
 		FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D841F20001D005083C1 /* SettingCell.swift */; };
 		FD9E9D871F2006FB005083C1 /* EditInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */; };
+		FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D881F201FB9005083C1 /* NotificationService.swift */; };
 		FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */; };
 		FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB231F1D2E740073FD3D /* ShowCell.swift */; };
 		FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB3FB281F1D7CF70073FD3D /* Media.xcassets */; };
@@ -48,6 +50,7 @@
 		FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Storyboards/Welcome.storyboard; sourceTree = "<group>"; };
 		FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = Controllers/WelcomePageViewController.swift; sourceTree = "<group>"; };
+		FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UYLNotificationDelegate.swift; sourceTree = "<group>"; };
 		FD90A8A31F15466000914980 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LotteryHome.storyboard; sourceTree = "<group>"; };
 		FD90A8A81F1583CB00914980 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		FD9E9D821F1FF2D8005083C1 /* ShowNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowNotificationCell.swift; path = Views/ShowNotificationCell.swift; sourceTree = "<group>"; };
 		FD9E9D841F20001D005083C1 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCell.swift; path = Views/SettingCell.swift; sourceTree = "<group>"; };
 		FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditInfoCell.swift; path = Views/EditInfoCell.swift; sourceTree = "<group>"; };
+		FD9E9D881F201FB9005083C1 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = Services/NotificationService.swift; sourceTree = "<group>"; };
 		FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		FDB3FB231F1D2E740073FD3D /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCell.swift; path = Views/ShowCell.swift; sourceTree = "<group>"; };
 		FDB3FB281F1D7CF70073FD3D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		FD90A8A51F15466500914980 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */,
 				FD90A8A31F15466000914980 /* Constants.swift */,
 			);
 			name = Supporting;
@@ -190,6 +195,7 @@
 		FDB3FB201F1D1F080073FD3D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FD9E9D881F201FB9005083C1 /* NotificationService.swift */,
 				FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */,
 			);
 			name = Services;
@@ -383,11 +389,13 @@
 				FD9E9D831F1FF2D8005083C1 /* ShowNotificationCell.swift in Sources */,
 				FD90A8AC1F158FBC00914980 /* LotteryHomeTableViewController.swift in Sources */,
 				FDFEE74B1F14324800FE59E4 /* ViewController.swift in Sources */,
+				FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */,
 				FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */,
 				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,
 				FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */,
 				FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */,
 				FD90A8A91F1583CB00914980 /* Show.swift in Sources */,
+				FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */,
 				FDFEE74D1F14336900FE59E4 /* GetStartedViewController.swift in Sources */,
 				FD9E9D811F1FDB17005083C1 /* SettingsTableViewController.swift in Sources */,
 				FD90A8A41F15466000914980 /* Constants.swift in Sources */,

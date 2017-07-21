@@ -64,11 +64,15 @@ class LotteryHomeTableViewController: UITableViewController {
         /*
         * lottery open
         */
-        var lotteryOpen = show.lotteryOpen
+        let lotteryOpen = show.lotteryOpen
         var timeModifierOpen: String = "a.m"
         var printMinutesOpen: String = "0"
         var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
         let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
+        print("hourOpen: ")
+        print(hourOpen)
+        print("minutesOpen: ")
+        print(minutesOpen)
         
         if hourOpen >= 12{
             timeModifierOpen = " p.m."

@@ -136,6 +136,26 @@ struct Constants{
             dateComponents.hour = hour
             dateComponents.minute = minutes
             
+            //set time zone
+//            let timeZone = TimeZone(abbreviation: "EDT")
+//        
+//            if (timeZone?.isDaylightSavingTime(for: calendar.date(from: dateComponents)!))!{
+//                dateComponents.timeZone = TimeZone(abbreviation: "EDT")
+//            }else{
+//                dateComponents.timeZone = TimeZone(abbreviation: "EST")
+//            }
+            dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+//            print("minutes (parameter")
+//            print(minutes)
+//            print("minutes date component")
+//            print(dateComponents.minute)
+            let time = calendar.date(from: dateComponents)
+            let componentsTest = calendar.dateComponents([.hour, .minute], from: time!)
+            print("hours after time zone:")
+            print(componentsTest.hour as Any)
+            print("minutes after time zone:")
+            print(componentsTest.minute as Any)
+            
             return calendar.date(from: dateComponents)
         }
     }
@@ -164,13 +184,23 @@ struct Constants{
             dateComponents.hour = hour
             dateComponents.minute = minutes
             
+            //set time zone
+//            let timeZone = TimeZone(abbreviation: "EDT")
+//            if (timeZone?.isDaylightSavingTime(for: Date()))!{
+//                dateComponents.timeZone = TimeZone(abbreviation: "EDT")
+//            }else{
+//                dateComponents.timeZone = TimeZone(abbreviation: "EST")
+//            }
+
+            dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+            
             return calendar.date(from: dateComponents)
         }
         
     }
     
         struct LotteryCloseMat{
-            static let aladdinCloseMat: Date  = setDate(hour: 8, minutes: 30)!//
+            static let aladdinCloseMat: Date  = setDate(hour: 9, minutes: 0)!//
             static let anastasiaCloseMat: Date  = setDate(hour: 9, minutes: 0)!
             static let bookOfMormonCloseMat: Date  = setDate(hour: 12, minutes: 30)!//
             static let catsCloseMat: Date  = setDate(hour: 11, minutes: 0)!
@@ -192,6 +222,15 @@ struct Constants{
                 var dateComponents = DateComponents()
                 dateComponents.hour = hour
                 dateComponents.minute = minutes
+                
+                //set time zone
+//                let timeZone = TimeZone(abbreviation: "EDT")
+//                if (timeZone?.isDaylightSavingTime(for: Date()))!{
+//                    dateComponents.timeZone = TimeZone(abbreviation: "EDT")
+//                }else{
+//                    dateComponents.timeZone = TimeZone(abbreviation: "EST")
+//                }
+                dateComponents.timeZone = TimeZone(identifier: "America/New_York")
                 
                 return calendar.date(from: dateComponents)
             }
