@@ -41,11 +41,10 @@ struct NotificationService{
                                                         repeats: true)
             }
         }
-        
-        
+    
       
         //schedule
-        //right now showing double -- might change id back to just title?
+        //change back to + "open"
         let id = currentShow.title
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
@@ -60,26 +59,36 @@ struct NotificationService{
     //enable close notification for one show
     static func setCloseShowNotification(currentShow: Show){
         //set up content
-        let contentClose = UNMutableNotificationContent()
-        contentClose.title = NSString.localizedUserNotificationString(forKey: currentShow.title, arguments: nil)
-        contentClose.body = NSString.localizedUserNotificationString(forKey: "The lottery for \(currentShow.title) just closed -- check your email soon for results!", arguments: nil)
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: currentShow.title, arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "The lottery for \(currentShow.title) just closed -- check your email soon for results!", arguments: nil)
         
-        contentClose.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default()
         
         //set up trigger time
-        var dateComponentsClose = DateComponents()
-        dateComponentsClose.hour = Calendar.current.component(.hour, from: currentShow.lotteryCloseEve)
-        dateComponentsClose.minute = Calendar.current.component(.minute, from: currentShow.lotteryCloseEve)
-        dateComponentsClose.second = 0
+        var dateComponents = DateComponents()
+        dateComponents.hour = Calendar.current.component(.hour, from: currentShow.lotteryCloseEve)
+        dateComponents.minute = Calendar.current.component(.minute, from: currentShow.lotteryCloseEve)
+        dateComponents.second = 0
         
-        let triggerClose = UNCalendarNotificationTrigger(dateMatching: dateComponentsClose, repeats: true)
+        var trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        //check timezone
+        let easternTimeZone = TimeZone(identifier: "America/New_York")
+        if TimeZone.autoupdatingCurrent != easternTimeZone{
+            
+            if let dateComponentsLocal = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent){
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
+                                                        repeats: true)
+            }
+        }
         
         //schedule
         let id = currentShow.title + "close"
-        let closeRequest = UNNotificationRequest(identifier: id, content: contentClose, trigger: triggerClose)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         let center = UNUserNotificationCenter.current()
-        center.add(closeRequest, withCompletionHandler: { (error) in
+        center.add(request, withCompletionHandler: { (error) in
             if let error = error {
                 print(error)
             }
@@ -126,9 +135,9 @@ struct NotificationService{
             let hour = (difference / (60 * 60))
             let minutes = difference % (60 * 60)
             print(minutes)
-            //add minutes calculation?
             
             if difference > 0{
+                //adjust time for time zones behind eastern
                 var newHour = dateComponents.hour! - hour
                 if newHour < 0{
                     newHour = 12 + newHour
@@ -138,6 +147,7 @@ struct NotificationService{
                 
                 return newDateComponents
             }else{
+                //adjust time for time zones ahead of eastern
                 var newHour = dateComponents.hour! + hour
                 if newHour > 24{
                     newHour = newHour - 24

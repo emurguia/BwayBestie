@@ -54,7 +54,7 @@ struct Constants{
     
     struct LotteryOpen{
         
-        static let aladdinOpen: Date = setDate(hour: 14, minutes: 35)! //changed for test
+        static let aladdinOpen: Date = setDate(hour: 19, minutes: 0)!
         static let anastasiaOpen: Date  = setDate(hour: 0, minutes: 0)!
         static let bookOfMormonOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
@@ -62,7 +62,7 @@ struct Constants{
         static let groundhogDayOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let hamiltonOpen: Date  = setDate(hour: 8, minutes: 0)!
         static let kinkyBootsOpen: Date  = setDate(hour: 9, minutes: 0)! // week in advance
-        static let lionKingOpen: Date  = setDate(hour: 19, minutes: 0)!
+        static let lionKingOpen: Date  = setDate(hour: 20, minutes: 0)!
         static let greatCometOpen: Date  = setDate(hour: 0, minutes: 0)!
         static let onYourFeetOpen: Date  = setDate(hour: 9, minutes: 0)!
         static let osloOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
@@ -75,11 +75,6 @@ struct Constants{
             var dateComponents = DateComponents()
             dateComponents.hour = hour
             dateComponents.minute = minutes
-            
-            //dateComponents.timeZone = TimeZone(identifier: "America/New_York")
-            //print("time zone IN constants: ")
-            //print(dateComponents.timeZone as Any)
-            //dateComponents.timeZone = TimeZone(abbreviation: "EDT")
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
 
             return nextOccurance
@@ -87,9 +82,9 @@ struct Constants{
     }
     
     struct LotteryCloseEve{
-        static let aladdinCloseEve: Date =  setDate(hour: 8, minutes: 30)! //8:30
-        static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 35)! //changed for test
-        static let bookOfMormonCloseEve: Date = setDate(hour: 12, minutes: 30)!//12:30
+        static let aladdinCloseEve: Date =  setDate(hour: 9, minutes: 0)!
+        static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 0)!
+        static let bookOfMormonCloseEve: Date = setDate(hour: 12, minutes: 30)!
         static let catsCloseEve: Date  = setDate(hour: 15, minutes: 0)!
         static let dearEvanHansenCloseEve: Date  = setDate(hour: 15, minutes: 0)!
         static let groundhogDayCloseEve: Date = setDate(hour: 12, minutes: 30)!
@@ -140,7 +135,7 @@ struct Constants{
                 dateComponents.hour = hour
                 dateComponents.minute = minutes
                 
-                dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+               // dateComponents.timeZone = TimeZone(identifier: "America/New_York")
                 let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
                 
                 return nextOccurance
