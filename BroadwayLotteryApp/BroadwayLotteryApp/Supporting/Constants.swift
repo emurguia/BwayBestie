@@ -131,32 +131,14 @@ struct Constants{
         static let wickedOpen: Date  = setDate(hour: 20, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
-            let calendar = Calendar.current
             var dateComponents = DateComponents()
             dateComponents.hour = hour
             dateComponents.minute = minutes
             
-            //set time zone
-//            let timeZone = TimeZone(abbreviation: "EDT")
-//        
-//            if (timeZone?.isDaylightSavingTime(for: calendar.date(from: dateComponents)!))!{
-//                dateComponents.timeZone = TimeZone(abbreviation: "EDT")
-//            }else{
-//                dateComponents.timeZone = TimeZone(abbreviation: "EST")
-//            }
             dateComponents.timeZone = TimeZone(identifier: "America/New_York")
-//            print("minutes (parameter")
-//            print(minutes)
-//            print("minutes date component")
-//            print(dateComponents.minute)
-            let time = calendar.date(from: dateComponents)
-            let componentsTest = calendar.dateComponents([.hour, .minute], from: time!)
-            print("hours after time zone:")
-            print(componentsTest.hour as Any)
-            print("minutes after time zone:")
-            print(componentsTest.minute as Any)
-            
-            return calendar.date(from: dateComponents)
+            let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
+
+            return nextOccurance
         }
     }
     
@@ -179,22 +161,14 @@ struct Constants{
         static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
-            let calendar = Calendar.current
             var dateComponents = DateComponents()
             dateComponents.hour = hour
             dateComponents.minute = minutes
-            
-            //set time zone
-//            let timeZone = TimeZone(abbreviation: "EDT")
-//            if (timeZone?.isDaylightSavingTime(for: Date()))!{
-//                dateComponents.timeZone = TimeZone(abbreviation: "EDT")
-//            }else{
-//                dateComponents.timeZone = TimeZone(abbreviation: "EST")
-//            }
 
             dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+            let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
             
-            return calendar.date(from: dateComponents)
+            return nextOccurance
         }
         
     }
@@ -218,45 +192,17 @@ struct Constants{
             static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
-                let calendar = Calendar.current
                 var dateComponents = DateComponents()
                 dateComponents.hour = hour
                 dateComponents.minute = minutes
                 
-                //set time zone
-//                let timeZone = TimeZone(abbreviation: "EDT")
-//                if (timeZone?.isDaylightSavingTime(for: Date()))!{
-//                    dateComponents.timeZone = TimeZone(abbreviation: "EDT")
-//                }else{
-//                    dateComponents.timeZone = TimeZone(abbreviation: "EST")
-//                }
                 dateComponents.timeZone = TimeZone(identifier: "America/New_York")
+                let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
                 
-                return calendar.date(from: dateComponents)
+                return nextOccurance
             }
             
         }
-
-    
-//    struct LotteryCloseMat{
-//        static let aladdinCloseMat: Double  = 8.5 //
-//        static let anastasiaCloseMat: Double  = 9
-//        static let bookOfMormonCloseMat: Double  = 12.5 //
-//        static let catsCloseMat: Double  = 11
-//        static let dearEvanHansenCloseMat: Double  = 10
-//        static let groundhogDayCloseMat: Double   = 12.5//
-//        static let hamiltonCloseMat: Double   = 9 //
-//        static let kinkyBootsCloseMat: Double   = 12.5 //
-//        static let lionKingCloseMat: Double  = 9
-//        static let greatCometCloseMat: Double  = 10
-//        static let onYourFeetCloseMat: Double  = 15//
-//        static let osloCloseMat: Double   = 10
-//        static let phantomCloseMat: Double  = 10
-//        static let schoolOfRockCloseMat: Double  = 10
-//        static let warPaintCloseMat: Double   = 15//
-//        static let wickedCloseMat: Double  = 10.5 //10:30
-//        
-//    }
     
     struct LotteryURLs{
         static let aladdinURL = "https://lottery.broadwaydirect.com/show/aladdin/"
