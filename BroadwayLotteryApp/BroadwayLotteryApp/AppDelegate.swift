@@ -41,8 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
                 NotificationService.setAllNotifications()
+                defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
             }else{
                 print("notifications not granted")
+                defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
             }
         }
         
@@ -56,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         
+        //testing
         let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests(){ results in
             for result in results{

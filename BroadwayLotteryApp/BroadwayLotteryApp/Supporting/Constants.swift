@@ -25,6 +25,25 @@ struct Constants{
     
     struct UserDefaults{
         static let isLoggedIn = "isLoggedIn"
+        
+        //show notifications are on / off 
+        static let notificationsOn = "notificationsOn"
+        static let aladdinNotifications = "aladdinNotifications"
+        static let anastasiaNotifications = "anastasiaNotifications"
+        static let bookOfMormonNotifications = "bookOfMormonNotifications"
+        static let catsNotifications = "catsNotifications"
+        static let dearEvanHansenNotifications = "dearEvanHansenNotifications"
+        static let groundhogDayNotifications = "groundhogDayNotifications"
+        static let hamiltonNotifications = "hamiltonNotifications"
+        static let kinkyBootsNotifications = "kinkyBootsNotifications"
+        static let lionKingNotifications = "lionKingNotifications"
+        static let greatCometNotifications = "greatCometNotifications"
+        static let onYourFeetNotifications = "onYourFeetNotifications"
+        static let osloNotifications = "osloNotifications"
+        static let phantomNotifications = "phantomNotifications"
+        static let schoolOfRockNotifications = "schoolOfRockNotifications"
+        static let warPaintNotifications = "warPaintNotifications"
+        static let wickedNotifications = "wickedNotifications"
     }
     
     struct ShowTitle{

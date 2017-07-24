@@ -95,11 +95,8 @@ class CollectUserInfoViewController: UITableViewController {
         //present Home storyboard 
         let storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)
         let initialViewController = storyboard.instantiateInitialViewController()
-        
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
-        
-
 
     }
 

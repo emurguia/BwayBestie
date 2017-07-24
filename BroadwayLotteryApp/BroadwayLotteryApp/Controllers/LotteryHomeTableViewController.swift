@@ -69,10 +69,10 @@ class LotteryHomeTableViewController: UITableViewController {
         var printMinutesOpen: String = "0"
         var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
         let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
-        print("hourOpen: ")
-        print(hourOpen)
-        print("minutesOpen: ")
-        print(minutesOpen)
+//        print("hourOpen: ")
+//        print(hourOpen)
+//        print("minutesOpen: ")
+//        print(minutesOpen)
         
         //add date formatter to display in EST 
         

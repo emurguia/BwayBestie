@@ -17,13 +17,8 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // NotificationService.setShowNotification(currentShow: shows[0])
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //setSwitches(tableView, indexPath: ind)
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +28,6 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-
         return 3
     }
 
@@ -67,6 +61,13 @@ class SettingsTableViewController: UITableViewController {
             //display show notification cells
             if settings[index] == "Notifications" {
                 cell.delegate = self
+                let defaults = UserDefaults.standard
+                cell.settingSwitch.isOn = defaults.bool(forKey: Constants.UserDefaults.notificationsOn)
+//                if defaults.bool(forKey: Constants.UserDefaults.notificationsOn) == true{
+//                    cell.settingSwitch.isOn = true
+//                }else{
+//                    cell.settingSwitch.isOn = false
+//                }
                 notificationsSwitch.isOn = cell.settingSwitch.isOn
                 //print(notificationsSwitch.isOn)
             }
@@ -101,6 +102,11 @@ class SettingsTableViewController: UITableViewController {
             fatalError("Error: unexpected indexPath")
         }
     }
+    
+    func setSwitches(_ tableView: UITableView, indexPath: IndexPath){
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingCell
+        
+    }
 }
 
 
@@ -108,13 +114,26 @@ extension SettingsTableViewController: SettingCellDelegate{
     
     func settingSwitchValueChanged(_ switchToggle: UISwitch, on cell: SettingCell){
         notificationsSwitch.isOn = !notificationsSwitch.isOn
+        let defaults = UserDefaults.standard
+        //cell.settingSwitch
+//        if notificationsSwitch.isOn{
+//            print("show notifs turned on")
+//            NotificationService.setAllNotifications()
+//            defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+//        }else{
+//            print("show notifs turned off")
+//            NotificationService.removeAllNotifications()
+//            defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
+//        }
         
-        if notificationsSwitch.isOn{
-            //print("all show notifs on")
+        if cell.settingSwitch.isOn{
+            print("show notifs turned on")
             NotificationService.setAllNotifications()
+            defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
         }else{
-            //print("all show notifs off")
+            print("show notifs turned off")
             NotificationService.removeAllNotifications()
+            defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
         }
         //reload data when done
         tableView.reloadData()
@@ -127,10 +146,16 @@ extension SettingsTableViewController: SettingCellDelegate{
 extension SettingsTableViewController: ShowNotificationCellDelegate{
     func notificationSwitchValueChanged(_ switchToggle: UISwitch, on cell: ShowNotificationCell){
         let currentShow = shows[cell.index]
+        let defaults = UserDefaults.standard
         if switchToggle.isOn{
+           
+            defaults.set(true, forKey: Constants.UserDefaults.isLoggedIn)
+
+            //turn on notifications
             NotificationService.setOpenShowNotification(currentShow: currentShow)
             NotificationService.setCloseShowNotification(currentShow: currentShow)
         }else{
+            //turn off notifications
             NotificationService.removeShowNotification(currentShow: currentShow)
         }
     }
