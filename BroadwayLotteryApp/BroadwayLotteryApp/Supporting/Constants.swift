@@ -46,6 +46,24 @@ struct Constants{
         static let schoolOfRockNotifications = "schoolOfRockNotifications"
         static let warPaintNotifications = "warPaintNotifications"
         static let wickedNotifications = "wickedNotifications"
+        
+//        static let aladdin = "Aladdin"
+//        static let anastasia = "Anastasia"
+//        static let bookOfMormon = "Book of Mormon"
+//        static let cats = "Cats"
+//        static let dearEvanHansen = "Dear Evan Hansen"
+//        static let groundhogDay = "Groundhog Day - The Musical"
+//        static let hamilton = "Hamilton - An American Musical"
+//        static let kinkyBoots = "Kinky Boots"
+//        static let lionKing = "The Lion King"
+//        static let greatComet =  "Natasha, Pierre, and the Great Comet of 1812"
+//        static let onYourFeet = "On Your Feet"
+//        static let oslo =  "Oslo"
+//        static let phantom = "The Phantom of the Opera"
+//        static let schoolOfRock = "School of Rock"
+//        static let warPaint = "War Paint"
+//        static let wicked = "Wicked"
+        
     }
     
     struct ShowTitle{

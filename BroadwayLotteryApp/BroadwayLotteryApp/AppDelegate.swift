@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if granted{
                 print("notifications granted")
                 NotificationService.setAllNotifications()
+               // NotificationTableViewController.setNotificationDefault(<#T##NotificationTableViewController#>)
                 //defaults.set(true, forKey: Constants.UserDefaults.notificationsGranted)
                 defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
             }else{

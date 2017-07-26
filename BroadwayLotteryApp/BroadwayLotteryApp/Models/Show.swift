@@ -12,21 +12,19 @@ class Show{
     
     //MARK: Properties 
     let title: String
-    //let lotteryOpen: String
-//    let lotteryCloseEve: String
-//    let lotteryCloseMat: String
     let lotteryOpen: Date
     let lotteryCloseEve: Date
     let lotteryCloseMat: Date
     let lotteryURL: String
-   // let lotteryCloseEvening: String
+    var notificationsOn: Bool
     
-    init(title: String, lotteryOpen: Date, lotteryCloseEve: Date, lotteryCloseMat: Date, lotteryURL: String) {
+    init(title: String, lotteryOpen: Date, lotteryCloseEve: Date, lotteryCloseMat: Date, lotteryURL: String, notificationsOn: Bool) {
         self.title = title
         self.lotteryOpen = lotteryOpen
         self.lotteryCloseEve = lotteryCloseEve
         self.lotteryCloseMat = lotteryCloseMat
         self.lotteryURL = lotteryURL
+        self.notificationsOn = notificationsOn
     }
     
     

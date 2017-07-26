@@ -23,6 +23,7 @@ class ShowNotificationCell: UITableViewCell {
     @IBOutlet weak var notificationSwitch: UISwitch!
     weak var delegate: ShowNotificationCellDelegate?
 
+    //var notificationsOn: Bool = true
     var index: Int = -1
     
     @IBAction func notificationSwitchValueDidChange(_ sender: UISwitch) {

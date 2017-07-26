@@ -12,15 +12,13 @@ class NotificationTableViewController: UITableViewController {
 
     //MARK: Properties
     let shows = ShowService.getShows()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        print("alladin user default for notif:")
+        print(defaults.bool(forKey: Constants.UserDefaults.aladdinNotifications))
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,16 +40,61 @@ class NotificationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
         let index = indexPath.row
         let currentShow = shows[index]
-        let defaults = UserDefaults.standard
+        //let defaults = UserDefaults.standard
         
         cell.index = index
         cell.showTitleLabel.text = currentShow.title
-        cell.notificationSwitch.isOn = defaults.bool(forKey: Constants.UserDefaults.notificationsOn)
+        if let notificationStatus = getNotificationDefault(currentShow: currentShow){
+            cell.notificationSwitch.isOn = notificationStatus
+        }
+    
         cell.delegate = self
         
         return cell
     }
    
+    func getNotificationDefault(currentShow: Show) -> Bool?{
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+            return defaults.bool(forKey: Constants.UserDefaults.aladdinNotifications)
+        case Constants.ShowTitle.anastasia:
+            return defaults.bool(forKey: Constants.UserDefaults.anastasiaNotifications)
+        case Constants.ShowTitle.bookOfMormon:
+            return defaults.bool(forKey: Constants.UserDefaults.bookOfMormonNotifications)
+        case Constants.ShowTitle.cats:
+            return defaults.bool(forKey: Constants.UserDefaults.catsNotifications)
+        case Constants.ShowTitle.dearEvanHansen:
+            return defaults.bool(forKey: Constants.UserDefaults.dearEvanHansenNotifications)
+        case Constants.ShowTitle.greatComet:
+            return defaults.bool(forKey: Constants.UserDefaults.greatCometNotifications)
+        case Constants.ShowTitle.groundhogDay:
+            return defaults.bool(forKey: Constants.UserDefaults.groundhogDayNotifications)
+        case Constants.ShowTitle.hamilton:
+            return defaults.bool(forKey: Constants.UserDefaults.hamiltonNotifications)
+        case Constants.ShowTitle.kinkyBoots:
+            return defaults.bool(forKey: Constants.UserDefaults.kinkyBootsNotifications)
+        case Constants.ShowTitle.lionKing:
+            return defaults.bool(forKey: Constants.UserDefaults.lionKingNotifications)
+        case Constants.ShowTitle.onYourFeet:
+            return defaults.bool(forKey: Constants.UserDefaults.onYourFeetNotifications)
+        case Constants.ShowTitle.oslo:
+            return defaults.bool(forKey: Constants.UserDefaults.osloNotifications)
+        case Constants.ShowTitle.phantom:
+            return defaults.bool(forKey: Constants.UserDefaults.phantomNotifications)
+        case Constants.ShowTitle.schoolOfRock:
+            return defaults.bool(forKey: Constants.UserDefaults.schoolOfRockNotifications)
+        case Constants.ShowTitle.warPaint:
+            return defaults.bool(forKey: Constants.UserDefaults.warPaintNotifications)
+        case Constants.ShowTitle.wicked:
+            return defaults.bool(forKey: Constants.UserDefaults.wickedNotifications)
+        default:
+            print("error - show not found")
+        }
+        
+        return nil
+    }
     /*
     // MARK: - Navigation
 
@@ -69,16 +112,63 @@ extension NotificationTableViewController: ShowNotificationCellDelegate{
     //function called when UISwitch value changes
     func notificationSwitchValueChanged(_ switchToggle: UISwitch, on cell: ShowNotificationCell){
         let currentShow = shows[cell.index]
-        let defaults = UserDefaults.standard
+        //let defaults = UserDefaults.standard
         
         if switchToggle.isOn{
-            defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+            //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+            
             NotificationService.setOpenShowNotification(currentShow: currentShow)
             NotificationService.setCloseShowNotification(currentShow: currentShow)
         }else{
-            defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
+            //this is issue -- not setting SHOW user default, setting general default
             NotificationService.removeShowNotification(currentShow: currentShow)
         }
+        
+        //setNotificationDefault(currentShow: currentShow, notificationsStatus: switchToggle.isOn)
+        
+//        print("current show notifications on: (in switch value change)")
+//        print(currentShow.notificationsOn)
     }
+    
+//    func setNotificationDefault(currentShow: Show, notificationsStatus: Bool){
+//        let defaults = UserDefaults.standard
+//        
+//        switch currentShow.title {
+//        case Constants.ShowTitle.aladdin:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.aladdinNotifications)
+//        case Constants.ShowTitle.anastasia:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.anastasiaNotifications)
+//        case Constants.ShowTitle.bookOfMormon:
+//             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.bookOfMormonNotifications)
+//        case Constants.ShowTitle.cats:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.catsNotifications)
+//        case Constants.ShowTitle.dearEvanHansen:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.dearEvanHansenNotifications)
+//        case Constants.ShowTitle.greatComet:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.greatCometNotifications)
+//        case Constants.ShowTitle.groundhogDay:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.groundhogDayNotifications)
+//        case Constants.ShowTitle.hamilton:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.hamiltonNotifications)
+//        case Constants.ShowTitle.kinkyBoots:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.kinkyBootsNotifications)
+//        case Constants.ShowTitle.lionKing:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.lionKingNotifications)
+//        case Constants.ShowTitle.onYourFeet:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.onYourFeetNotifications)
+//        case Constants.ShowTitle.oslo:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.osloNotifications)
+//        case Constants.ShowTitle.phantom:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.phantomNotifications)
+//        case Constants.ShowTitle.schoolOfRock:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.schoolOfRockNotifications)
+//        case Constants.ShowTitle.warPaint:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.warPaintNotifications)
+//        case Constants.ShowTitle.wicked:
+//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.wickedNotifications)
+//        default:
+//            print("error - show not found")
+//        }
+//    }
     
 }
