@@ -16,9 +16,11 @@ class ShowNotificationCell: UITableViewCell {
     
     //MARK -- properties
    
+//    @IBOutlet weak var showTitleLabel: UILabel!
+//    @IBOutlet weak var notificationSwitch: UISwitch!
+//    
     @IBOutlet weak var showTitleLabel: UILabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
-    
     weak var delegate: ShowNotificationCellDelegate?
 
     var index: Int = -1
@@ -26,6 +28,9 @@ class ShowNotificationCell: UITableViewCell {
     @IBAction func notificationSwitchValueDidChange(_ sender: UISwitch) {
         delegate?.notificationSwitchValueChanged(notificationSwitch, on: self)
     }
+//    @IBAction func notificationSwitchValueDidChange(_ sender: UISwitch) {
+//        delegate?.notificationSwitchValueChanged(notificationSwitch, on: self)
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

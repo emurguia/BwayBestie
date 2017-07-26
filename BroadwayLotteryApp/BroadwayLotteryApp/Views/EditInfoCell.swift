@@ -8,11 +8,21 @@
 
 import UIKit
 
+protocol EditInfoCellDelegate: class{
+    func editInfoButtonWasTapped(_ button: UIButton, on cell: EditInfoCell)
+}
+
+
 class EditInfoCell: UITableViewCell {
 
     //MARK -- properties
     @IBOutlet weak var editInfoLabel: UILabel!
     @IBOutlet weak var tapToEditButton: UIButton!
+    weak var delegate: EditInfoCellDelegate?
+    
+    @IBAction func editInfoButtonTapped(_ sender: UIButton) {
+        delegate?.editInfoButtonWasTapped(sender, on: self)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

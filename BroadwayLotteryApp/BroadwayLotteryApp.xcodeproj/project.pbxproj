@@ -32,6 +32,7 @@
 		FDB3FB3F1F1D7CF70073FD3D /* SwiftWebVCActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB381F1D7CF70073FD3D /* SwiftWebVCActivity.swift */; };
 		FDB3FB401F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB391F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift */; };
 		FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB3A1F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift */; };
+		FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */; };
 		FDFEE7451F14318B00FE59E4 /* CollectUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFEE7441F14318B00FE59E4 /* CollectUserInfo.storyboard */; };
 		FDFEE7471F1431AB00FE59E4 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE7461F1431AB00FE59E4 /* CollectUserInfoViewController.swift */; };
 		FDFEE7491F14324100FE59E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFEE7481F14324100FE59E4 /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		FDB3FB381F1D7CF70073FD3D /* SwiftWebVCActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivity.swift; sourceTree = "<group>"; };
 		FDB3FB391F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivityChrome.swift; sourceTree = "<group>"; };
 		FDB3FB3A1F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivitySafari.swift; sourceTree = "<group>"; };
+		FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewController.swift; path = Controllers/NotificationTableViewController.swift; sourceTree = "<group>"; };
 		FDFEE7441F14318B00FE59E4 /* CollectUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CollectUserInfo.storyboard; path = Storyboards/CollectUserInfo.storyboard; sourceTree = "<group>"; };
 		FDFEE7461F1431AB00FE59E4 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectUserInfoViewController.swift; path = Controllers/CollectUserInfoViewController.swift; sourceTree = "<group>"; };
 		FDFEE7481F14324100FE59E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */,
+				FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */,
 				FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */,
 				FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */,
 				FDFEE74A1F14324800FE59E4 /* ViewController.swift */,
@@ -387,6 +390,7 @@
 				FDFEE7471F1431AB00FE59E4 /* CollectUserInfoViewController.swift in Sources */,
 				FDB3FB3F1F1D7CF70073FD3D /* SwiftWebVCActivity.swift in Sources */,
 				FD9E9D831F1FF2D8005083C1 /* ShowNotificationCell.swift in Sources */,
+				FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */,
 				FD90A8AC1F158FBC00914980 /* LotteryHomeTableViewController.swift in Sources */,
 				FDFEE74B1F14324800FE59E4 /* ViewController.swift in Sources */,
 				FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */,

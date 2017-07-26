@@ -40,10 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.delegate = notificationDelegate
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
+                print("notifications granted")
                 NotificationService.setAllNotifications()
+                //defaults.set(true, forKey: Constants.UserDefaults.notificationsGranted)
                 defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
             }else{
-                print("notifications not granted")
+                print("notifications NOT granted")
+                //defaults.set(false, forKey: Constants.UserDefaults.notificationsGranted)
                 defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
             }
         }
@@ -75,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+       
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

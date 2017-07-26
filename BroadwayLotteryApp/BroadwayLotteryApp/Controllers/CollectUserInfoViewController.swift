@@ -49,7 +49,6 @@ class CollectUserInfoViewController: UITableViewController {
             //print("User details not saved -- all fields not filled out")
             return
         }
-       
         //get number tickets
         let numberTicketsIndex = numberTicketsSegment.selectedSegmentIndex
         var numberTickets = 1

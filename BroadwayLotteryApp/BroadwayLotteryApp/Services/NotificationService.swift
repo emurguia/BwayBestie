@@ -101,11 +101,33 @@ struct NotificationService{
         let shows = ShowService.getShows()
         //setShowNotification(currentShow: shows[0])
         let center = UNUserNotificationCenter.current()
+        let defaults = UserDefaults.standard
+        //for testing
         center.removeAllPendingNotificationRequests()
-        for show in shows{
-            setOpenShowNotification(currentShow: show)
-            setCloseShowNotification(currentShow: show)
-        }
+        
+        center.getNotificationSettings(completionHandler: { (settings) in
+            if settings.authorizationStatus == .denied {
+                print("notifcations denied")
+                //defaults.set(false, forKey: Constants.UserDefaults.notificationsGranted)
+                defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
+                // Notification permission was previously denied, go to settings & privacy to re-enable
+                //UIAlertController
+                
+            }
+            
+            if settings.authorizationStatus == .authorized {
+                // Notification permission was already granted
+                print("IN NOTIF SERVICE -- notifications authorized")
+                for show in shows{
+                    setOpenShowNotification(currentShow: show)
+                    setCloseShowNotification(currentShow: show)
+                }
+                
+                //defaults.set(true, forKey: Constants.UserDefaults.notificationsGranted)
+                
+            }
+        })
+        defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
     }
     
     //disable notifications for one show
@@ -121,6 +143,8 @@ struct NotificationService{
         for show in shows{
             removeShowNotification(currentShow: show)
         }
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
     }
     
     //function to convert to local times 
@@ -134,7 +158,7 @@ struct NotificationService{
             let difference = easternSecondsFromGMT - localTimeZoneSecondsFromGMT
             let hour = (difference / (60 * 60))
             let minutes = difference % (60 * 60)
-            print(minutes)
+           // print(minutes)
             
             if difference > 0{
                 //adjust time for time zones behind eastern
