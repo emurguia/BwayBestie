@@ -40,14 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.delegate = notificationDelegate
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
-                print("notifications granted")
-                NotificationService.setAllNotifications()
-               // NotificationTableViewController.setNotificationDefault(<#T##NotificationTableViewController#>)
-                //defaults.set(true, forKey: Constants.UserDefaults.notificationsGranted)
-                defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+                if defaults.bool(forKey: Constants.UserDefaults.notificationsOn) == false{
+                    print("notifications granted")
+                    NotificationService.setAllNotifications()
+                    defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+                }
             }else{
                 print("notifications NOT granted")
-                //defaults.set(false, forKey: Constants.UserDefaults.notificationsGranted)
                 defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
             }
         }
@@ -58,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+      //  UserDefaults.standard.synchronize()
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -84,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        //UserDefaults.standard.synchronize()
     }
 
 

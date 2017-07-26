@@ -55,7 +55,7 @@ struct NotificationService{
         })
         
         //set notification default 
-        setNotificationDefault(currentShow: currentShow, notificationsStatus: true)
+        print("set user defaults for \(currentShow.title) to true")
     }
     
     //enable close notification for one show
@@ -108,6 +108,7 @@ struct NotificationService{
         for show in shows{
             setOpenShowNotification(currentShow: show)
             setCloseShowNotification(currentShow: show)
+            setNotificationDefault(currentShow: show, notificationsStatus: true)
         }
     }
     
@@ -116,6 +117,8 @@ struct NotificationService{
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: [currentShow.title, currentShow.title + "close"])
         setNotificationDefault(currentShow: currentShow, notificationsStatus: false)
+        print("set user defaults for \(currentShow.title) to false")
+
     }
     
     
@@ -127,6 +130,7 @@ struct NotificationService{
         }
         let defaults = UserDefaults.standard
         defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
+
     }
     
     //function to convert to local times 

@@ -15,10 +15,6 @@ class NotificationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        print("alladin user default for notif:")
-        print(defaults.bool(forKey: Constants.UserDefaults.aladdinNotifications))
-
     }
 
     override func didReceiveMemoryWarning() {
