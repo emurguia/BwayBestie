@@ -17,8 +17,7 @@ struct NotificationService{
     static func setOpenShowNotification(currentShow: Show){
         //set up content
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey:
-            currentShow.title, arguments: nil)
+        //content.title = NSString.localizedUserNotificationString(forKey: currentShow.title, arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey:
             "The Lottery for \(currentShow.title) has opened!", arguments: nil)
 
@@ -60,8 +59,8 @@ struct NotificationService{
     static func setCloseShowNotification(currentShow: Show){
         //set up content
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: currentShow.title, arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: "The lottery for \(currentShow.title) just closed -- check your email soon for results!", arguments: nil)
+        //content.title = NSString.localizedUserNotificationString(forKey: currentShow.title, arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "The lottery for \(currentShow.title) just closed. Check your email for results!", arguments: nil)
         
         content.sound = UNNotificationSound.default()
         
@@ -99,35 +98,14 @@ struct NotificationService{
     //enable notifications for all shows
     static func setAllNotifications(){
         let shows = ShowService.getShows()
-        //setShowNotification(currentShow: shows[0])
         let center = UNUserNotificationCenter.current()
-        let defaults = UserDefaults.standard
         //for testing
         center.removeAllPendingNotificationRequests()
         
-        center.getNotificationSettings(completionHandler: { (settings) in
-            if settings.authorizationStatus == .denied {
-                print("notifcations denied")
-                //defaults.set(false, forKey: Constants.UserDefaults.notificationsGranted)
-                defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
-                // Notification permission was previously denied, go to settings & privacy to re-enable
-                //UIAlertController
-                
-            }
-            
-            if settings.authorizationStatus == .authorized {
-                // Notification permission was already granted
-                print("IN NOTIF SERVICE -- notifications authorized")
-                for show in shows{
-                    setOpenShowNotification(currentShow: show)
-                    setCloseShowNotification(currentShow: show)
-                }
-                
-                //defaults.set(true, forKey: Constants.UserDefaults.notificationsGranted)
-                
-            }
-        })
-        defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+        for show in shows{
+            setOpenShowNotification(currentShow: show)
+            setCloseShowNotification(currentShow: show)
+        }
     }
     
     //disable notifications for one show
