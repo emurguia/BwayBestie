@@ -54,81 +54,137 @@ class LotteryHomeTableViewController: UITableViewController {
         cell.index = index
         
         //set lottery time labels
-        configureLabel(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
+        configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
         
         return cell
     }
     
-    func configureLabel(openLabel: UILabel, closeLabel: UILabel, with show: Show){
+    func configureLotteryLabels(openLabel: UILabel, closeLabel: UILabel, with show: Show){
         
         /*
         * lottery open
         */
-        let lotteryOpen = show.lotteryOpen
-        var timeModifierOpen: String = "a.m"
-        var printMinutesOpen: String = "0"
-        var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
-        let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
-//        print("hourOpen: ")
-//        print(hourOpen)
-//        print("minutesOpen: ")
-//        print(minutesOpen)
         
-        //add date formatter to display in EST 
         
-        if hourOpen >= 12{
-            timeModifierOpen = " p.m."
-            //convert from 24 hr
-            if hourOpen >= 13{
-                hourOpen = hourOpen - 12
+      //  NotificationService.convertToLocalTime(dateComponents: <#T##DateComponents#>, timeZone: <#T##TimeZone#>)
+      //  let lotteryOpen = show.lotteryOpen
+        var openDateComponents = DateComponents()
+        openDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryOpen)
+        openDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryOpen)
+        
+        var closeDateComponents = DateComponents()
+        closeDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryCloseEve)
+        closeDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryCloseEve)
+        
+        //convert to local time
+        let easternTimeZone = TimeZone(identifier: "America/New_York")
+        if TimeZone.autoupdatingCurrent != easternTimeZone{
+            if let dateComponents =  NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent){
+                configureTime(dateComponents: dateComponents, label: openLabel)
+            }
+            
+            if let dateComponents = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent){
+                configureTime(dateComponents: dateComponents, label: closeLabel)
             }
         }else{
-            timeModifierOpen = " a.m."
-            if hourOpen == 0{
-                hourOpen = 12
-            }
+            configureTime(dateComponents: openDateComponents, label: openLabel)
+            configureTime(dateComponents: closeDateComponents, label: closeLabel)
         }
         
-        if minutesOpen == 0{
-            printMinutesOpen = "00"
-        }else{
-            printMinutesOpen = String(minutesOpen)
-        }
-        
+//        var timeModifierOpen: String = "a.m"
+//        var printMinutesOpen: String = "0"
+//        var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
+//        let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
+//        
+//        if hourOpen >= 12{
+//            timeModifierOpen = " p.m."
+//            //convert from 24 hr
+//            if hourOpen >= 13{
+//                hourOpen = hourOpen - 12
+//            }
+//        }else{
+//            timeModifierOpen = " a.m."
+//            if hourOpen == 0{
+//                hourOpen = 12
+//            }
+//        }
+//        
+//        if minutesOpen == 0{
+//            printMinutesOpen = "00"
+//        }else{
+//            printMinutesOpen = String(minutesOpen)
+//        }
+//        
+//        
+//        let openTime = String(hourOpen) + ":" + printMinutesOpen + timeModifierOpen
+//        openLabel.text = openTime
+
         /*
          * lottery close evening
          */
-        let lotteryCloseEve = show.lotteryCloseEve
-        var timeModiferClose: String = " a.m."
-        var printMinutesCloseEve = "0"
-        var hourCloseEve = Calendar.current.component(.hour, from: lotteryCloseEve)
-        let minutesCloseEve = Calendar.current.component(.minute, from: lotteryCloseEve)
-        
-        if hourCloseEve >= 12{
-            timeModiferClose = " p.m."
-            //convert from 24 hr
-            if hourCloseEve >= 13{
-                hourCloseEve = hourCloseEve - 12
-            }
-        }else{
-            timeModiferClose = " a.m."
-            if hourCloseEve == 0{
-                hourCloseEve = 12
-            }
-        }
-        
-        if minutesCloseEve == 0{
-            printMinutesCloseEve = "00"
-        }else{
-            printMinutesCloseEve = String(minutesCloseEve)
-        }
-        
-        let openTime = String(hourOpen) + ":" + printMinutesOpen + timeModifierOpen
-        let closeTime = String(hourCloseEve) + ":" + printMinutesCloseEve + timeModiferClose
-        
-        openLabel.text = openTime
-        closeLabel.text = closeTime
+//        let lotteryCloseEve = show.lotteryCloseEve
+//        var timeModiferClose: String = " a.m."
+//        var printMinutesCloseEve = "0"
+//        var hourCloseEve = Calendar.current.component(.hour, from: lotteryCloseEve)
+//        let minutesCloseEve = Calendar.current.component(.minute, from: lotteryCloseEve)
+//        
+//        if hourCloseEve >= 12{
+//            timeModiferClose = " p.m."
+//            //convert from 24 hr
+//            if hourCloseEve >= 13{
+//                hourCloseEve = hourCloseEve - 12
+//            }
+//        }else{
+//            timeModiferClose = " a.m."
+//            if hourCloseEve == 0{
+//                hourCloseEve = 12
+//            }
+//        }
+//        
+//        if minutesCloseEve == 0{
+//            printMinutesCloseEve = "00"
+//        }else{
+//            printMinutesCloseEve = String(minutesCloseEve)
+//        }
+//    
+//        
+//        let closeTime = String(hourCloseEve) + ":" + printMinutesCloseEve + timeModiferClose
+//        closeLabel.text = closeTime
 
+    }
+    
+    func configureTime(dateComponents: DateComponents, label: UILabel){
+        var timeModifier: String = "a.m"
+        var printMinutes: String = "0"
+        var hour = dateComponents.hour
+        var printHour: String = "0"
+        
+        if hour != nil{
+            if hour! >= 12{
+                timeModifier = " p.m."
+                //convert from 24 hr
+                if hour! >= 13{
+                    hour = hour! - 12
+                }
+            }else{
+                timeModifier = " a.m."
+                if hour! == 0{
+                    hour = 12
+                }
+            }
+            printHour = String(hour!)
+        }
+        
+       if let minutes = dateComponents.minute{
+            if minutes == 0{
+                printMinutes = "00"
+            }else{
+                printMinutes = String(minutes)
+            }
+        }
+        
+        let time = printHour + ":" + printMinutes + timeModifier
+        label.text = time
     }
     
 

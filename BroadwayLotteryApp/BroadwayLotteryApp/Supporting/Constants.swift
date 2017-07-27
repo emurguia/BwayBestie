@@ -98,7 +98,7 @@ struct Constants{
         static let anastasiaOpen: Date  = setDate(hour: 0, minutes: 0)!
         static let bookOfMormonOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
-        static let dearEvanHansenOpen: Date  = setDate(hour: 10, minutes: 0)!//10
+        static let dearEvanHansenOpen: Date  = setDate(hour: 0, minutes: 1)!//10
         static let groundhogDayOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let hamiltonOpen: Date  = setDate(hour: 8, minutes: 0)!
         static let kinkyBootsOpen: Date  = setDate(hour: 9, minutes: 0)! // week in advance
@@ -126,9 +126,9 @@ struct Constants{
         static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let bookOfMormonCloseEve: Date = setDate(hour: 12, minutes: 30)!
         static let catsCloseEve: Date  = setDate(hour: 15, minutes: 0)!
-        static let dearEvanHansenCloseEve: Date  = setDate(hour: 15, minutes: 0)!
+        static let dearEvanHansenCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let groundhogDayCloseEve: Date = setDate(hour: 12, minutes: 30)!
-        static let hamiltonCloseEve: Date = setDate(hour: 9, minutes: 0)!
+        static let hamiltonCloseEve: Date = setDate(hour: 15, minutes: 0)!
         static let kinkyBootsCloseEve: Date   = setDate(hour: 12, minutes: 30)!
         static let lionKingCloseEve: Date  = setDate(hour: 9, minutes: 0)!
         static let greatCometCloseEve: Date  = setDate(hour: 15, minutes: 0)!
