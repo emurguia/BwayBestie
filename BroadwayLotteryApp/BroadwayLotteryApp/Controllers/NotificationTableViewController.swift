@@ -126,45 +126,6 @@ extension NotificationTableViewController: ShowNotificationCellDelegate{
 //        print(currentShow.notificationsOn)
     }
     
-//    func setNotificationDefault(currentShow: Show, notificationsStatus: Bool){
-//        let defaults = UserDefaults.standard
-//        
-//        switch currentShow.title {
-//        case Constants.ShowTitle.aladdin:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.aladdinNotifications)
-//        case Constants.ShowTitle.anastasia:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.anastasiaNotifications)
-//        case Constants.ShowTitle.bookOfMormon:
-//             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.bookOfMormonNotifications)
-//        case Constants.ShowTitle.cats:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.catsNotifications)
-//        case Constants.ShowTitle.dearEvanHansen:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.dearEvanHansenNotifications)
-//        case Constants.ShowTitle.greatComet:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.greatCometNotifications)
-//        case Constants.ShowTitle.groundhogDay:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.groundhogDayNotifications)
-//        case Constants.ShowTitle.hamilton:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.hamiltonNotifications)
-//        case Constants.ShowTitle.kinkyBoots:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.kinkyBootsNotifications)
-//        case Constants.ShowTitle.lionKing:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.lionKingNotifications)
-//        case Constants.ShowTitle.onYourFeet:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.onYourFeetNotifications)
-//        case Constants.ShowTitle.oslo:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.osloNotifications)
-//        case Constants.ShowTitle.phantom:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.phantomNotifications)
-//        case Constants.ShowTitle.schoolOfRock:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.schoolOfRockNotifications)
-//        case Constants.ShowTitle.warPaint:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.warPaintNotifications)
-//        case Constants.ShowTitle.wicked:
-//            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.wickedNotifications)
-//        default:
-//            print("error - show not found")
-//        }
-//    }
+
     
 }

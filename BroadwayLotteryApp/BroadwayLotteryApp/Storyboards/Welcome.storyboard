@@ -100,14 +100,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Check the captcha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-vi-mqO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Hit submit! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejn-Et-tfi">
                                 <rect key="frame" x="25" y="337" width="325" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Hit submit! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejn-Et-tfi">
-                                <rect key="frame" x="25" y="388.5" width="325" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -116,21 +110,16 @@
                         <color key="backgroundColor" red="0.71764705880000002" green="0.1843137255" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gLu-oK-FA0" secondAttribute="trailing" constant="10" id="5fG-Ew-ZiN"/>
-                            <constraint firstItem="b6g-vi-mqO" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="9NX-95-Y8v"/>
                             <constraint firstItem="gLu-oK-FA0" firstAttribute="top" secondItem="lxR-JW-9jw" secondAttribute="bottom" constant="80" id="9gA-Vi-G5w"/>
-                            <constraint firstItem="Ejn-Et-tfi" firstAttribute="top" secondItem="b6g-vi-mqO" secondAttribute="bottom" constant="25" id="G3G-WH-Bfa"/>
                             <constraint firstItem="zhO-4B-AzZ" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="J0b-Rt-eKp"/>
-                            <constraint firstItem="b6g-vi-mqO" firstAttribute="top" secondItem="Qxk-MA-62Y" secondAttribute="bottom" constant="25" id="KrO-yV-sJQ"/>
                             <constraint firstAttribute="trailing" secondItem="Qxk-MA-62Y" secondAttribute="trailing" constant="25" id="Q85-sf-TUF"/>
                             <constraint firstAttribute="trailing" secondItem="zhO-4B-AzZ" secondAttribute="trailing" constant="25" id="Vxx-d0-Q9U"/>
-                            <constraint firstItem="b6g-vi-mqO" firstAttribute="top" secondItem="Qxk-MA-62Y" secondAttribute="bottom" constant="25" id="W0Y-hk-9HR"/>
                             <constraint firstItem="gLu-oK-FA0" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="10" id="X0L-ee-Lzy"/>
                             <constraint firstAttribute="trailing" secondItem="Ejn-Et-tfi" secondAttribute="trailing" constant="25" id="XGm-0a-uVZ"/>
                             <constraint firstItem="Ejn-Et-tfi" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="bpu-Z3-Igu"/>
                             <constraint firstItem="Qxk-MA-62Y" firstAttribute="top" secondItem="zhO-4B-AzZ" secondAttribute="bottom" constant="25" id="dyw-Ht-EwZ"/>
                             <constraint firstItem="Qxk-MA-62Y" firstAttribute="top" secondItem="zhO-4B-AzZ" secondAttribute="bottom" constant="25" id="haX-0X-kl4"/>
-                            <constraint firstItem="Ejn-Et-tfi" firstAttribute="top" secondItem="b6g-vi-mqO" secondAttribute="bottom" constant="25" id="kZm-SN-Ndg"/>
-                            <constraint firstAttribute="trailing" secondItem="b6g-vi-mqO" secondAttribute="trailing" constant="25" id="x0m-n9-wSK"/>
+                            <constraint firstItem="Ejn-Et-tfi" firstAttribute="top" secondItem="Qxk-MA-62Y" secondAttribute="bottom" constant="25" id="woo-qJ-4eZ"/>
                             <constraint firstItem="zhO-4B-AzZ" firstAttribute="top" secondItem="gLu-oK-FA0" secondAttribute="bottom" constant="45" id="xwf-cz-cZp"/>
                             <constraint firstItem="Qxk-MA-62Y" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="zDr-t0-tff"/>
                         </constraints>

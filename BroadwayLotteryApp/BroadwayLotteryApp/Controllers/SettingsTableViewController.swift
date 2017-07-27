@@ -33,6 +33,8 @@ class SettingsTableViewController: UITableViewController {
                 self.isEnabledLabel.text = "Enabled"
             }
         })
+        
+        self.tableView.sectionHeaderHeight = 70
       
     }
     
@@ -60,16 +62,19 @@ class SettingsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     // MARK: - Table view data source
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 1{
-//            if isEnabledLabel.text == "Disabled"{
-//                //trigger UIAlertController
-//                print("alert--go to your phone settings to enable notifications")
-//            }
-//            
-//        }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = UIColor.red
+//        return view
 //    }
 
+    @IBAction func unwindToSettingsViewController(_ segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
+    }
 
 }
 
