@@ -34,8 +34,8 @@ struct NotificationService{
         //check timezone
         let easternTimeZone = TimeZone(identifier: "America/New_York")
         if TimeZone.autoupdatingCurrent != easternTimeZone{
-            
-            if let dateComponentsLocal = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent){
+            let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
+            if let dateComponentsLocal = conversionResult.0 {
                 trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
                                                         repeats: true)
             }
@@ -78,8 +78,8 @@ struct NotificationService{
         //check timezone
         let easternTimeZone = TimeZone(identifier: "America/New_York")
         if TimeZone.autoupdatingCurrent != easternTimeZone{
-            
-            if let dateComponentsLocal = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent){
+            let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
+            if let dateComponentsLocal = conversionResult.0{
                 trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
                                                         repeats: true)
             }
@@ -134,8 +134,9 @@ struct NotificationService{
     }
     
     //function to convert to local times 
-    static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> DateComponents?{
+    static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> (DateComponents?, Bool){
         var newDateComponents = DateComponents()
+        var crossedMidnight: Bool = false
         
         if let easternTimeZone = TimeZone(identifier: "America/New_York"){
             let easternSecondsFromGMT = easternTimeZone.secondsFromGMT()
@@ -151,24 +152,26 @@ struct NotificationService{
                 var newHour = dateComponents.hour! - hour
                 if newHour < 0{
                     newHour = 12 + newHour
+                    crossedMidnight = true
                 }
                 newDateComponents.hour = newHour
                 newDateComponents.minute = dateComponents.minute! - minutes
                 
-                return newDateComponents
+                return (newDateComponents, crossedMidnight)
             }else{
                 //adjust time for time zones ahead of eastern
                 var newHour = dateComponents.hour! + hour
                 if newHour > 24{
                     newHour = newHour - 24
+                    crossedMidnight = true
                 }
                 newDateComponents.hour = newHour
                 newDateComponents.minute = dateComponents.minute! + minutes
-                return newDateComponents
+                return (newDateComponents, crossedMidnight)
             }
         }
         
-        return nil
+        return (nil, crossedMidnight)
     }
     
     static func setNotificationDefault(currentShow: Show, notificationsStatus: Bool){

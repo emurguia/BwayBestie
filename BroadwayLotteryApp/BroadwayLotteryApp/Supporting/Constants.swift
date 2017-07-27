@@ -98,7 +98,7 @@ struct Constants{
         static let anastasiaOpen: Date  = setDate(hour: 0, minutes: 0)!
         static let bookOfMormonOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
-        static let dearEvanHansenOpen: Date  = setDate(hour: 0, minutes: 1)!//10
+        static let dearEvanHansenOpen: Date  = setDate(hour: 0, minutes: 0)!//change to 12:01 
         static let groundhogDayOpen: Date  = setDate(hour: 9, minutes: 0)! //week in advance
         static let hamiltonOpen: Date  = setDate(hour: 8, minutes: 0)!
         static let kinkyBootsOpen: Date  = setDate(hour: 9, minutes: 0)! // week in advance

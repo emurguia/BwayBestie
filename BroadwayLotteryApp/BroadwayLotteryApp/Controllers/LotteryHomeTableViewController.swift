@@ -60,14 +60,7 @@ class LotteryHomeTableViewController: UITableViewController {
     }
     
     func configureLotteryLabels(openLabel: UILabel, closeLabel: UILabel, with show: Show){
-        
-        /*
-        * lottery open
-        */
-        
-        
-      //  NotificationService.convertToLocalTime(dateComponents: <#T##DateComponents#>, timeZone: <#T##TimeZone#>)
-      //  let lotteryOpen = show.lotteryOpen
+
         var openDateComponents = DateComponents()
         openDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryOpen)
         openDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryOpen)
@@ -76,84 +69,27 @@ class LotteryHomeTableViewController: UITableViewController {
         closeDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryCloseEve)
         closeDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryCloseEve)
         
-        //convert to local time
+        //check if need to convert local time
         let easternTimeZone = TimeZone(identifier: "America/New_York")
         if TimeZone.autoupdatingCurrent != easternTimeZone{
-            if let dateComponents =  NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent){
-                configureTime(dateComponents: dateComponents, label: openLabel)
+           //lottery open
+            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+            if let dateComponents = conversionResultOpen.0 {
+                configureTime(dateComponents: dateComponents, label: openLabel, crossedMidnight: conversionResultOpen.1)
             }
             
-            if let dateComponents = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent){
-                configureTime(dateComponents: dateComponents, label: closeLabel)
+            //loterry close
+            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+            if let dateComponents = conversionResultClose.0 {
+                configureTime(dateComponents: dateComponents, label: closeLabel, crossedMidnight: conversionResultClose.1)
             }
         }else{
-            configureTime(dateComponents: openDateComponents, label: openLabel)
-            configureTime(dateComponents: closeDateComponents, label: closeLabel)
+            configureTime(dateComponents: openDateComponents, label: openLabel, crossedMidnight: false)
+            configureTime(dateComponents: closeDateComponents, label: closeLabel, crossedMidnight: false)
         }
-        
-//        var timeModifierOpen: String = "a.m"
-//        var printMinutesOpen: String = "0"
-//        var hourOpen = Calendar.current.component(.hour, from: lotteryOpen)
-//        let minutesOpen = Calendar.current.component(.minute, from: lotteryOpen)
-//        
-//        if hourOpen >= 12{
-//            timeModifierOpen = " p.m."
-//            //convert from 24 hr
-//            if hourOpen >= 13{
-//                hourOpen = hourOpen - 12
-//            }
-//        }else{
-//            timeModifierOpen = " a.m."
-//            if hourOpen == 0{
-//                hourOpen = 12
-//            }
-//        }
-//        
-//        if minutesOpen == 0{
-//            printMinutesOpen = "00"
-//        }else{
-//            printMinutesOpen = String(minutesOpen)
-//        }
-//        
-//        
-//        let openTime = String(hourOpen) + ":" + printMinutesOpen + timeModifierOpen
-//        openLabel.text = openTime
-
-        /*
-         * lottery close evening
-         */
-//        let lotteryCloseEve = show.lotteryCloseEve
-//        var timeModiferClose: String = " a.m."
-//        var printMinutesCloseEve = "0"
-//        var hourCloseEve = Calendar.current.component(.hour, from: lotteryCloseEve)
-//        let minutesCloseEve = Calendar.current.component(.minute, from: lotteryCloseEve)
-//        
-//        if hourCloseEve >= 12{
-//            timeModiferClose = " p.m."
-//            //convert from 24 hr
-//            if hourCloseEve >= 13{
-//                hourCloseEve = hourCloseEve - 12
-//            }
-//        }else{
-//            timeModiferClose = " a.m."
-//            if hourCloseEve == 0{
-//                hourCloseEve = 12
-//            }
-//        }
-//        
-//        if minutesCloseEve == 0{
-//            printMinutesCloseEve = "00"
-//        }else{
-//            printMinutesCloseEve = String(minutesCloseEve)
-//        }
-//    
-//        
-//        let closeTime = String(hourCloseEve) + ":" + printMinutesCloseEve + timeModiferClose
-//        closeLabel.text = closeTime
-
     }
     
-    func configureTime(dateComponents: DateComponents, label: UILabel){
+    func configureTime(dateComponents: DateComponents, label: UILabel, crossedMidnight: Bool){
         var timeModifier: String = "a.m"
         var printMinutes: String = "0"
         var hour = dateComponents.hour
@@ -166,10 +102,16 @@ class LotteryHomeTableViewController: UITableViewController {
                 if hour! >= 13{
                     hour = hour! - 12
                 }
+                if crossedMidnight == true{
+                    timeModifier = " a.m."
+                }
             }else{
                 timeModifier = " a.m."
                 if hour! == 0{
                     hour = 12
+                }
+                if crossedMidnight == true{
+                    timeModifier = " p.m."
                 }
             }
             printHour = String(hour!)
@@ -187,41 +129,6 @@ class LotteryHomeTableViewController: UITableViewController {
         label.text = time
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
