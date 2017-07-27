@@ -120,7 +120,10 @@ class LotteryHomeTableViewController: UITableViewController {
        if let minutes = dateComponents.minute{
             if minutes == 0{
                 printMinutes = "00"
-            }else{
+            }else if minutes < 10{
+                printMinutes = "0" + String(minutes)
+            }
+            else{
                 printMinutes = String(minutes)
             }
         }
