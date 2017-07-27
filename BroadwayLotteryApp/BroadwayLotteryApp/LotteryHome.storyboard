@@ -186,7 +186,7 @@
                                             <segue destination="jX1-l9-5M7" kind="show" identifier="displayNotifications" id="1ve-kf-6i7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LvY-OD-vHR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LvY-OD-vHR">
                                         <rect key="frame" x="0.0" y="120" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LvY-OD-vHR" id="57d-1k-JOE">
@@ -202,6 +202,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-bV-dZ1">
                                                     <rect key="frame" x="305" y="15" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="autofillSwitchValueDidChange:" destination="DpO-e2-v69" eventType="valueChanged" id="5UA-4G-mYU"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -219,6 +222,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="autofillSwitch" destination="EOt-bV-dZ1" id="XJj-Qs-Cty"/>
                         <outlet property="isEnabledLabel" destination="1Tx-Xl-PbG" id="VZq-dZ-aSf"/>
                     </connections>
                 </tableViewController>

@@ -300,43 +300,49 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.updateToolbarItems()
         })
         
-        //get user info from key chain
-        let firstNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
-        let lastNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.lastName)
-        let zipCodeTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.zipCode)
-        let ageTemp: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.userAge)
-        let emailTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.email)
-        let numberTicketsTemp: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.numberTickets)
-        let birthMonthTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthMonth)
-        let birthDateTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthDate)
-        let birthYearTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthYear)
         
-        //only fills out info user has inputted
-        if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{
+        //only autofill is autofill setting is on
+        if UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn) == true {
+            //get user info from key chain
+            let firstNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
+            let lastNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.lastName)
+            let zipCodeTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.zipCode)
+            let ageTemp: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.userAge)
+            let emailTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.email)
+            let numberTicketsTemp: Int? = KeychainWrapper.standard.integer(forKey: Constants.Keychain.numberTickets)
+            let birthMonthTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthMonth)
+            let birthDateTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthDate)
+            let birthYearTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthYear)
             
-            let urlString = String(describing: url)
-            if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
+            //only fills out info user has inputted
+            if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{
                 
-                webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
-                    guard error == nil else{
-                        print ("Error executing JS")
-                        return
+                let urlString = String(describing: url)
+                if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
+                    
+                    webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
+                        guard error == nil else{
+                            print ("Error executing JS")
+                            return
+                        }
                     }
                 }
-            }
-            
-            
-            if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
-                print("bway direct")
-                webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName)'; document.getElementById('dlslot_name_last').value = '\(lastName)'; document.getElementById('dlslot_email').value = '\(email)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth)'; document.getElementById('dlslot_dob_day').value = '\(birthDate)'; document.getElementById('dlslot_dob_year').value = '\(birthYear)'; document.getElementById('dlslot_zip').value = '\(zipCode)'; if(\(numberTickets) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
-                    guard error == nil else{
-                        print ("Error executing JS")
-                        print(error! as Any)
-                        return
+                
+                
+                if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
+                    print("bway direct")
+                    webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName)'; document.getElementById('dlslot_name_last').value = '\(lastName)'; document.getElementById('dlslot_email').value = '\(email)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth)'; document.getElementById('dlslot_dob_day').value = '\(birthDate)'; document.getElementById('dlslot_dob_year').value = '\(birthYear)'; document.getElementById('dlslot_zip').value = '\(zipCode)'; if(\(numberTickets) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
+                        guard error == nil else{
+                            print ("Error executing JS")
+                            print(error! as Any)
+                            return
+                        }
                     }
                 }
             }
         }
+        
+        
     }
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

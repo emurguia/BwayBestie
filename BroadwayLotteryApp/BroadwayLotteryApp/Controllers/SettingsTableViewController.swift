@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
     //MARK -- properties 
     let shows = ShowService.getShows()
     @IBOutlet weak var isEnabledLabel: UILabel!
-    
+    @IBOutlet weak var autofillSwitch: UISwitch!
     let notificationsSwitch = UISwitch()
     
     override func viewDidLoad() {
@@ -33,8 +33,8 @@ class SettingsTableViewController: UITableViewController {
                 self.isEnabledLabel.text = "Enabled"
             }
         })
-        
-        self.tableView.sectionHeaderHeight = 70
+        autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
+        //self.tableView.sectionHeaderHeight = 70
       
     }
     
@@ -61,20 +61,26 @@ class SettingsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // MARK: - Table view data source
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView()
-//        view.backgroundColor = UIColor.red
-//        return view
-//    }
 
+    //unwind segue from edit user info view
     @IBAction func unwindToSettingsViewController(_ segue: UIStoryboardSegue) {
-        
-        // for now, simply defining the method is sufficient.
-        // we'll add code later
         
     }
 
+    @IBAction func autofillSwitchValueDidChange(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        defaults.set(sender.isOn, forKey: Constants.UserDefaults.autofillOn)
+       // sender.isOn
+    }
+    
+    
+    
+    // MARK: - Table view data source
+    
+    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        let view = UIView()
+    //        view.backgroundColor = UIColor.red
+    //        return view
+    //    }
 }
 
