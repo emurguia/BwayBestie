@@ -47,9 +47,21 @@ class CollectUserInfoViewController: UITableViewController {
         //get values from textfields 
         //does NOT currently fail if not all fields filled out -- change this?
         guard let firstName = firstNameField.text, let lastName = lastNameField.text, let email = emailAddressField.text, let zipCode = zipCodeField.text, let birthMonth = birthMonthField.text, let birthDate = birthDateField.text, let birthYear = birthYearField.text else{
-            //print("User details not saved -- all fields not filled out")
             return
         }
+        
+        //form validation
+        if firstName == "" || lastName == "" || email == "" || zipCode == "" || birthMonth == "" || birthDate == "" || birthYear == ""{
+            let alertController = UIAlertController(title: "Fields Left Empty", message: "Please make sure you fill out every field (they're required to enter the lotteries!)", preferredStyle: .alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alertController.addAction(OKAction)
+            present(alertController, animated: true)
+            return
+        }
+        
+            
         //get number tickets
         let numberTicketsIndex = numberTicketsSegment.selectedSegmentIndex
         var numberTickets = 1
