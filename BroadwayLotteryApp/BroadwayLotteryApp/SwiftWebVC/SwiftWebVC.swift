@@ -166,45 +166,46 @@ public class SwiftWebVC: UIViewController {
         backBarButtonItem.isEnabled = webView.canGoBack
         forwardBarButtonItem.isEnabled = webView.canGoForward
         
-        
-        let refreshStopBarButtonItem: UIBarButtonItem = webView.isLoading ? stopBarButtonItem : refreshBarButtonItem
-        
-        let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-        let flexibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad) {
+        if navigationController != nil{
+            let refreshStopBarButtonItem: UIBarButtonItem = webView.isLoading ? stopBarButtonItem : refreshBarButtonItem
             
-            let toolbarWidth: CGFloat = 250.0
-            fixedSpace.width = 35.0
+            let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+            let flexibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
             
-            let items: NSArray = [fixedSpace, refreshStopBarButtonItem, fixedSpace, backBarButtonItem, fixedSpace, forwardBarButtonItem, fixedSpace, actionBarButtonItem]
-            
-            let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: toolbarWidth, height: 44.0))
-            if !closing {
-                toolbar.items = items as? [UIBarButtonItem]
-                if presentingViewController == nil {
-                    toolbar.barTintColor = navigationController!.navigationBar.barTintColor
+            if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad) {
+                
+                let toolbarWidth: CGFloat = 250.0
+                fixedSpace.width = 35.0
+                
+                let items: NSArray = [fixedSpace, refreshStopBarButtonItem, fixedSpace, backBarButtonItem, fixedSpace, forwardBarButtonItem, fixedSpace, actionBarButtonItem]
+                
+                let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: toolbarWidth, height: 44.0))
+                if !closing {
+                    toolbar.items = items as? [UIBarButtonItem]
+                    if presentingViewController == nil {
+                        toolbar.barTintColor = navigationController!.navigationBar.barTintColor
+                    }
+                    else {
+                        toolbar.barStyle = navigationController!.navigationBar.barStyle
+                    }
+                    toolbar.tintColor = navigationController!.navigationBar.tintColor
                 }
-                else {
-                    toolbar.barStyle = navigationController!.navigationBar.barStyle
-                }
-                toolbar.tintColor = navigationController!.navigationBar.tintColor
+                navigationItem.rightBarButtonItems = items.reverseObjectEnumerator().allObjects as? [UIBarButtonItem]
+                
             }
-            navigationItem.rightBarButtonItems = items.reverseObjectEnumerator().allObjects as? [UIBarButtonItem]
-            
-        }
-        else {
-            let items: NSArray = [fixedSpace, backBarButtonItem, flexibleSpace, forwardBarButtonItem, flexibleSpace, refreshStopBarButtonItem, flexibleSpace, actionBarButtonItem, fixedSpace]
-            
-            if !closing {
-                if presentingViewController == nil {
-                    navigationController!.toolbar.barTintColor = navigationController!.navigationBar.barTintColor
+            else {
+                let items: NSArray = [fixedSpace, backBarButtonItem, flexibleSpace, forwardBarButtonItem, flexibleSpace, refreshStopBarButtonItem, flexibleSpace, actionBarButtonItem, fixedSpace]
+                
+                if !closing {
+                    if presentingViewController == nil {
+                        navigationController!.toolbar.barTintColor = navigationController!.navigationBar.barTintColor
+                    }
+                    else {
+                        navigationController!.toolbar.barStyle = navigationController!.navigationBar.barStyle
+                    }
+                    navigationController!.toolbar.tintColor = navigationController!.navigationBar.tintColor
+                    toolbarItems = items as? [UIBarButtonItem]
                 }
-                else {
-                    navigationController!.toolbar.barStyle = navigationController!.navigationBar.barStyle
-                }
-                navigationController!.toolbar.tintColor = navigationController!.navigationBar.tintColor
-                toolbarItems = items as? [UIBarButtonItem]
             }
         }
     }
@@ -300,7 +301,12 @@ extension SwiftWebVC: WKNavigationDelegate {
             self.updateToolbarItems()
         })
         
-        
+        autofill()
+    }
+    
+    
+    //function to autofill user information in lottery entry forms
+    public func autofill(){
         //only autofill is autofill setting is on
         if UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn) == true {
             //get user info from key chain
@@ -328,7 +334,6 @@ extension SwiftWebVC: WKNavigationDelegate {
                     }
                 }
                 
-                
                 if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
                     print("bway direct")
                     webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName)'; document.getElementById('dlslot_name_last').value = '\(lastName)'; document.getElementById('dlslot_email').value = '\(email)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth)'; document.getElementById('dlslot_dob_day').value = '\(birthDate)'; document.getElementById('dlslot_dob_year').value = '\(birthYear)'; document.getElementById('dlslot_zip').value = '\(zipCode)'; if(\(numberTickets) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
@@ -341,8 +346,6 @@ extension SwiftWebVC: WKNavigationDelegate {
                 }
             }
         }
-        
-        
     }
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
