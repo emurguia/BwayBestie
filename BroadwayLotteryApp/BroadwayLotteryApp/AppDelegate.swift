@@ -51,6 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        //navigation bar appereance
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.white
+        navigationBarAppearace.barTintColor = UIColor.gray
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        
         return true
     }
 
