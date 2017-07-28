@@ -202,7 +202,7 @@ struct Constants{
         static let wickedURL = "https://lottery.broadwaydirect.com/show/wicked/"
         
         //lottery entry page for broadway direct lotteries 
-        static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/"
+        static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"
     }
     
 }
