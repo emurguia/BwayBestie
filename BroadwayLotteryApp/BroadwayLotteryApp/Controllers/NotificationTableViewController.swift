@@ -28,10 +28,21 @@ class NotificationTableViewController: UITableViewController {
         return 2
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Get Notified When Lotteries Open Each Day"
+        case 1:
+            return "Manage Notifications By Show"
+        default:
+            return nil
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return 2
         case 1:
             return shows.count
         default:
@@ -44,11 +55,24 @@ class NotificationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "allShowsNotificationCell", for: indexPath) as! AllShowsNotificationCell
-            cell.settingLabel.text = "All Shows"
-            cell.settingSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.notificationsOn)
-            cell.delegate = self
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "allShowsNotificationCell", for: indexPath) as! AllShowsNotificationCell
+                cell.settingLabel.text = "All Shows"
+                cell.settingSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.notificationsOn)
+                cell.delegate = self
+                cell.index = indexPath.row
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "allShowsNotificationCell", for: indexPath) as! AllShowsNotificationCell
+                cell.settingLabel.text = "Additional Alerts When Lotteries Close"
+                cell.settingSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.closeNotificationsOn)
+                cell.delegate = self
+                cell.index = indexPath.row
+                return cell
+            default:
+                fatalError("Error: unexpected indexPath")
+            }
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
             let index = indexPath.row
@@ -111,15 +135,6 @@ class NotificationTableViewController: UITableViewController {
         
         return nil
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -128,32 +143,37 @@ extension NotificationTableViewController: ShowNotificationCellDelegate{
     //function called when UISwitch value changes
     func notificationSwitchValueChanged(_ switchToggle: UISwitch, on cell: ShowNotificationCell){
         let currentShow = shows[cell.index]
-        //let defaults = UserDefaults.standard
         
         if switchToggle.isOn{
-            //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
-            
             NotificationService.setOpenShowNotification(currentShow: currentShow)
-            //NotificationService.setCloseShowNotification(currentShow: currentShow)
+            if UserDefaults.standard.bool(forKey: Constants.UserDefaults.closeNotificationsOn) == true {
+                NotificationService.setCloseShowNotification(currentShow: currentShow)
+            }
         }else{
-            //this is issue -- not setting SHOW user default, setting general default
             NotificationService.removeShowNotification(currentShow: currentShow)
+            NotificationService.removeShowCloseNotification(currentShow: currentShow)
         }
     }
 }
 
 extension NotificationTableViewController: AllShowsNotificationCellDelegate{
     
-    func settingSwitchValueDidChange(_ switchToggle: UISwitch, on cell: AllShowsNotificationCell){
-        if switchToggle.isOn{
-            print("turning on all notifs")
-            NotificationService.setAllNotifications()
-        }else{
-            print("turning OFF all notifs")
-            NotificationService.removeAllNotifications()
+    func settingSwitchValueDidChange(_ switchToggle: UISwitch, on cell: AllShowsNotificationCell, index: Int){
+        if index == 0{
+            if switchToggle.isOn{
+                NotificationService.setAllNotifications()
+            }else{
+                NotificationService.removeAllNotifications()
+            }
+            tableView.reloadData()
         }
-        print("notif on user default:")
-        print(UserDefaults.standard.bool(forKey: Constants.UserDefaults.notificationsOn))
-        tableView.reloadData()
+        
+        if index == 1{
+            if switchToggle.isOn{
+                NotificationService.setCloseForActiveNotifications()
+            }else{
+                NotificationService.removeCloseForActiveNotifications()
+            }
+        }
     }
 }

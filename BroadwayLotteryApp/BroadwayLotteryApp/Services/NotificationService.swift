@@ -109,36 +109,97 @@ struct NotificationService{
         
         for show in shows{
             setOpenShowNotification(currentShow: show)
-            
-            //only setting open as default for now
-            //setCloseShowNotification(currentShow: show)
-           // setNotificationDefault(currentShow: show, notificationsStatus: true)
-            print("set user defaults for \(show.title) to true")
+            if UserDefaults.standard.bool(forKey: Constants.UserDefaults.closeNotificationsOn){
+                print("close notifs on -- setting them up ")
+                setCloseShowNotification(currentShow: show)
+            }
         }
         UserDefaults.standard.set(true, forKey: Constants.UserDefaults.notificationsOn)
     }
+    
+    //enable close notifications for shows with notifications currently turned on 
+    static func setCloseForActiveNotifications(){
+        let shows = ShowService.getShows()
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(){ requests in
+            var ids = [String]()
+            for request in requests{
+                ids.append(request.identifier)
+            }
+            
+            for id in ids{
+                for show in shows{
+                    if show.title == id{
+                        self.setCloseShowNotification(currentShow: show)
+                    }
+                }
+            }
+        }
+        UserDefaults.standard.set(true, forKey: Constants.UserDefaults.closeNotificationsOn)
+    }
+    
     
     /* 
      * DISABLING
      */
     
+    //disable close notifications for shows with notifications currently turned on
+    static func removeCloseForActiveNotifications(){
+        let shows = ShowService.getShows()
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(){ requests in
+            var ids = [String]()
+            for request in requests{
+                ids.append(request.identifier)
+            }
+            
+            for id in ids{
+                for show in shows{
+                    if show.title == id{
+                        self.removeShowCloseNotification(currentShow: show)
+                    }
+                }
+            }
+        }
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.closeNotificationsOn)
+    }
+    
+    
+    //disable close notifications for one show
+    static func removeShowCloseNotification(currentShow: Show){
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [currentShow.title + "close"])
+    }
+    
     //disable notifications for one show
     static func removeShowNotification(currentShow: Show){
         let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: [currentShow.title, currentShow.title + "close"])
+        center.removePendingNotificationRequests(withIdentifiers: [currentShow.title])
         setNotificationDefault(currentShow: currentShow, notificationsStatus: false)
-        print("set user defaults for \(currentShow.title) to false")
-
+        
     }
     
-    //disable notifications for all shows 
+    //disable close notifications for all shows
+    static func removeCloseNotifications(){
+        let shows = ShowService.getShows()
+        for show in shows{
+            removeShowCloseNotification(currentShow: show)
+        }
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.closeNotificationsOn)
+    }
+    
+    //disable all notifications for all shows
     static func removeAllNotifications(){
         let shows = ShowService.getShows()
         for show in shows{
             removeShowNotification(currentShow: show)
+            removeShowCloseNotification(currentShow: show)
         }
         UserDefaults.standard.set(false, forKey: Constants.UserDefaults.notificationsOn)
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.closeNotificationsOn)
     }
+    
+
     
     /*
      * HELPERS

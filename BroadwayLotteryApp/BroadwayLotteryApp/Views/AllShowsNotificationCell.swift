@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AllShowsNotificationCellDelegate: class{
-    func settingSwitchValueDidChange(_ switchToggle: UISwitch, on cell: AllShowsNotificationCell)
+    func settingSwitchValueDidChange(_ switchToggle: UISwitch, on cell: AllShowsNotificationCell, index: Int)
 }
 
 class AllShowsNotificationCell: UITableViewCell{
@@ -17,10 +17,11 @@ class AllShowsNotificationCell: UITableViewCell{
     //MARK: Properties
     @IBOutlet weak var settingLabel: UILabel!
     @IBOutlet weak var settingSwitch: UISwitch!
+    var index: Int = -1
     
     weak var delegate: AllShowsNotificationCellDelegate?
     
     @IBAction func settingSwitchDidChange(_ sender: UISwitch) {
-        delegate?.settingSwitchValueDidChange(sender, on: self)
+        delegate?.settingSwitchValueDidChange(sender, on: self, index: index)
     }
 }
