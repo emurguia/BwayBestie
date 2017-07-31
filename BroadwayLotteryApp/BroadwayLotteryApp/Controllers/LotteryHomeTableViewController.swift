@@ -10,6 +10,7 @@ import UIKit
 
 class LotteryHomeTableViewController: UITableViewController {
 
+    @IBOutlet weak var backgroundView: UIView!
     //MARK -- Properties 
     let shows = ShowService.getShows()
 
@@ -20,6 +21,8 @@ class LotteryHomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,13 +48,18 @@ class LotteryHomeTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
+       // let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
         let index = indexPath.row
         let currentShow = shows[index]
         
         cell.showTitleLabel.text = currentShow.title
         cell.delegate = self
         cell.index = index
+        
+        //test cell
+        cell.enterNowButton.layer.cornerRadius = 4
+        //cell.showImage.image = UIImage(contentsOfFile: "Aladdin_digitallottery_980x1502")
         
         //set lottery time labels
         configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
@@ -156,6 +164,15 @@ extension LotteryHomeTableViewController: ShowCellDelegate{
         self.navigationController?.pushViewController(webVC, animated: true)
     }
    
+}
+
+extension LotteryHomeTableViewController: ShowCellTestDelegate{
+    func didPressEnterButton(_ likeButton: UIButton, on cell: ShowTestCell){
+        let currentShow = shows[cell.index]
+        let webVC = SwiftWebVC(urlString: currentShow.lotteryURL)
+        self.navigationController?.pushViewController(webVC, animated: true)
+    }
+
 }
 
 

@@ -20,23 +20,35 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //check if user has authorized notifications
+        checkNotificationStatus()
+        autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
+      
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.addObserver(self, selector: #selector(appBecameActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
+    
+    }
+    
+    func checkNotificationStatus(){
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings(completionHandler: { (settings) in
             if settings.authorizationStatus == .denied {
-                print("notifcations denied")
+                //print("notifcations denied")
                 self.isEnabledLabel.text = "Disabled"
             }
             
             if settings.authorizationStatus == .authorized {
-                print("notifications authorized")
+                //print("notifications authorized")
                 self.isEnabledLabel.text = "Enabled"
             }
         })
-        autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
-        //self.tableView.sectionHeaderHeight = 70
-      
+        
     }
+    
+    func appBecameActive(){
+        print("application did become active")
+        checkNotificationStatus()
+    }
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "displayNotifications"{
@@ -51,9 +63,7 @@ class SettingsTableViewController: UITableViewController {
                 
                 return false
             }
-           // print("transitions to notification screen")
         }
-        
         return true
     }
 
@@ -70,7 +80,6 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func autofillSwitchValueDidChange(_ sender: UISwitch) {
         let defaults = UserDefaults.standard
         defaults.set(sender.isOn, forKey: Constants.UserDefaults.autofillOn)
-       // sender.isOn
     }
     
     

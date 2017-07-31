@@ -25,28 +25,48 @@ class NotificationTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shows.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return shows.count
+        default:
+            print("Error: unexpected indexPath")
+            return 0
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
-        let index = indexPath.row
-        let currentShow = shows[index]
-        //let defaults = UserDefaults.standard
-        
-        cell.index = index
-        cell.showTitleLabel.text = currentShow.title
-        if let notificationStatus = getNotificationDefault(currentShow: currentShow){
-            cell.notificationSwitch.isOn = notificationStatus
+        switch indexPath.section{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "allShowsNotificationCell", for: indexPath) as! AllShowsNotificationCell
+            cell.settingLabel.text = "All Shows"
+            cell.settingSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.notificationsOn)
+            cell.delegate = self
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
+            let index = indexPath.row
+            let currentShow = shows[index]
+            //let defaults = UserDefaults.standard
+            
+            cell.index = index
+            cell.showTitleLabel.text = currentShow.title
+            if let notificationStatus = getNotificationDefault(currentShow: currentShow){
+                cell.notificationSwitch.isOn = notificationStatus
+            }
+            
+            cell.delegate = self
+            
+            return cell
+        default:
+            fatalError("Error: unexpected indexPath")
         }
-    
-        cell.delegate = self
-        
-        return cell
     }
    
     func getNotificationDefault(currentShow: Show) -> Bool?{
@@ -114,18 +134,26 @@ extension NotificationTableViewController: ShowNotificationCellDelegate{
             //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
             
             NotificationService.setOpenShowNotification(currentShow: currentShow)
-            NotificationService.setCloseShowNotification(currentShow: currentShow)
+            //NotificationService.setCloseShowNotification(currentShow: currentShow)
         }else{
             //this is issue -- not setting SHOW user default, setting general default
             NotificationService.removeShowNotification(currentShow: currentShow)
         }
-        
-        //setNotificationDefault(currentShow: currentShow, notificationsStatus: switchToggle.isOn)
-        
-//        print("current show notifications on: (in switch value change)")
-//        print(currentShow.notificationsOn)
     }
-    
+}
 
+extension NotificationTableViewController: AllShowsNotificationCellDelegate{
     
+    func settingSwitchValueDidChange(_ switchToggle: UISwitch, on cell: AllShowsNotificationCell){
+        if switchToggle.isOn{
+            print("turning on all notifs")
+            NotificationService.setAllNotifications()
+        }else{
+            print("turning OFF all notifs")
+            NotificationService.removeAllNotifications()
+        }
+        print("notif on user default:")
+        print(UserDefaults.standard.bool(forKey: Constants.UserDefaults.notificationsOn))
+        tableView.reloadData()
+    }
 }

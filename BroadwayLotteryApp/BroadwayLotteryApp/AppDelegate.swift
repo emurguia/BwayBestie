@@ -18,10 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
-        //initial view controller 
+        //set up initial view controller
         let defaults = UserDefaults.standard
         var storyboard: UIStoryboard
         if defaults.bool(forKey: Constants.UserDefaults.isLoggedIn) == true {
@@ -31,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let initialViewController = storyboard.instantiateInitialViewController()
-        
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         
@@ -42,8 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if granted{
                 if defaults.bool(forKey: Constants.UserDefaults.notificationsOn) == false{
                     print("notifications granted")
-                    NotificationService.setAllNotifications()
-                    defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+                    //NotificationService.setAllNotifications()
+                    //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
+                    defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
                 }
             }else{
                 print("notifications NOT granted")
@@ -51,11 +50,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        //get rid of notifications for expired shows
+        let shows = ShowService.getShows()
+        for show in shows{
+            print(show.title)
+        }
+        
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            print("entered completion handler")
+            
+            var ids = [String]()
+            for request in requests{
+                ids.append(request.identifier)
+            }
+            
+            var found: Bool = false
+            for id in ids{
+                found = false
+                for show in shows{
+                    if show.title == id{
+                        found = true
+                        break
+                    }
+                    
+                    let closeID = show.title + "close"
+                    if closeID == id{
+                        found = true
+                        break
+                    }
+                }
+                if found == false{
+                    print("removing notification for notifcation id: \(id)")
+                    center.removePendingNotificationRequests(withIdentifiers: [id])
+                }
+//                if found == true{
+//                    print("this notification is here to stay! \(id)")
+//                }
+            }
+        })
+
         //navigation bar appereance
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor.white
-        navigationBarAppearace.barTintColor = UIColor.gray
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationBarAppearace.barStyle = UIBarStyle.black
+        navigationBarAppearace.isTranslucent = true
+//        navigationBarAppearace.tintColor = UIColor.white
+//        navigationBarAppearace.barTintColor = UIColor.lightGray
+//        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         
         return true

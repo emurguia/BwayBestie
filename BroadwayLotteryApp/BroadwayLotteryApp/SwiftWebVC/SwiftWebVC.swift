@@ -308,6 +308,7 @@ extension SwiftWebVC: WKNavigationDelegate {
     //function to autofill user information in lottery entry forms
     public func autofill(){
         //only autofill is autofill setting is on
+        
         if UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn) == true {
             //get user info from key chain
             let firstNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
@@ -324,6 +325,7 @@ extension SwiftWebVC: WKNavigationDelegate {
             if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{
                 
                 let urlString = String(describing: url)
+                print(urlString)
                 if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
                     
                     webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
@@ -335,6 +337,7 @@ extension SwiftWebVC: WKNavigationDelegate {
                 }
                 
                 if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
+                    //https://lottery.broadwaydirect.com/enter-lottery/success/?lottery=251089&window=popup&target=to
                     print("bway direct")
                     webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName)'; document.getElementById('dlslot_name_last').value = '\(lastName)'; document.getElementById('dlslot_email').value = '\(email)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth)'; document.getElementById('dlslot_dob_day').value = '\(birthDate)'; document.getElementById('dlslot_dob_year').value = '\(birthYear)'; document.getElementById('dlslot_zip').value = '\(zipCode)'; if(\(numberTickets) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
                         guard error == nil else{
@@ -360,7 +363,7 @@ extension SwiftWebVC: WKNavigationDelegate {
         let url = navigationAction.request.url
         
         let hostAddress = navigationAction.request.url?.host
-        
+        print(hostAddress as Any)
         if (navigationAction.targetFrame == nil) {
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.openURL(url!)
@@ -376,6 +379,37 @@ extension SwiftWebVC: WKNavigationDelegate {
                 return
             }
         }
+        
+        // To connect to Facebook App 
+        if hostAddress == "m.facebook.com" {
+            print("clicked facebook link")
+//            print(navigationAction.request.url! as Any)
+//            
+//            //check if fb app installed 
+//            let fbInstalled = schemeAvailable(scheme: "fb://")
+//            if fbInstalled{
+//                let facebookURL = String(describing: navigationAction.request.url!)
+//                let appURLString = facebookURL.replacingOccurrences(of: "https://", with: "fb://")
+//                print(appURLString)
+//                if let appURL = URL(string: appURLString){
+//                    UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+//                }
+//            }
+            
+//            func open(scheme: String) {
+//                if let url = URL(string: scheme) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: {
+//                        (success) in
+//                        print("Open \(scheme): \(success)")
+//                    })
+//                }
+//            }
+//            
+//            open(scheme: "twitter://timeline")
+            //if so open in fb app
+        }
+        
+        
         
         let url_elements = url!.absoluteString.components(separatedBy: ":")
         
@@ -398,6 +432,13 @@ extension SwiftWebVC: WKNavigationDelegate {
         
         decisionHandler(.allow)
         
+    }
+    
+    func schemeAvailable(scheme: String) -> Bool {
+        if let url = URL(string: scheme) {
+            return UIApplication.shared.canOpenURL(url)
+        }
+        return false
     }
     
     func openCustomApp(urlScheme: String, additional_info:String){

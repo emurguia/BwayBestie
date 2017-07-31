@@ -22,6 +22,8 @@ class EditUserInfoTableViewController: UITableViewController {
     @IBOutlet weak var birthMonthField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +65,9 @@ class EditUserInfoTableViewController: UITableViewController {
         }else{
             numberTickets.selectedSegmentIndex = 1
         }
+        
+        //button appereance 
+        saveButton.layer.cornerRadius = 4
         
         
     }

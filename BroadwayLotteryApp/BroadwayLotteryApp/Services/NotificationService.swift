@@ -11,7 +11,9 @@ import UserNotifications
 
 struct NotificationService{
     
-    
+    /*
+     * ENABLING
+     */
     
     //enable open notification for one show
     static func setOpenShowNotification(currentShow: Show){
@@ -55,7 +57,7 @@ struct NotificationService{
         })
         
         //set notification default 
-        print("set user defaults for \(currentShow.title) to true")
+        setNotificationDefault(currentShow: currentShow, notificationsStatus: true)
     }
     
     //enable close notification for one show
@@ -107,10 +109,18 @@ struct NotificationService{
         
         for show in shows{
             setOpenShowNotification(currentShow: show)
-            setCloseShowNotification(currentShow: show)
-            setNotificationDefault(currentShow: show, notificationsStatus: true)
+            
+            //only setting open as default for now
+            //setCloseShowNotification(currentShow: show)
+           // setNotificationDefault(currentShow: show, notificationsStatus: true)
+            print("set user defaults for \(show.title) to true")
         }
+        UserDefaults.standard.set(true, forKey: Constants.UserDefaults.notificationsOn)
     }
+    
+    /* 
+     * DISABLING
+     */
     
     //disable notifications for one show
     static func removeShowNotification(currentShow: Show){
@@ -121,17 +131,18 @@ struct NotificationService{
 
     }
     
-    
     //disable notifications for all shows 
     static func removeAllNotifications(){
         let shows = ShowService.getShows()
         for show in shows{
             removeShowNotification(currentShow: show)
         }
-        let defaults = UserDefaults.standard
-        defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
-
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.notificationsOn)
     }
+    
+    /*
+     * HELPERS
+     */
     
     //function to convert to local times 
     static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> (DateComponents?, Bool){
@@ -145,7 +156,6 @@ struct NotificationService{
             let difference = easternSecondsFromGMT - localTimeZoneSecondsFromGMT
             let hour = (difference / (60 * 60))
             let minutes = difference % (60 * 60)
-           // print(minutes)
             
             if difference > 0{
                 //adjust time for time zones behind eastern
@@ -174,6 +184,7 @@ struct NotificationService{
         return (nil, crossedMidnight)
     }
     
+    //function to set user defaults for each show
     static func setNotificationDefault(currentShow: Show, notificationsStatus: Bool){
         let defaults = UserDefaults.standard
         

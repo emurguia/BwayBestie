@@ -10,7 +10,7 @@ import Foundation
 
 /*
  * To add new show: 
- * 1) add Title and Lottery URL to Constants
+ * 1) add Title, Lottery URL, Times to Constants
  * 2) add lottery open/close times in fillLotteryTimes()
  * 3) add case to allShows enum 
  * 4) add to asShow() switch statement
@@ -39,7 +39,7 @@ struct ShowService{
         case kinkyBoots
         case lionKing
         case onYourFeet
-        case oslo
+        //case oslo
         case phantom
         case schoolOfRock
         case warPaint
@@ -83,8 +83,8 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.lionKing, lotteryOpen: Constants.LotteryOpen.lionKingOpen, lotteryCloseEve: Constants.LotteryCloseEve.lionKingCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.lionKingCloseMat, lotteryURL: Constants.LotteryURLs.lionKingURL, notificationsOn: notifications)
             case .onYourFeet:
                 return Show(title: Constants.ShowTitle.onYourFeet, lotteryOpen: Constants.LotteryOpen.onYourFeetOpen, lotteryCloseEve: Constants.LotteryCloseEve.onYourFeetCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.onYourFeetCloseMat, lotteryURL: Constants.LotteryURLs.onYourFeetURL, notificationsOn: notifications)
-            case .oslo:
-                return Show(title: Constants.ShowTitle.oslo, lotteryOpen: Constants.LotteryOpen.osloOpen, lotteryCloseEve: Constants.LotteryCloseEve.osloCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.osloCloseMat, lotteryURL: Constants.LotteryURLs.osloURL, notificationsOn: notifications)
+            /*case .oslo:
+                return Show(title: Constants.ShowTitle.oslo, lotteryOpen: Constants.LotteryOpen.osloOpen, lotteryCloseEve: Constants.LotteryCloseEve.osloCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.osloCloseMat, lotteryURL: Constants.LotteryURLs.osloURL, notificationsOn: notifications)*/
             case .phantom:
                 return Show(title: Constants.ShowTitle.phantom, lotteryOpen: Constants.LotteryOpen.phantomOpen, lotteryCloseEve: Constants.LotteryCloseEve.phantomCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.phantomCloseMat, lotteryURL: Constants.LotteryURLs.phantomURL, notificationsOn: notifications)
             case .schoolOfRock:

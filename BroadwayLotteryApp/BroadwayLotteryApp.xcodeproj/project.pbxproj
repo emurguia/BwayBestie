@@ -14,6 +14,8 @@
 		FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */; };
 		FD1A905C1F0EF25E005EDBC9 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */; };
 		FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */; };
+		FD4C7F0A1F2BEAEC0038A093 /* ShowTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */; };
+		FD6B64C01F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B64BF1F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift */; };
 		FD90A8A41F15466000914980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8A31F15466000914980 /* Constants.swift */; };
 		FD90A8A71F1572AB00914980 /* LotteryHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */; };
 		FD90A8A91F1583CB00914980 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD90A8A81F1583CB00914980 /* Show.swift */; };
@@ -53,6 +55,8 @@
 		FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Storyboards/Welcome.storyboard; sourceTree = "<group>"; };
 		FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = Controllers/WelcomePageViewController.swift; sourceTree = "<group>"; };
 		FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UYLNotificationDelegate.swift; sourceTree = "<group>"; };
+		FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowTestCell.swift; path = Views/ShowTestCell.swift; sourceTree = "<group>"; };
+		FD6B64BF1F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllShowsNotificationCell.swift; path = Views/AllShowsNotificationCell.swift; sourceTree = "<group>"; };
 		FD90A8A31F15466000914980 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LotteryHome.storyboard; sourceTree = "<group>"; };
 		FD90A8A81F1583CB00914980 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Show.swift; path = Models/Show.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */,
 				FD9E9D821F1FF2D8005083C1 /* ShowNotificationCell.swift */,
 				FDB3FB231F1D2E740073FD3D /* ShowCell.swift */,
+				FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */,
+				FD6B64BF1F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6B64C01F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift in Sources */,
 				FDB3FB3D1F1D7CF70073FD3D /* SwiftModalWebVC.swift in Sources */,
 				FD1A905C1F0EF25E005EDBC9 /* WelcomePageViewController.swift in Sources */,
 				FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */,
@@ -401,6 +408,7 @@
 				FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */,
 				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,
 				FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */,
+				FD4C7F0A1F2BEAEC0038A093 /* ShowTestCell.swift in Sources */,
 				FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */,
 				FD90A8A91F1583CB00914980 /* Show.swift in Sources */,
 				FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */,
