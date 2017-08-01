@@ -52,11 +52,18 @@ class LotteryHomeTableViewController: UITableViewController {
        // let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
         let index = indexPath.row
         let currentShow = shows[index]
-        
+        print(currentShow.title)
         cell.showTitleLabel.text = currentShow.title
         cell.delegate = self
         cell.index = index
-        
+        if let lotteryIsOpen = currentShow.lotteryIsOpen(){
+            if lotteryIsOpen == false{
+                print("setting label to lottery closed")
+                cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
+            }else if lotteryIsOpen == true{
+                cell.enterNowButton.setTitle("Enter Now", for: .normal)
+            }
+        }
         //test cell
         cell.enterNowButton.layer.cornerRadius = 4
         //cell.showImage.image = UIImage(contentsOfFile: "Aladdin_digitallottery_980x1502")
