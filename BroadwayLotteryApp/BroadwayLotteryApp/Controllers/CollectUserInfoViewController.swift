@@ -19,7 +19,7 @@ class CollectUserInfoViewController: UITableViewController {
     @IBOutlet weak var birthDateField: UITextField!
     @IBOutlet weak var birthYearField: UITextField!
     @IBOutlet weak var numberTicketsSegment: UISegmentedControl!
-    
+    @IBOutlet weak var getStartedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,8 @@ class CollectUserInfoViewController: UITableViewController {
         birthMonthField.delegate = self
         birthYearField.delegate = self
         
+        //button appereance
+        getStartedButton.layer.cornerRadius = 4
 
         // Do any additional setup after loading the view.
     }
