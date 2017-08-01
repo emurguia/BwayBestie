@@ -60,12 +60,16 @@ class LotteryHomeTableViewController: UITableViewController {
             if lotteryIsOpen == false{
                 print("setting label to lottery closed")
                 cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
+                 cell.enterNowButton.layer.backgroundColor = UIColor.lightGray.cgColor
             }else if lotteryIsOpen == true{
                 cell.enterNowButton.setTitle("Enter Now", for: .normal)
+                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
             }
         }
         //test cell
-        cell.enterNowButton.layer.cornerRadius = 4
+        cell.enterNowButton.layer.cornerRadius = 2
+//        cell.enterNowButton.layer.borderWidth = 2.0
+//        cell.enterNowButton.layer.borderColor = UIColor.lightGray.cgColor
         //cell.showImage.image = UIImage(contentsOfFile: "Aladdin_digitallottery_980x1502")
         
         //set lottery time labels
