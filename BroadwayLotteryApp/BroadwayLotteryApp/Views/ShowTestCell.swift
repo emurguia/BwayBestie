@@ -23,6 +23,7 @@ class ShowTestCell: UITableViewCell{
    // @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var showImage: UIImageView!
     weak var delegate: ShowCellTestDelegate?
+    @IBOutlet weak var entryPeriodLabel: UILabel!
     
     @IBAction func enterNowButtonPressed(_ sender: UIButton) {
         delegate?.didPressEnterButton(sender, on: self)

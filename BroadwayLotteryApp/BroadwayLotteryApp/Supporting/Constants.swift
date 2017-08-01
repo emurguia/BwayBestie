@@ -159,6 +159,24 @@ struct Constants{
             
         }
     
+    struct canEnterWeekly{
+        static let aladdinCanEnterWeekly = false
+        static let anastasiaCanEnterWeekly = false
+        static let bookOfMormonCanEnterWeekly = true
+        static let catsCanEnterWeekly = false
+        static let dearEvanHansenCanEnterWeekly = false
+        static let groundhogDayCanEnterWeekly = true
+        static let hamiltonCanEnterWeekly = false
+        static let kinkyBootsCanEnterWeekly = true
+        static let lionKingCanEnterWeekly = false
+        static let greatCometCanEnterWeekly = false
+        static let onYourFeetCanEnterWeekly = false
+        static let phantomCanEnterWeekly = false
+        static let schoolOfRockCanEnterWeekly = false
+        static let warPaintCanEnterWeekly = false
+        static let wickedCanEnterWeekly = false
+    }
+    
     struct LotteryURLs{
         static let aladdinURL = "https://lottery.broadwaydirect.com/show/aladdin/"
         static let anastasiaURL = "http://www.anastasiabroadwaylottery.com"

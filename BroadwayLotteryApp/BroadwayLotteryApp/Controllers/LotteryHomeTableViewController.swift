@@ -57,15 +57,31 @@ class LotteryHomeTableViewController: UITableViewController {
         cell.delegate = self
         cell.index = index
         if let lotteryIsOpen = currentShow.lotteryIsOpen(){
-            if lotteryIsOpen == false{
-                print("setting label to lottery closed")
-                cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
-                 cell.enterNowButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            }else if lotteryIsOpen == true{
+            if currentShow.canEnterWeekly == false{
+                if lotteryIsOpen == false {
+                    print("setting label to lottery closed")
+                    cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
+                    cell.enterNowButton.layer.backgroundColor = UIColor.lightGray.cgColor
+                }else if lotteryIsOpen == true{
+                    cell.enterNowButton.setTitle("Enter Now", for: .normal)
+                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.26, green:0.57, blue:0.80, alpha:1.0).cgColor
+                        //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
+                }
+            }else{
                 cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
+                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.26, green:0.57, blue:0.80, alpha:1.0).cgColor
+                    //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
             }
+            
         }
+        if currentShow.canEnterWeekly{
+            cell.entryPeriodLabel.text = "Weekly"
+        }else{
+            cell.entryPeriodLabel.text = "Daily"
+        }
+        
+        
+        cell.backgroundColor = getAltColor(index: index)
         //test cell
         cell.enterNowButton.layer.cornerRadius = 2
 //        cell.enterNowButton.layer.borderWidth = 2.0
@@ -76,6 +92,33 @@ class LotteryHomeTableViewController: UITableViewController {
         configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
         
         return cell
+    }
+    
+//    func getColor(index: Int)-> UIColor{
+//        if index == 0{
+//            return UIColor(red:0.55, green:0.06, blue:0.79, alpha:1.0)
+//        }else if index == 1{
+//            return UIColor(red:0.92, green:0.53, blue:0.85, alpha:1.0)
+//        }else if index == 2{
+//            return UIColor(red:0.83, green:0.72, blue:0.31, alpha:1.0)
+//        }else if index == 3{
+//            return UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
+//        }else{
+//            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+//        }
+//    }
+//    
+    func getAltColor(index: Int) -> UIColor{
+        if index == 0{
+            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+        }else{
+            let even = index%2
+            if even == 0{
+                return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+            }else{
+                return UIColor(red:0.62, green:0.04, blue:0.04, alpha:1.0)
+            }
+        }
     }
     
     func configureLotteryLabels(openLabel: UILabel, closeLabel: UILabel, with show: Show){

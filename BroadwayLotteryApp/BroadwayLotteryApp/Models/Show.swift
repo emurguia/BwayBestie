@@ -17,14 +17,16 @@ class Show{
     let lotteryCloseMat: Date
     let lotteryURL: String
     var notificationsOn: Bool
+    let canEnterWeekly: Bool
     
-    init(title: String, lotteryOpen: Date, lotteryCloseEve: Date, lotteryCloseMat: Date, lotteryURL: String, notificationsOn: Bool) {
+    init(title: String, lotteryOpen: Date, lotteryCloseEve: Date, lotteryCloseMat: Date, lotteryURL: String, notificationsOn: Bool, canEnterWeekly: Bool) {
         self.title = title
         self.lotteryOpen = lotteryOpen
         self.lotteryCloseEve = lotteryCloseEve
         self.lotteryCloseMat = lotteryCloseMat
         self.lotteryURL = lotteryURL
         self.notificationsOn = notificationsOn
+        self.canEnterWeekly = canEnterWeekly
     }
     
     
