@@ -117,17 +117,17 @@ class LotteryHomeTableViewController: UITableViewController {
                 if hour! >= 13{
                     hour = hour! - 12
                 }
-                if crossedMidnight == true{
-                    timeModifier = " a.m."
-                }
+//                if crossedMidnight == true{
+//                    timeModifier = " a.m."
+//                }
             }else{
                 timeModifier = " a.m."
                 if hour! == 0{
                     hour = 12
                 }
-                if crossedMidnight == true{
-                    timeModifier = " p.m."
-                }
+//                if crossedMidnight == true{
+//                    timeModifier = " p.m."
+//                }
             }
             printHour = String(hour!)
         }

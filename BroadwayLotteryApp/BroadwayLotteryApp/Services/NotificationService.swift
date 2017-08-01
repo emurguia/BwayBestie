@@ -222,7 +222,7 @@ struct NotificationService{
                 //adjust time for time zones behind eastern
                 var newHour = dateComponents.hour! - hour
                 if newHour < 0{
-                    newHour = 12 + newHour
+                    newHour = 24 + newHour
                     crossedMidnight = true
                 }
                 newDateComponents.hour = newHour
