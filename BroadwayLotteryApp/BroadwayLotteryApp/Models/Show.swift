@@ -51,7 +51,7 @@ class Show{
             //convert to local time
             let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: lotteryOpenDateComponents, timeZone: TimeZone.autoupdatingCurrent)
             let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: lotteryCloseDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = conversionResultOpen.0?.hour, let lotteryOpenMinute = conversionResultOpen.0?.minute, let lotteryCloseHour = conversionResultClose.0?.hour, let lotteryCloseMinute = conversionResultClose.0?.minute{
+            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = conversionResultOpen?.hour, let lotteryOpenMinute = conversionResultOpen?.minute, let lotteryCloseHour = conversionResultClose?.hour, let lotteryCloseMinute = conversionResultClose?.minute{
                 
                 return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
             }

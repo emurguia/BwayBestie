@@ -37,7 +37,7 @@ struct NotificationService{
         let easternTimeZone = TimeZone(identifier: "America/New_York")
         if TimeZone.autoupdatingCurrent != easternTimeZone{
             let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponentsLocal = conversionResult.0 {
+            if let dateComponentsLocal = conversionResult {
                 trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
                                                         repeats: true)
             }
@@ -81,7 +81,7 @@ struct NotificationService{
         let easternTimeZone = TimeZone(identifier: "America/New_York")
         if TimeZone.autoupdatingCurrent != easternTimeZone{
             let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponentsLocal = conversionResult.0{
+            if let dateComponentsLocal = conversionResult{
                 trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
                                                         repeats: true)
             }
@@ -206,9 +206,8 @@ struct NotificationService{
      */
     
     //function to convert to local times 
-    static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> (DateComponents?, Bool){
+    static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> DateComponents?{
         var newDateComponents = DateComponents()
-        var crossedMidnight: Bool = false
         
         if let easternTimeZone = TimeZone(identifier: "America/New_York"){
             let easternSecondsFromGMT = easternTimeZone.secondsFromGMT()
@@ -223,26 +222,24 @@ struct NotificationService{
                 var newHour = dateComponents.hour! - hour
                 if newHour < 0{
                     newHour = 24 + newHour
-                    crossedMidnight = true
                 }
                 newDateComponents.hour = newHour
                 newDateComponents.minute = dateComponents.minute! - minutes
                 
-                return (newDateComponents, crossedMidnight)
+                return newDateComponents
             }else{
                 //adjust time for time zones ahead of eastern
                 var newHour = dateComponents.hour! + hour
                 if newHour > 24{
                     newHour = newHour - 24
-                    crossedMidnight = true
                 }
                 newDateComponents.hour = newHour
                 newDateComponents.minute = dateComponents.minute! + minutes
-                return (newDateComponents, crossedMidnight)
+                return newDateComponents
             }
         }
         
-        return (nil, crossedMidnight)
+        return nil
     }
     
     //function to set user defaults for each show

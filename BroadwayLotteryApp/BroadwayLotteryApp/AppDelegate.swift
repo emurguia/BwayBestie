@@ -52,12 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //get rid of notifications for expired shows
         let shows = ShowService.getShows()
-        for show in shows{
-            print(show.title)
-        }
+//        for show in shows{
+//            print(show.title)
+//        }
         
         center.getPendingNotificationRequests(completionHandler: { requests in
-            print("entered completion handler")
+           // print("entered completion handler")
             
             var ids = [String]()
             for request in requests{

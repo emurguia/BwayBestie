@@ -89,22 +89,22 @@ class LotteryHomeTableViewController: UITableViewController {
         if TimeZone.autoupdatingCurrent != easternTimeZone{
            //lottery open
             let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponents = conversionResultOpen.0 {
-                configureTime(dateComponents: dateComponents, label: openLabel, crossedMidnight: conversionResultOpen.1)
+            if let dateComponents = conversionResultOpen {
+                configureTime(dateComponents: dateComponents, label: openLabel)
             }
             
             //loterry close
             let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponents = conversionResultClose.0 {
-                configureTime(dateComponents: dateComponents, label: closeLabel, crossedMidnight: conversionResultClose.1)
+            if let dateComponents = conversionResultClose {
+                configureTime(dateComponents: dateComponents, label: closeLabel)
             }
         }else{
-            configureTime(dateComponents: openDateComponents, label: openLabel, crossedMidnight: false)
-            configureTime(dateComponents: closeDateComponents, label: closeLabel, crossedMidnight: false)
+            configureTime(dateComponents: openDateComponents, label: openLabel)
+            configureTime(dateComponents: closeDateComponents, label: closeLabel)
         }
     }
     
-    func configureTime(dateComponents: DateComponents, label: UILabel, crossedMidnight: Bool){
+    func configureTime(dateComponents: DateComponents, label: UILabel){
         var timeModifier: String = "a.m"
         var printMinutes: String = "0"
         var hour = dateComponents.hour
@@ -117,17 +117,11 @@ class LotteryHomeTableViewController: UITableViewController {
                 if hour! >= 13{
                     hour = hour! - 12
                 }
-//                if crossedMidnight == true{
-//                    timeModifier = " a.m."
-//                }
             }else{
                 timeModifier = " a.m."
                 if hour! == 0{
                     hour = 12
                 }
-//                if crossedMidnight == true{
-//                    timeModifier = " p.m."
-//                }
             }
             printHour = String(hour!)
         }
