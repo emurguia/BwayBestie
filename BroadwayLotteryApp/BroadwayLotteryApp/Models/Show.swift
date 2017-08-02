@@ -68,7 +68,7 @@ class Show{
         return nil
     }
     
-    //will probably need to return
+    //determine if lottery is currently open
     func checkLottery(currentHour: Int, currentMinute: Int, lotteryOpenHour: Int, lotteryOpenMinute: Int, lotteryCloseHour: Int, lotteryCloseMinute: Int) -> Bool{
         
         var lotteryIsOpen: Bool
@@ -77,44 +77,30 @@ class Show{
 //        print("lottery opens at \(lotteryOpenHour):\(lotteryOpenMinute)")
 //        print("lottery closes at \(lotteryCloseHour):\(lotteryCloseMinute)")
         
-//        Book of Mormon
-//        current time is 10:51
-//        lottery opens at 9:0
-//        lottery closes at 9:30
-//        lottery is OPEN
-        
-//        The Phantom of the Opera
-//        current time is 10:53
-//        lottery opens at 4:1
-//        lottery closes at 6:0
-//        lottery is OPEN
-//        
-        
-//        School of Rock
-//        current time is 10:53
-//        lottery opens at 9:1
-//        lottery closes at 11:0
-//        lottery is OPEN -- but setting label as Lottery Closed??
+
+        // EX:
         
         if currentHour >= lotteryCloseHour && currentHour < lotteryOpenHour {
             //lottery is closed
             lotteryIsOpen = false
-           // print("lottery is CLOSED")
             return lotteryIsOpen
         }else if currentHour >= lotteryCloseHour && currentHour > lotteryOpenHour{
             //ex. currently 10:00, opens at 4, closes at 6
-            lotteryIsOpen = false
-           // print("lottery is CLOSED")
-            return lotteryIsOpen
+            if lotteryOpenHour < lotteryCloseHour{
+                lotteryIsOpen = false
+                return lotteryIsOpen
+            }else{
+                //ex.lottery opens at 4:00 pm (16:00) , lottery closes at 5:30 am , current time is 5:47 pm  (17:47)
+                lotteryIsOpen = true
+                return lotteryIsOpen
+            }
         }else if currentHour < lotteryCloseHour && currentHour < lotteryOpenHour{
             //ex. currently 2:00, opens at 4, closes at 6
             lotteryIsOpen = false
-           // print("lottery is CLOSED")
             return lotteryIsOpen
         }else{
             //lottery is open
             lotteryIsOpen = true
-           // print("lottery is OPEN")
             return lotteryIsOpen
         }
     }
