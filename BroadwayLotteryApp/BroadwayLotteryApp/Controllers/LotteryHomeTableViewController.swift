@@ -52,14 +52,14 @@ class LotteryHomeTableViewController: UITableViewController {
        // let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
         let index = indexPath.row
         let currentShow = shows[index]
-        print(currentShow.title)
+        //print(currentShow.title)
         cell.showTitleLabel.text = currentShow.title
         cell.delegate = self
         cell.index = index
         if let lotteryIsOpen = currentShow.lotteryIsOpen(){
             if currentShow.canEnterWeekly == false{
                 if lotteryIsOpen == false {
-                    print("setting label to lottery closed")
+                    //print("setting label to lottery closed")
                     cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
                     cell.enterNowButton.layer.backgroundColor = UIColor.lightGray.cgColor
                 }else if lotteryIsOpen == true{

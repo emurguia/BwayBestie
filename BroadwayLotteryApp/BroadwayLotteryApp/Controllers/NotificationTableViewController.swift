@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotificationTableViewController: UITableViewController {
 
@@ -15,11 +16,35 @@ class NotificationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       checkNotificationStatus()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //check if user has enabled notifications for app
+    func checkNotificationStatus(){
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings(completionHandler: { (settings) in
+            if settings.authorizationStatus == .denied {
+                self.notificationsDisabledAlert()
+            }
+        })
+    }
+    
+    //display alert if notifications are disabled
+    func notificationsDisabledAlert(){
+        let alertController = UIAlertController(title: "Notifications Disabled", message: "Go to Settings -> Notifications -> BroadwayLotteryApp to enable notifications", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            //go back to settings page 
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
     }
 
     // MARK: - Table view data source
@@ -51,6 +76,7 @@ class NotificationTableViewController: UITableViewController {
         }
         
     }
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
@@ -92,7 +118,8 @@ class NotificationTableViewController: UITableViewController {
             fatalError("Error: unexpected indexPath")
         }
     }
-   
+
+
     func getNotificationDefault(currentShow: Show) -> Bool?{
         let defaults = UserDefaults.standard
         

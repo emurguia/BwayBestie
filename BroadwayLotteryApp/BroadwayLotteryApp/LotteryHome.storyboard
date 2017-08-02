@@ -358,17 +358,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enabled" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tx-Xl-PbG">
-                                                    <rect key="frame" x="261" y="17" width="76" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1Tx-Xl-PbG" secondAttribute="trailing" constant="5" id="cew-Kb-yhq"/>
                                                 <constraint firstItem="978-bC-n7L" firstAttribute="leading" secondItem="B6Y-l8-3Id" secondAttribute="leading" constant="30" id="jTY-gq-jg7"/>
-                                                <constraint firstItem="1Tx-Xl-PbG" firstAttribute="centerY" secondItem="B6Y-l8-3Id" secondAttribute="centerY" id="lSt-jY-ISe"/>
                                                 <constraint firstItem="978-bC-n7L" firstAttribute="centerY" secondItem="B6Y-l8-3Id" secondAttribute="centerY" id="weA-gR-Dp4"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -413,7 +405,6 @@
                     </tableView>
                     <connections>
                         <outlet property="autofillSwitch" destination="EOt-bV-dZ1" id="XJj-Qs-Cty"/>
-                        <outlet property="isEnabledLabel" destination="1Tx-Xl-PbG" id="VZq-dZ-aSf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avl-xP-M4z" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -39,13 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
                 if defaults.bool(forKey: Constants.UserDefaults.notificationsOn) == false{
-                    print("notifications granted")
+                   // print("notifications granted")
                     //NotificationService.setAllNotifications()
                     //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
                     defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
                 }
             }else{
-                print("notifications NOT granted")
+                //print("notifications NOT granted")
                 defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
             }
         }
@@ -111,12 +111,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         
         //testing
-        let center = UNUserNotificationCenter.current()
-        center.getPendingNotificationRequests(){ results in
-            for result in results{
-                print(result)
-            }
-        }
+//        let center = UNUserNotificationCenter.current()
+//        center.getPendingNotificationRequests(){ results in
+//            for result in results{
+//                print(result)
+//            }
+//        }
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -127,7 +127,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-       
+      
+        //((window.rootViewController as? UINavigationController)?.topViewController as? ViewController)?.myFunction()
+
+//        if let view = (window?.rootViewController as? UINavigationController)?.topViewController as? SettingsTableViewController{
+//            view.checkNotificationStatus()
+//            print("setting vc on top")
+//        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

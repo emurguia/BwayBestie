@@ -16,58 +16,32 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var isEnabledLabel: UILabel!
     @IBOutlet weak var autofillSwitch: UISwitch!
     let notificationsSwitch = UISwitch()
+    var notificationsEnabled: Bool?
+  //  var notificationsEnabled: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkNotificationStatus()
+        //checkNotificationStatus()
         autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
-      
-//        let notificationCenter = NotificationCenter.default
-//        notificationCenter.addObserver(self, selector: #selector(appBecameActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
-    
-    }
-    
-    func checkNotificationStatus(){
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings(completionHandler: { (settings) in
-            if settings.authorizationStatus == .denied {
-                //print("notifcations denied")
-                self.isEnabledLabel.text = "Disabled"
-            }
-            
-            if settings.authorizationStatus == .authorized {
-                //print("notifications authorized")
-                self.isEnabledLabel.text = "Enabled"
-            }
-        })
-        
-    }
-    
-    func appBecameActive(){
-        print("application did become active")
-        checkNotificationStatus()
-    }
-    
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "displayNotifications"{
-            if isEnabledLabel.text == "Disabled"{
-                //set up and present alert
-                let alertController = UIAlertController(title: "Notifications Disabled", message: "Go to Settings -> Notifications -> BroadwayLotteryApp to enable notifications", preferredStyle: .alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                }
-                alertController.addAction(OKAction)
-                present(alertController, animated: true)
-                
-                return false
-            }
-        }
-        return true
     }
 
-    
+//func checkNotificationStatus(){
+//    let center = UNUserNotificationCenter.current()
+//    center.getNotificationSettings(completionHandler: { (settings) in
+//        if settings.authorizationStatus == .denied {
+//            //print("notifcations denied")
+//            self.isEnabledLabel.text = "Disabled"
+//        }
+//        
+//        if settings.authorizationStatus == .authorized {
+//            //print("notifications authorized")
+//            self.isEnabledLabel.text = "Enabled"
+//        }
+//    })
+//    
+//}
+//    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -73,9 +73,9 @@ class Show{
         
         var lotteryIsOpen: Bool
         
-        print("current time is \(currentHour):\(currentMinute)")
-        print("lottery opens at \(lotteryOpenHour):\(lotteryOpenMinute)")
-        print("lottery closes at \(lotteryCloseHour):\(lotteryCloseMinute)")
+//        print("current time is \(currentHour):\(currentMinute)")
+//        print("lottery opens at \(lotteryOpenHour):\(lotteryOpenMinute)")
+//        print("lottery closes at \(lotteryCloseHour):\(lotteryCloseMinute)")
         
 //        Book of Mormon
 //        current time is 10:51
@@ -99,22 +99,22 @@ class Show{
         if currentHour >= lotteryCloseHour && currentHour < lotteryOpenHour {
             //lottery is closed
             lotteryIsOpen = false
-            print("lottery is CLOSED")
+           // print("lottery is CLOSED")
             return lotteryIsOpen
         }else if currentHour >= lotteryCloseHour && currentHour > lotteryOpenHour{
             //ex. currently 10:00, opens at 4, closes at 6
             lotteryIsOpen = false
-            print("lottery is CLOSED")
+           // print("lottery is CLOSED")
             return lotteryIsOpen
         }else if currentHour < lotteryCloseHour && currentHour < lotteryOpenHour{
             //ex. currently 2:00, opens at 4, closes at 6
             lotteryIsOpen = false
-            print("lottery is CLOSED")
+           // print("lottery is CLOSED")
             return lotteryIsOpen
         }else{
             //lottery is open
             lotteryIsOpen = true
-            print("lottery is OPEN")
+           // print("lottery is OPEN")
             return lotteryIsOpen
         }
     }
