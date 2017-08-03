@@ -8,4 +8,5 @@ target 'BroadwayLotteryApp' do
   # Pods for BroadwayLotteryApp
   pod 'IQKeyboardManagerSwift', '4.0.10'
   pod 'SwiftKeychainWrapper'
+  pod 'SideMenu'
 end

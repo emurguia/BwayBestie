@@ -9,8 +9,10 @@
 import UIKit
 import IQKeyboardManagerSwift
 import UserNotifications
+//import SlideMenuControllerSwift
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -28,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             storyboard = UIStoryboard(name: "Welcome", bundle: nil)
         }
+        
+        //slide menu 
+//        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        
+        
         
         let initialViewController = storyboard.instantiateInitialViewController()
         window?.rootViewController = initialViewController
@@ -92,7 +99,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //navigation bar appereance
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barStyle = UIBarStyle.black
-        navigationBarAppearace.isTranslucent = true
+        //navigationBarAppearace.isTranslucent = true
+        navigationBarAppearace.tintColor = UIColor.white
+        
 //        navigationBarAppearace.tintColor = UIColor.white
 //        navigationBarAppearace.barTintColor = UIColor.lightGray
 //        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
