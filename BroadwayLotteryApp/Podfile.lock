@@ -1,18 +1,21 @@
 PODS:
   - IQKeyboardManagerSwift (4.0.10)
   - SideMenu (2.3.2)
+  - SideMenuController (0.2.4)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (= 4.0.10)
   - SideMenu
+  - SideMenuController
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 4c97f8d3b65bcded530a039926f24e4c412bebe0
+PODFILE CHECKSUM: 51286941ce4b543a3bf3a74933d87356755a69fd
 
 COCOAPODS: 1.2.1

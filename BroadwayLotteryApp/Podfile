@@ -9,4 +9,5 @@ target 'BroadwayLotteryApp' do
   pod 'IQKeyboardManagerSwift', '4.0.10'
   pod 'SwiftKeychainWrapper'
   pod 'SideMenu'
+  pod 'SideMenuController'
 end

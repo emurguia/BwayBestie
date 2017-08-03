@@ -13,7 +13,7 @@ class NotificationTableViewController: UITableViewController {
 
     //MARK: Properties
     let shows = ShowService.getShows()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

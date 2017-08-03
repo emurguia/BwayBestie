@@ -19,6 +19,9 @@ class SettingsTableViewController: UITableViewController {
     var notificationsEnabled: Bool?
   //  var notificationsEnabled: Bool?
     
+    let cacheIdentifier = "NotificationHomeViewController"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

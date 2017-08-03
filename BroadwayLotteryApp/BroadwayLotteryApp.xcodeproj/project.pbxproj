@@ -25,6 +25,9 @@
 		FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D841F20001D005083C1 /* SettingCell.swift */; };
 		FD9E9D871F2006FB005083C1 /* EditInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */; };
 		FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D881F201FB9005083C1 /* NotificationService.swift */; };
+		FDA795D41F33C9C100A17231 /* CustomSideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */; };
+		FDA795D61F33CA6D00A17231 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D51F33CA6D00A17231 /* SideViewController.swift */; };
+		FDA795D81F33D6F300A17231 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */; };
 		FDB19C731F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */; };
 		FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */; };
 		FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB231F1D2E740073FD3D /* ShowCell.swift */; };
@@ -66,6 +69,9 @@
 		FD9E9D841F20001D005083C1 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCell.swift; path = Views/SettingCell.swift; sourceTree = "<group>"; };
 		FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditInfoCell.swift; path = Views/EditInfoCell.swift; sourceTree = "<group>"; };
 		FD9E9D881F201FB9005083C1 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = Services/NotificationService.swift; sourceTree = "<group>"; };
+		FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSideMenuController.swift; path = Controllers/CustomSideMenuController.swift; sourceTree = "<group>"; };
+		FDA795D51F33CA6D00A17231 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideViewController.swift; path = Controllers/SideViewController.swift; sourceTree = "<group>"; };
+		FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsTableViewController.swift; path = Controllers/QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserInfoTableViewController.swift; path = Controllers/EditUserInfoTableViewController.swift; sourceTree = "<group>"; };
 		FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		FDB3FB231F1D2E740073FD3D /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCell.swift; path = Views/ShowCell.swift; sourceTree = "<group>"; };
@@ -161,13 +167,16 @@
 		FD1A90571F0EEB26005EDBC9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */,
+				FDA795D51F33CA6D00A17231 /* SideViewController.swift */,
+				FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */,
+				FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */,
 				FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */,
-				FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */,
 				FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */,
-				FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */,
+				FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */,
 				FDFEE74A1F14324800FE59E4 /* ViewController.swift */,
+				FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */,
 				FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */,
+				FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */,
 				FDFEE7461F1431AB00FE59E4 /* CollectUserInfoViewController.swift */,
 			);
 			name = Controllers;
@@ -400,6 +409,7 @@
 				FDB19C731F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift in Sources */,
 				FDFEE7471F1431AB00FE59E4 /* CollectUserInfoViewController.swift in Sources */,
 				FDB3FB3F1F1D7CF70073FD3D /* SwiftWebVCActivity.swift in Sources */,
+				FDA795D81F33D6F300A17231 /* QuestionsTableViewController.swift in Sources */,
 				FD9E9D831F1FF2D8005083C1 /* ShowNotificationCell.swift in Sources */,
 				FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */,
 				FD90A8AC1F158FBC00914980 /* LotteryHomeTableViewController.swift in Sources */,
@@ -413,7 +423,9 @@
 				FD90A8A91F1583CB00914980 /* Show.swift in Sources */,
 				FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */,
 				FDFEE74D1F14336900FE59E4 /* GetStartedViewController.swift in Sources */,
+				FDA795D41F33C9C100A17231 /* CustomSideMenuController.swift in Sources */,
 				FD9E9D811F1FDB17005083C1 /* SettingsTableViewController.swift in Sources */,
+				FDA795D61F33CA6D00A17231 /* SideViewController.swift in Sources */,
 				FD90A8A41F15466000914980 /* Constants.swift in Sources */,
 				FD9E9D871F2006FB005083C1 /* EditInfoCell.swift in Sources */,
 				FDB3FB401F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift in Sources */,

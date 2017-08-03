@@ -9,7 +9,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import UserNotifications
-//import SlideMenuControllerSwift
+import SideMenuController
+
 
 @UIApplicationMain
 
@@ -30,10 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             storyboard = UIStoryboard(name: "Welcome", bundle: nil)
         }
-        
-        //slide menu 
-//        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-        
         
         
         let initialViewController = storyboard.instantiateInitialViewController()
@@ -106,6 +103,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        navigationBarAppearace.barTintColor = UIColor.lightGray
 //        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        
+        //side menu 
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "hamburger_menu")
+        SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
+        SideMenuController.preferences.drawing.sidePanelWidth = 300
+        SideMenuController.preferences.drawing.centerPanelShadow = true
+        SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
         
         return true
     }
