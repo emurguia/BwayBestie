@@ -56,61 +56,56 @@ class LotteryHomeTableViewController: UITableViewController {
         cell.showTitleLabel.text = currentShow.title
         cell.delegate = self
         cell.index = index
+        //set lottery time labels
+        configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
+
+        cell.backgroundColor = getAltColor(index: index)
+        cell.enterNowButton.layer.cornerRadius = 2
+        
         if let lotteryIsOpen = currentShow.lotteryIsOpen(){
             if currentShow.canEnterWeekly == false{
                 if lotteryIsOpen == false {
                     //print("setting label to lottery closed")
                     cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
-                    cell.enterNowButton.layer.backgroundColor = UIColor.lightGray.cgColor
+                    //cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
+                    cell.enterNowButton.setTitleColor(UIColor(red:0.81, green:0.73, blue:0.65, alpha:1.0), for: .normal)
+                    //cell.enterNowButton.layer.backgroundColor = UIColor(red:0.45, green:0.29, blue:0.11, alpha:1.0).cgColor
+                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.46, green:0.42, blue:0.37, alpha:1.0).cgColor
                 }else if lotteryIsOpen == true{
                     cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.26, green:0.57, blue:0.80, alpha:1.0).cgColor
+                    //cell.enterNowButton.layer.backgroundColor = UIColor(red:1.00, green:0.67, blue:0.06, alpha:1.0).cgColor
+                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
+                    cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
                         //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
                 }
             }else{
                 cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.26, green:0.57, blue:0.80, alpha:1.0).cgColor
+                //cell.enterNowButton.layer.backgroundColor = UIColor(red:1.00, green:0.67, blue:0.06, alpha:1.0).cgColor
+                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
+                cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
                     //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
             }
             
         }
         if currentShow.canEnterWeekly{
-            cell.entryPeriodLabel.text = "Weekly"
+            cell.entryPeriodLabel.text = "Enter up to a week in advance"
+            cell.lotteryCloseLabel.isHidden = true
+            cell.lotteryOpenLabel.isHidden = true
+            cell.toLabel.isHidden = true
         }else{
             cell.entryPeriodLabel.text = "Daily"
+            cell.lotteryCloseLabel.isHidden = false
+            cell.lotteryOpenLabel.isHidden = false
+            cell.toLabel.isHidden = false
         }
-        
-        
-        cell.backgroundColor = getAltColor(index: index)
-        //test cell
-        cell.enterNowButton.layer.cornerRadius = 2
-//        cell.enterNowButton.layer.borderWidth = 2.0
-//        cell.enterNowButton.layer.borderColor = UIColor.lightGray.cgColor
-        //cell.showImage.image = UIImage(contentsOfFile: "Aladdin_digitallottery_980x1502")
-        
-        //set lottery time labels
-        configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
-        
+    
         return cell
     }
-//    
-//    func getColor(index: Int)-> UIColor{
-//        if index == 0{
-//            return UIColor(red:0.55, green:0.06, blue:0.79, alpha:1.0)
-//        }else if index == 1{
-//            return UIColor(red:0.92, green:0.53, blue:0.85, alpha:1.0)
-//        }else if index == 2{
-//            return UIColor(red:0.83, green:0.72, blue:0.31, alpha:1.0)
-//        }else if index == 3{
-//            return UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
-//        }else{
-//            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
-//        }
-//    }
+
     
     func getAltColor(index: Int) -> UIColor{
         if index == 0{
-           return UIColor(red:0.74, green:0.15, blue:0.15, alpha:1.0) //firebrick
+           return UIColor(red:0.74, green:0.15, blue:0.15, alpha:1.0)
         }else{
             let even = index%2
             if even == 0{
@@ -207,15 +202,6 @@ class LotteryHomeTableViewController: UITableViewController {
 
 }
 
-extension LotteryHomeTableViewController: ShowCellDelegate{
-    
-    func didTapEnterButton(_ likeButton: UIButton, on cell: ShowCell){
-        let currentShow = shows[cell.index]
-        let webVC = SwiftWebVC(urlString: currentShow.lotteryURL)
-        self.navigationController?.pushViewController(webVC, animated: true)
-    }
-   
-}
 
 extension LotteryHomeTableViewController: ShowCellTestDelegate{
     func didPressEnterButton(_ likeButton: UIButton, on cell: ShowTestCell){

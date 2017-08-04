@@ -29,7 +29,6 @@
 		FDA795D61F33CA6D00A17231 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D51F33CA6D00A17231 /* SideViewController.swift */; };
 		FDB19C731F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */; };
 		FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */; };
-		FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB231F1D2E740073FD3D /* ShowCell.swift */; };
 		FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB3FB281F1D7CF70073FD3D /* Media.xcassets */; };
 		FDB3FB3C1F1D7CF70073FD3D /* SwiftWebVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDB3FB2A1F1D7CF70073FD3D /* SwiftWebVC.strings */; };
 		FDB3FB3D1F1D7CF70073FD3D /* SwiftModalWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB361F1D7CF70073FD3D /* SwiftModalWebVC.swift */; };
@@ -70,7 +69,6 @@
 		FDA795D51F33CA6D00A17231 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideViewController.swift; path = Controllers/SideViewController.swift; sourceTree = "<group>"; };
 		FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserInfoTableViewController.swift; path = Controllers/EditUserInfoTableViewController.swift; sourceTree = "<group>"; };
 		FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
-		FDB3FB231F1D2E740073FD3D /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCell.swift; path = Views/ShowCell.swift; sourceTree = "<group>"; };
 		FDB3FB281F1D7CF70073FD3D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FDB3FB2B1F1D7CF70073FD3D /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SwiftWebVC.strings; sourceTree = "<group>"; };
 		FDB3FB2C1F1D7CF70073FD3D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SwiftWebVC.strings; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				FD9E9D841F20001D005083C1 /* SettingCell.swift */,
 				FD9E9D861F2006FB005083C1 /* EditInfoCell.swift */,
 				FD9E9D821F1FF2D8005083C1 /* ShowNotificationCell.swift */,
-				FDB3FB231F1D2E740073FD3D /* ShowCell.swift */,
 				FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */,
 				FD6B64BF1F2FAC6E0026AEA9 /* AllShowsNotificationCell.swift */,
 			);
@@ -405,7 +402,6 @@
 				FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */,
 				FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */,
 				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,
-				FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */,
 				FD4C7F0A1F2BEAEC0038A093 /* ShowTestCell.swift in Sources */,
 				FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */,
 				FD90A8A91F1583CB00914980 /* Show.swift in Sources */,

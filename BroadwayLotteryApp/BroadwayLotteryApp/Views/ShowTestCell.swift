@@ -14,16 +14,15 @@ protocol ShowCellTestDelegate: class{
 
 class ShowTestCell: UITableViewCell{
     
-    
     @IBOutlet weak var showTitleLabel: UILabel!
     @IBOutlet weak var lotteryOpenLabel: UILabel!
     @IBOutlet weak var lotteryCloseLabel: UILabel!
-    var index: Int = -1
     @IBOutlet weak var enterNowButton: UIButton!
-   // @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var showImage: UIImageView!
-    weak var delegate: ShowCellTestDelegate?
     @IBOutlet weak var entryPeriodLabel: UILabel!
+    @IBOutlet weak var toLabel: UILabel!
+    
+    weak var delegate: ShowCellTestDelegate?
+    var index: Int = -1
     
     @IBAction func enterNowButtonPressed(_ sender: UIButton) {
         delegate?.didPressEnterButton(sender, on: self)
