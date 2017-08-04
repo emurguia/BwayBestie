@@ -30,7 +30,7 @@ class Show{
     }
     
     
-    //function to determine if the lottery is currently open -- will probably need a return value
+    //function to determine if the lottery is currently open
     func lotteryIsOpen() -> Bool?{
         let currentDate = Date()
         var dateComponents = DateComponents()
@@ -48,21 +48,26 @@ class Show{
         lotteryCloseDateComponents.minute = Calendar.current.component(.minute, from: lotteryCloseEve)
         
         
-        let easternTimeZone = TimeZone(identifier: "America/New_York")
-        if TimeZone.autoupdatingCurrent != easternTimeZone{
-            //convert to local time
-            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: lotteryOpenDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: lotteryCloseDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = conversionResultOpen?.hour, let lotteryOpenMinute = conversionResultOpen?.minute, let lotteryCloseHour = conversionResultClose?.hour, let lotteryCloseMinute = conversionResultClose?.minute{
-                
-                return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
-            }
-        }else{
-            //no conversion necessary
-            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = lotteryOpenDateComponents.hour, let lotteryOpenMinute = lotteryOpenDateComponents.minute, let lotteryCloseHour = lotteryCloseDateComponents.hour, let lotteryCloseMinute = lotteryCloseDateComponents.minute{
-                
-                return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
-            }
+//        let easternTimeZone = TimeZone(identifier: "America/New_York")
+//        if TimeZone.autoupdatingCurrent != easternTimeZone{
+//            //convert to local time
+//            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: lotteryOpenDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+//            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: lotteryCloseDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+//            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = conversionResultOpen?.hour, let lotteryOpenMinute = conversionResultOpen?.minute, let lotteryCloseHour = conversionResultClose?.hour, let lotteryCloseMinute = conversionResultClose?.minute{
+//                
+//                return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
+//            }
+//        }else{
+//            //no conversion necessary
+//            if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = lotteryOpenDateComponents.hour, let lotteryOpenMinute = lotteryOpenDateComponents.minute, let lotteryCloseHour = lotteryCloseDateComponents.hour, let lotteryCloseMinute = lotteryCloseDateComponents.minute{
+//                
+//                return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
+//            }
+//        }
+//        
+        if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = lotteryOpenDateComponents.hour, let lotteryOpenMinute = lotteryOpenDateComponents.minute, let lotteryCloseHour = lotteryCloseDateComponents.hour, let lotteryCloseMinute = lotteryCloseDateComponents.minute{
+            
+            return checkLottery(currentHour: currentHour, currentMinute: currentMinute, lotteryOpenHour: lotteryOpenHour, lotteryOpenMinute: lotteryOpenMinute, lotteryCloseHour: lotteryCloseHour, lotteryCloseMinute: lotteryCloseMinute)
         }
         
         return nil

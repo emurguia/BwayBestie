@@ -132,23 +132,26 @@ class LotteryHomeTableViewController: UITableViewController {
         closeDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryCloseEve)
         
         //check if need to convert local time
-        let easternTimeZone = TimeZone(identifier: "America/New_York")
-        if TimeZone.autoupdatingCurrent != easternTimeZone{
-           //lottery open
-            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponents = conversionResultOpen {
-                configureTime(dateComponents: dateComponents, label: openLabel)
-            }
-            
-            //loterry close
-            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-            if let dateComponents = conversionResultClose {
-                configureTime(dateComponents: dateComponents, label: closeLabel)
-            }
-        }else{
-            configureTime(dateComponents: openDateComponents, label: openLabel)
-            configureTime(dateComponents: closeDateComponents, label: closeLabel)
-        }
+//        let easternTimeZone = TimeZone(identifier: "America/New_York")
+//        if TimeZone.autoupdatingCurrent != easternTimeZone{
+//           //lottery open
+//            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+//            if let dateComponents = conversionResultOpen {
+//                configureTime(dateComponents: dateComponents, label: openLabel)
+//            }
+//            
+//            //loterry close
+//            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent)
+//            if let dateComponents = conversionResultClose {
+//                configureTime(dateComponents: dateComponents, label: closeLabel)
+//            }
+//        }else{
+//            configureTime(dateComponents: openDateComponents, label: openLabel)
+//            configureTime(dateComponents: closeDateComponents, label: closeLabel)
+//        }
+//        
+        configureTime(dateComponents: openDateComponents, label: openLabel)
+        configureTime(dateComponents: closeDateComponents, label: closeLabel)
     }
     
     func configureTime(dateComponents: DateComponents, label: UILabel){
