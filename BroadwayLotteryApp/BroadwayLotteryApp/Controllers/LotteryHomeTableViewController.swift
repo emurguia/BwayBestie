@@ -93,30 +93,30 @@ class LotteryHomeTableViewController: UITableViewController {
         
         return cell
     }
-    
-    func getColor(index: Int)-> UIColor{
-        if index == 0{
-            return UIColor(red:0.55, green:0.06, blue:0.79, alpha:1.0)
-        }else if index == 1{
-            return UIColor(red:0.92, green:0.53, blue:0.85, alpha:1.0)
-        }else if index == 2{
-            return UIColor(red:0.83, green:0.72, blue:0.31, alpha:1.0)
-        }else if index == 3{
-            return UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
-        }else{
-            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
-        }
-    }
+//    
+//    func getColor(index: Int)-> UIColor{
+//        if index == 0{
+//            return UIColor(red:0.55, green:0.06, blue:0.79, alpha:1.0)
+//        }else if index == 1{
+//            return UIColor(red:0.92, green:0.53, blue:0.85, alpha:1.0)
+//        }else if index == 2{
+//            return UIColor(red:0.83, green:0.72, blue:0.31, alpha:1.0)
+//        }else if index == 3{
+//            return UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
+//        }else{
+//            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+//        }
+//    }
     
     func getAltColor(index: Int) -> UIColor{
         if index == 0{
-            return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+           return UIColor(red:0.74, green:0.15, blue:0.15, alpha:1.0) //firebrick
         }else{
             let even = index%2
             if even == 0{
-                return UIColor(red:0.71, green:0.23, blue:0.23, alpha:1.0)
+                return UIColor(red:0.74, green:0.15, blue:0.15, alpha:1.0)
             }else{
-                return UIColor(red:0.62, green:0.04, blue:0.04, alpha:1.0)
+                return UIColor(red:0.67, green:0.00, blue:0.00, alpha:1.0)
             }
         }
     }

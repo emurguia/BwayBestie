@@ -11,7 +11,7 @@ import SideMenuController
 
 class SideViewController: UITableViewController{
     
-    let segues = ["lotteryHomeSegue", "settingsHomeSegue", "questionsSegue"]
+    let segues = ["lotteryHomeSegue", "notificationsSegue", "editInformationSegue"]
     //let dataSource = [FCViewController.self, SCViewController.self, TCViewController.self] as [Any]
 
     //let dataSource = [LotteryNavigationViewController.self, SettingsNavigationViewController.self, QuestionsNavigationViewController.self]
