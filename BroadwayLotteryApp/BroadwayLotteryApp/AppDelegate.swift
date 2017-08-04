@@ -95,9 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //navigation bar appereance
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.barStyle = UIBarStyle.black
-        //navigationBarAppearace.isTranslucent = true
+        //navigationBarAppearace.barStyle = UIBarStyle.black
+        navigationBarAppearace.isTranslucent = true
+        navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.00, blue:0.00, alpha:1.0)
         navigationBarAppearace.tintColor = UIColor.white
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        //navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         
 //        navigationBarAppearace.tintColor = UIColor.white
 //        navigationBarAppearace.barTintColor = UIColor.lightGray
@@ -105,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //side menu 
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "hamburger_menu")
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "Hamburger_Menusidespace")
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 300
         SideMenuController.preferences.drawing.centerPanelShadow = true
