@@ -51,10 +51,11 @@ class SideViewController: UITableViewController{
 //            sideMenuController?.embed(centerViewController: controllerType.init(), cacheIdentifier: cacheIdentifier)
 //        }
 
-        
-        
-        sideMenuController?.performSegue(withIdentifier: segues[indexPath.row], sender: nil)
-        previousIndex = indexPath as NSIndexPath?
+        if !(indexPath.row == 0){
+            sideMenuController?.performSegue(withIdentifier: segues[indexPath.row - 1], sender: nil)
+            previousIndex = indexPath as NSIndexPath?
+            
+        }
     }
 
     
