@@ -107,7 +107,7 @@ class CollectUserInfoViewController: UITableViewController {
         defaults.set(true, forKey: Constants.UserDefaults.isLoggedIn)
         
         //set autofill to be on
-        defaults.set(true, forKey: Constants.UserDefaults.autofillOn)
+        // defaults.set(true, forKey: Constants.UserDefaults.autofillOn)
         
         //present Home storyboard 
         let storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)

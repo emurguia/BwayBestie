@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //checkNotificationStatus()
-        autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
+      //  autofillSwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn)
     }
 
 //func checkNotificationStatus(){
@@ -57,7 +57,7 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func autofillSwitchValueDidChange(_ sender: UISwitch) {
         let defaults = UserDefaults.standard
-        defaults.set(sender.isOn, forKey: Constants.UserDefaults.autofillOn)
+      //  defaults.set(sender.isOn, forKey: Constants.UserDefaults.autofillOn)
     }
     
     

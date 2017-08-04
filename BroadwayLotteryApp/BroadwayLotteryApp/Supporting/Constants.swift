@@ -28,7 +28,7 @@ struct Constants{
         
         static let notificationsOn = "notificationsOn"
         static let closeNotificationsOn = "closeNotificationsOn"
-        static let autofillOn = "autofillOn"
+        //static let autofillOn = "autofillOn"
         
         static let aladdinNotifications = "aladdinNotifications"
         static let anastasiaNotifications = "anastasiaNotifications"

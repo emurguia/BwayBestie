@@ -27,7 +27,6 @@
 		FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E9D881F201FB9005083C1 /* NotificationService.swift */; };
 		FDA795D41F33C9C100A17231 /* CustomSideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */; };
 		FDA795D61F33CA6D00A17231 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D51F33CA6D00A17231 /* SideViewController.swift */; };
-		FDA795D81F33D6F300A17231 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */; };
 		FDB19C731F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */; };
 		FDB3FB1F1F1D1F040073FD3D /* ShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */; };
 		FDB3FB241F1D2E740073FD3D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB231F1D2E740073FD3D /* ShowCell.swift */; };
@@ -41,8 +40,6 @@
 		FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */; };
 		FDFEE7451F14318B00FE59E4 /* CollectUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFEE7441F14318B00FE59E4 /* CollectUserInfo.storyboard */; };
 		FDFEE7471F1431AB00FE59E4 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE7461F1431AB00FE59E4 /* CollectUserInfoViewController.swift */; };
-		FDFEE7491F14324100FE59E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFEE7481F14324100FE59E4 /* Main.storyboard */; };
-		FDFEE74B1F14324800FE59E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE74A1F14324800FE59E4 /* ViewController.swift */; };
 		FDFEE74D1F14336900FE59E4 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +68,6 @@
 		FD9E9D881F201FB9005083C1 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = Services/NotificationService.swift; sourceTree = "<group>"; };
 		FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSideMenuController.swift; path = Controllers/CustomSideMenuController.swift; sourceTree = "<group>"; };
 		FDA795D51F33CA6D00A17231 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideViewController.swift; path = Controllers/SideViewController.swift; sourceTree = "<group>"; };
-		FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsTableViewController.swift; path = Controllers/QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditUserInfoTableViewController.swift; path = Controllers/EditUserInfoTableViewController.swift; sourceTree = "<group>"; };
 		FDB3FB1E1F1D1F040073FD3D /* ShowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowService.swift; sourceTree = "<group>"; };
 		FDB3FB231F1D2E740073FD3D /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowCell.swift; path = Views/ShowCell.swift; sourceTree = "<group>"; };
@@ -95,8 +91,6 @@
 		FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewController.swift; path = Controllers/NotificationTableViewController.swift; sourceTree = "<group>"; };
 		FDFEE7441F14318B00FE59E4 /* CollectUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CollectUserInfo.storyboard; path = Storyboards/CollectUserInfo.storyboard; sourceTree = "<group>"; };
 		FDFEE7461F1431AB00FE59E4 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectUserInfoViewController.swift; path = Controllers/CollectUserInfoViewController.swift; sourceTree = "<group>"; };
-		FDFEE7481F14324100FE59E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
-		FDFEE74A1F14324800FE59E4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetStartedViewController.swift; path = Controllers/GetStartedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,11 +163,9 @@
 			children = (
 				FDA795D51F33CA6D00A17231 /* SideViewController.swift */,
 				FDA795D31F33C9C100A17231 /* CustomSideMenuController.swift */,
-				FDA795D71F33D6F300A17231 /* QuestionsTableViewController.swift */,
 				FD9E9D801F1FDB17005083C1 /* SettingsTableViewController.swift */,
 				FD90A8AB1F158FBC00914980 /* LotteryHomeTableViewController.swift */,
 				FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */,
-				FDFEE74A1F14324800FE59E4 /* ViewController.swift */,
 				FDFEE74C1F14336900FE59E4 /* GetStartedViewController.swift */,
 				FD1A905B1F0EF25E005EDBC9 /* WelcomePageViewController.swift */,
 				FDB19C721F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift */,
@@ -186,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				FD90A8A61F1572AB00914980 /* LotteryHome.storyboard */,
-				FDFEE7481F14324100FE59E4 /* Main.storyboard */,
 				FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */,
 				FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */,
 				FDFEE7441F14318B00FE59E4 /* CollectUserInfo.storyboard */,
@@ -337,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */,
-				FDFEE7491F14324100FE59E4 /* Main.storyboard in Resources */,
 				FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */,
 				FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */,
 				FDFEE7451F14318B00FE59E4 /* CollectUserInfo.storyboard in Resources */,
@@ -409,11 +399,9 @@
 				FDB19C731F2A58B800B3E4F2 /* EditUserInfoTableViewController.swift in Sources */,
 				FDFEE7471F1431AB00FE59E4 /* CollectUserInfoViewController.swift in Sources */,
 				FDB3FB3F1F1D7CF70073FD3D /* SwiftWebVCActivity.swift in Sources */,
-				FDA795D81F33D6F300A17231 /* QuestionsTableViewController.swift in Sources */,
 				FD9E9D831F1FF2D8005083C1 /* ShowNotificationCell.swift in Sources */,
 				FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */,
 				FD90A8AC1F158FBC00914980 /* LotteryHomeTableViewController.swift in Sources */,
-				FDFEE74B1F14324800FE59E4 /* ViewController.swift in Sources */,
 				FD9E9D891F201FB9005083C1 /* NotificationService.swift in Sources */,
 				FD9E9D851F20001D005083C1 /* SettingCell.swift in Sources */,
 				FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */,

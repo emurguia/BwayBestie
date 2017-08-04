@@ -309,7 +309,7 @@ extension SwiftWebVC: WKNavigationDelegate {
     public func autofill(){
         //only autofill is autofill setting is on
         
-        if UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn) == true {
+       // if UserDefaults.standard.bool(forKey: Constants.UserDefaults.autofillOn) == true {
             //get user info from key chain
             let firstNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.firstName)
             let lastNameTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.lastName)
@@ -348,7 +348,7 @@ extension SwiftWebVC: WKNavigationDelegate {
                     }
                 }
             }
-        }
+       // }
     }
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
