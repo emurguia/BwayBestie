@@ -54,6 +54,7 @@ class LotteryHomeTableViewController: UITableViewController {
         let currentShow = shows[index]
         //print(currentShow.title)
         cell.showTitleLabel.text = currentShow.title
+       // cell.showTitleLabel.font = UIFont(name: "OpenSans-Semibold", size: 28)
         cell.delegate = self
         cell.index = index
         //set lottery time labels
