@@ -40,7 +40,10 @@ class NotificationTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Notifications Disabled", message: "Go to Settings -> Notifications -> BroadwayLotteryApp to enable notifications", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action) in
             //go back to settings page 
-            self.navigationController?.popViewController(animated: true)
+//            self.navigationController?.popViewController(animated: true)
+            
+            self.sideMenuController?.performSegue(withIdentifier: "lotteryHomeSegue", sender: nil)
+
         }
         
         alertController.addAction(dismissAction)

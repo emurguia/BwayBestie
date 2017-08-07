@@ -68,10 +68,8 @@ class LotteryHomeTableViewController: UITableViewController {
                 if lotteryIsOpen == false {
                     //print("setting label to lottery closed")
                     cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
-                    //cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
-                    cell.enterNowButton.setTitleColor(UIColor(red:0.81, green:0.73, blue:0.65, alpha:1.0), for: .normal)
-                    //cell.enterNowButton.layer.backgroundColor = UIColor(red:0.45, green:0.29, blue:0.11, alpha:1.0).cgColor
-                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.46, green:0.42, blue:0.37, alpha:1.0).cgColor
+                    cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
+                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.38, green:0.38, blue:0.38, alpha:1.0).cgColor
                 }else if lotteryIsOpen == true{
                     cell.enterNowButton.setTitle("Enter Now", for: .normal)
                     //cell.enterNowButton.layer.backgroundColor = UIColor(red:1.00, green:0.67, blue:0.06, alpha:1.0).cgColor
@@ -146,6 +144,29 @@ class LotteryHomeTableViewController: UITableViewController {
 //            configureTime(dateComponents: closeDateComponents, label: closeLabel)
 //        }
 //        
+//        let calendar = Calendar.current
+//        let testOpenDate = calendar.date(from: openDateComponents)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.timeStyle = DateFormatter.Style.short
+//        dateFormatter.dateStyle = DateFormatter.Style.none
+//        let localtimeZone = TimeZone.autoupdatingCurrent
+//        DateFormatter.timeZone = NSTimeZone()
+//        let localDate = dateFormatter.stringFromDate(testOpenDate)
+//        let testCal = Calendar.
+//        
+//        let date = NSDate();
+//        let dateFormatter = NSDateFormatter()
+//        //To prevent displaying either date or time, set the desired style to NoStyle.
+//        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
+//        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
+//        dateFormatter.timeZone = NSTimeZone()
+//        let localDate = dateFormatter.stringFromDate(date)
+//        
+//        println("UTC Time")
+//        println(date)
+//        println("Local Time")
+//        println(localDate)
+        
         configureTime(dateComponents: openDateComponents, label: openLabel)
         configureTime(dateComponents: closeDateComponents, label: closeLabel)
     }

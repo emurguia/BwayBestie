@@ -93,8 +93,8 @@ struct Constants{
             var dateComponents = DateComponents()
             dateComponents.hour = hour
             dateComponents.minute = minutes
+//            dateComponents.timeZone = TimeZone.autoupdatingCurrent
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
-
             return nextOccurance
         }
     }

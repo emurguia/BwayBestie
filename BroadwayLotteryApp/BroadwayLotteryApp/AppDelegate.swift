@@ -101,9 +101,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.isTranslucent = true
         navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.00, blue:0.00, alpha:1.0)
         navigationBarAppearace.tintColor = UIColor.white
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        //navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
-        
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "OpenSans", size: 16)!]
+
+        let attr = NSDictionary(object: UIFont(name: "OpenSans", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
+        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+
 //        navigationBarAppearace.tintColor = UIColor.white
 //        navigationBarAppearace.barTintColor = UIColor.lightGray
 //        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
