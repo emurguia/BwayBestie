@@ -125,6 +125,21 @@ class EditUserInfoTableViewController: UITableViewController {
         }
         
         //return user to settings screen 
+        sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.70,
+                       initialSpringVelocity: 4.50,
+                       options: .allowUserInteraction,
+                       animations: {  [] in
+                            sender.transform = .identity
+            },
+                       completion: nil)
+        
+        UIView.transition(with: sender, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            sender.setTitle("Saved", for: .normal)
+        }, completion: nil)
     }
 
 
