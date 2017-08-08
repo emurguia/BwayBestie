@@ -15,6 +15,21 @@ struct NotificationService{
      * ENABLING
      */
     
+    static func setNotificationID(identifer: String){
+        let shows = ShowService.getShows()
+        for show in shows{
+            if identifer.contains(show.title){
+                if identifer.contains("close"){
+                    print("setting close notification for \(show.title)")
+                    setCloseShowNotification(currentShow: show)
+                }else{
+                    print("setting open notification for \(show.title)")
+                    setOpenShowNotification(currentShow: show)
+                }
+            }
+        }
+    }
+    
     //enable open notification for one show
     static func setOpenShowNotification(currentShow: Show){
         //set up content
@@ -32,18 +47,6 @@ struct NotificationService{
         dateComponents.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        //check timezone
-//        let easternTimeZone = TimeZone(identifier: "America/New_York")
-//        //ISSUE: TimeZone.autoupdatingCurrent only compares equal to itself
-//        if TimeZone.autoupdatingCurrent != easternTimeZone{
-//            let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
-//            if let dateComponentsLocal = conversionResult {
-//                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
-//                                                        repeats: true)
-//            }
-//        }
-    
       
         //schedule
         //change back to + "open"
@@ -77,16 +80,6 @@ struct NotificationService{
         dateComponents.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        //check timezone
-//        let easternTimeZone = TimeZone(identifier: "America/New_York")
-//        if TimeZone.autoupdatingCurrent != easternTimeZone{
-//            let conversionResult = convertToLocalTime(dateComponents: dateComponents, timeZone: TimeZone.autoupdatingCurrent)
-//            if let dateComponentsLocal = conversionResult{
-//                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponentsLocal,
-//                                                        repeats: true)
-//            }
-//        }
         
         //schedule
         let id = currentShow.title + "close"
@@ -206,44 +199,8 @@ struct NotificationService{
      * HELPERS
      */
     
-    //function to convert to local times 
-    //BUGGY
-//    static func convertToLocalTime(dateComponents: DateComponents, timeZone: TimeZone) -> DateComponents?{
-//        var newDateComponents = DateComponents()
-//        
-//        if let easternTimeZone = TimeZone(identifier: "America/New_York"){
-//            let easternSecondsFromGMT = easternTimeZone.secondsFromGMT()
-//            let localTimeZoneSecondsFromGMT = timeZone.secondsFromGMT()
-//            
-//            let difference = easternSecondsFromGMT - localTimeZoneSecondsFromGMT
-//            let hour = (difference / (60 * 60))
-//            let minutes = difference % (60 * 60)
-//            
-//            if difference > 0{
-//                //adjust time for time zones behind eastern
-//                var newHour = dateComponents.hour! - hour
-//                if newHour < 0{
-//                    newHour = 24 + newHour
-//                }
-//                newDateComponents.hour = newHour
-//                newDateComponents.minute = dateComponents.minute! - minutes
-//                
-//                return newDateComponents
-//            }else{
-//                //adjust time for time zones ahead of eastern
-//                var newHour = dateComponents.hour! + hour
-//                if newHour > 24{
-//                    newHour = newHour - 24
-//                }
-//                newDateComponents.hour = newHour
-//                newDateComponents.minute = dateComponents.minute! + minutes
-//                return newDateComponents
-//            }
-//        }
-//        
-//        return nil
-//    }
-//    
+  
+
     //function to set user defaults for each show
     static func setNotificationDefault(currentShow: Show, notificationsStatus: Bool){
         let defaults = UserDefaults.standard

@@ -93,12 +93,24 @@ struct Constants{
             var dateComponents = DateComponents()
             dateComponents.hour = hour
             dateComponents.minute = minutes
-//            dateComponents.timeZone = TimeZone.autoupdatingCurrent
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
-            return nextOccurance
+            
+            //convert to local time
+            if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+                let userTimeZone = TimeZone.current
+                let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
+                let userGMTOffset = userTimeZone.secondsFromGMT()
+                let interval = Double(userGMTOffset - sourceGMTOffset)
+                
+                let destinationDate = Date(timeInterval: interval, since: nextOccurance)
+                return destinationDate
+            }else{
+                return nextOccurance
+            }
         }
     }
     
+
     struct LotteryCloseEve{
         static let aladdinCloseEve: Date =  setDate(hour: 8, minutes: 30)!
         static let anastasiaCloseEve: Date  = setDate(hour: 14, minutes: 0)!
@@ -124,9 +136,19 @@ struct Constants{
 
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
             
-            return nextOccurance
+            //convert to local time
+            if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+                let userTimeZone = TimeZone.current
+                let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
+                let userGMTOffset = userTimeZone.secondsFromGMT()
+                let interval = Double(userGMTOffset - sourceGMTOffset)
+                
+                let destinationDate = Date(timeInterval: interval, since: nextOccurance)
+                return destinationDate
+            }else{
+                return nextOccurance
+            }
         }
-        
     }
     
         struct LotteryCloseMat{
@@ -154,7 +176,18 @@ struct Constants{
                 
                 let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
                 
-                return nextOccurance
+                //convert to local time
+                if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+                    let userTimeZone = TimeZone.current
+                    let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
+                    let userGMTOffset = userTimeZone.secondsFromGMT()
+                    let interval = Double(userGMTOffset - sourceGMTOffset)
+                    
+                    let destinationDate = Date(timeInterval: interval, since: nextOccurance)
+                    return destinationDate
+                }else{
+                    return nextOccurance
+                }
             }
             
         }

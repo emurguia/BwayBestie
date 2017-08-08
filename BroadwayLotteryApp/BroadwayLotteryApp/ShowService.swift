@@ -23,9 +23,6 @@ import Foundation
 struct ShowService{
     
     static var lotteryOpen = [String: String]()
-//    static var lotteryCloseEve = [String: String]()
-//    static var lotteryCloseMat = [String: String]()
-    
     
     enum allShows:Int{
         case aladdin
@@ -110,5 +107,6 @@ struct ShowService{
         }
         return showArr
     }
+
     
 }

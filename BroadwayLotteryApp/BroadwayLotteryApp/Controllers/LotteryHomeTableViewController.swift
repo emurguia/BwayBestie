@@ -49,14 +49,12 @@ class LotteryHomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
-       // let cell: ShowCell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as! ShowCell
         let index = indexPath.row
         let currentShow = shows[index]
-        //print(currentShow.title)
         cell.showTitleLabel.text = currentShow.title
-       // cell.showTitleLabel.font = UIFont(name: "OpenSans-Semibold", size: 28)
         cell.delegate = self
         cell.index = index
+        
         //set lottery time labels
         configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
 
@@ -99,10 +97,10 @@ class LotteryHomeTableViewController: UITableViewController {
             cell.toLabel.isHidden = false
             cell.enterLabel.isHidden = false
         }
-    
+        
         return cell
     }
-
+    
     
     func getAltColor(index: Int) -> UIColor{
         if index == 0{
@@ -117,57 +115,29 @@ class LotteryHomeTableViewController: UITableViewController {
         }
     }
     
+    
     func configureLotteryLabels(openLabel: UILabel, closeLabel: UILabel, with show: Show){
 
+        print("configuring label for \(show.title)")
+        //get date components
         var openDateComponents = DateComponents()
         openDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryOpen)
         openDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryOpen)
-        
+
+
         var closeDateComponents = DateComponents()
         closeDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryCloseEve)
         closeDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryCloseEve)
         
-        //check if need to convert local time
-//        let easternTimeZone = TimeZone(identifier: "America/New_York")
-//        if TimeZone.autoupdatingCurrent != easternTimeZone{
-//           //lottery open
-//            let conversionResultOpen = NotificationService.convertToLocalTime(dateComponents: openDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-//            if let dateComponents = conversionResultOpen {
-//                configureTime(dateComponents: dateComponents, label: openLabel)
-//            }
-//            
-//            //loterry close
-//            let conversionResultClose = NotificationService.convertToLocalTime(dateComponents: closeDateComponents, timeZone: TimeZone.autoupdatingCurrent)
-//            if let dateComponents = conversionResultClose {
-//                configureTime(dateComponents: dateComponents, label: closeLabel)
-//            }
+        //configure labels
+//        if let convertedOpenDateComponents = ShowService.convertToLocalTime(dateComponents: openDateComponents), let convertedCloseDateComponentes = ShowService.convertToLocalTime(dateComponents: closeDateComponents){
+//            configureTime(dateComponents: convertedOpenDateComponents, label: openLabel)
+//            configureTime(dateComponents: convertedCloseDateComponentes, label: closeLabel)
 //        }else{
+//            //conversion failed - default to EST labels
 //            configureTime(dateComponents: openDateComponents, label: openLabel)
 //            configureTime(dateComponents: closeDateComponents, label: closeLabel)
 //        }
-//        
-//        let calendar = Calendar.current
-//        let testOpenDate = calendar.date(from: openDateComponents)
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.timeStyle = DateFormatter.Style.short
-//        dateFormatter.dateStyle = DateFormatter.Style.none
-//        let localtimeZone = TimeZone.autoupdatingCurrent
-//        DateFormatter.timeZone = NSTimeZone()
-//        let localDate = dateFormatter.stringFromDate(testOpenDate)
-//        let testCal = Calendar.
-//        
-//        let date = NSDate();
-//        let dateFormatter = NSDateFormatter()
-//        //To prevent displaying either date or time, set the desired style to NoStyle.
-//        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
-//        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
-//        dateFormatter.timeZone = NSTimeZone()
-//        let localDate = dateFormatter.stringFromDate(date)
-//        
-//        println("UTC Time")
-//        println(date)
-//        println("Local Time")
-//        println(localDate)
         
         configureTime(dateComponents: openDateComponents, label: openLabel)
         configureTime(dateComponents: closeDateComponents, label: closeLabel)

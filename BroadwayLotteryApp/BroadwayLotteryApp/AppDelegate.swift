@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-               
-        
+
         IQKeyboardManager.sharedManager().enable = true
         
         //set up initial view controller
@@ -35,37 +33,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storyboard = UIStoryboard(name: "Welcome", bundle: nil)
         }
         
-        
         let initialViewController = storyboard.instantiateInitialViewController()
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         
-        //set up notifications
+        //request access to notifications
         let center = UNUserNotificationCenter.current()
         center.delegate = notificationDelegate
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             if granted{
                 if defaults.bool(forKey: Constants.UserDefaults.notificationsOn) == false{
-                   // print("notifications granted")
-                    //NotificationService.setAllNotifications()
-                    //defaults.set(true, forKey: Constants.UserDefaults.notificationsOn)
                     defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
                 }
             }else{
-                //print("notifications NOT granted")
                 defaults.set(false, forKey: Constants.UserDefaults.notificationsOn)
             }
         }
         
         //get rid of notifications for expired shows
         let shows = ShowService.getShows()
-//        for show in shows{
-//            print(show.title)
-//        }
-        
         center.getPendingNotificationRequests(completionHandler: { requests in
-           // print("entered completion handler")
-            
             var ids = [String]()
             for request in requests{
                 ids.append(request.identifier)
@@ -90,15 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("removing notification for notifcation id: \(id)")
                     center.removePendingNotificationRequests(withIdentifiers: [id])
                 }
-//                if found == true{
-//                    print("this notification is here to stay! \(id)")
-//                }
             }
         })
 
         //navigation bar appereance
         let navigationBarAppearace = UINavigationBar.appearance()
-        //navigationBarAppearace.barStyle = UIBarStyle.black
         navigationBarAppearace.isTranslucent = true
         navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.00, blue:0.00, alpha:1.0)
         navigationBarAppearace.tintColor = UIColor.white
@@ -106,13 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let attr = NSDictionary(object: UIFont(name: "OpenSans", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
         UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
-
-//        navigationBarAppearace.tintColor = UIColor.white
-//        navigationBarAppearace.barTintColor = UIColor.lightGray
-//        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        
-        //side menu 
+        //configure side menu
         SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "Hamburger_Menusidespace")
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 300
@@ -132,12 +110,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         
         //testing
-//        let center = UNUserNotificationCenter.current()
-//        center.getPendingNotificationRequests(){ results in
-//            for result in results{
-//                print(result)
-//            }
-//        }
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(){ results in
+            for result in results{
+                print(result)
+            }
+        }
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -147,14 +125,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-      
-        //((window.rootViewController as? UINavigationController)?.topViewController as? ViewController)?.myFunction()
-
-//        if let view = (window?.rootViewController as? UINavigationController)?.topViewController as? SettingsTableViewController{
-//            view.checkNotificationStatus()
-//            print("setting vc on top")
-//        }
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.timeZoneDidChange),
+            name: .NSSystemTimeZoneDidChange,
+            object: nil)
+    
+    }
+    
+    func timeZoneDidChange(){
+        //remove all notifications and reset with new timezone
+        print("time zone changed")
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests{
+                //remove notification with time in previous time zone
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [request.identifier])
+                //add notitfication with new time 
+                NotificationService.setNotificationID(identifer: request.identifier)
+            }
+        })
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
