@@ -20,6 +20,7 @@ class ShowTestCell: UITableViewCell{
     @IBOutlet weak var enterNowButton: UIButton!
     @IBOutlet weak var entryPeriodLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var enterLabel: UILabel!
     
     weak var delegate: ShowCellTestDelegate?
     var index: Int = -1

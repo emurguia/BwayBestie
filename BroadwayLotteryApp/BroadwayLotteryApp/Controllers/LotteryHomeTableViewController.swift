@@ -91,11 +91,13 @@ class LotteryHomeTableViewController: UITableViewController {
             cell.lotteryCloseLabel.isHidden = true
             cell.lotteryOpenLabel.isHidden = true
             cell.toLabel.isHidden = true
+            cell.enterLabel.isHidden = true
         }else{
             cell.entryPeriodLabel.text = "Daily"
             cell.lotteryCloseLabel.isHidden = false
             cell.lotteryOpenLabel.isHidden = false
             cell.toLabel.isHidden = false
+            cell.enterLabel.isHidden = false
         }
     
         return cell
