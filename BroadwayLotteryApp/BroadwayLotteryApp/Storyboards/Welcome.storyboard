@@ -15,6 +15,9 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Welcome Page View Controller-->
@@ -37,39 +40,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BroadwayBestie" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IT-zd-yZD">
-                                <rect key="frame" x="20" y="170" width="335" height="34.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to Learn More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-uv-UEZ">
-                                <rect key="frame" x="0.0" y="304.5" width="375" height="23.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Making it Easier to Enter Broadway Lotteries!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guB-Dj-7jj">
-                                <rect key="frame" x="10" y="224.5" width="355" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-ed-P5O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="MVS-L6-EZd">
+                                        <rect key="frame" x="147" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="hPr-Tr-hHD"/>
+                                            <constraint firstAttribute="height" constant="80" id="zI6-jq-ken"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="MVS-L6-EZd" firstAttribute="centerY" secondItem="bwr-ed-P5O" secondAttribute="centerY" id="0EA-af-uEN"/>
+                                    <constraint firstItem="MVS-L6-EZd" firstAttribute="centerX" secondItem="bwr-ed-P5O" secondAttribute="centerX" id="CtR-8U-5nh"/>
+                                    <constraint firstAttribute="height" constant="100" id="cVW-MC-Q7z"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-08-07 at 4.52.03 PM" translatesAutoresizingMaskIntoConstraints="NO" id="gEY-pL-3ui">
+                                <rect key="frame" x="67" y="135" width="240" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="0ic-mH-GnO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Lotteries" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guB-Dj-7jj">
+                                <rect key="frame" x="10" y="520" width="355" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="pcs-a2-jqy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" id="3rC-d9-ybH"/>
-                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="centerX" secondItem="Pj9-RX-CRw" secondAttribute="centerX" id="4w0-nd-7Ac"/>
-                            <constraint firstAttribute="trailing" secondItem="6kw-uv-UEZ" secondAttribute="trailing" id="6mf-WB-6SE"/>
-                            <constraint firstItem="8IT-zd-yZD" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="20" id="Cf2-Cv-gUq"/>
+                            <constraint firstItem="bwr-ed-P5O" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" id="7wd-qj-C71"/>
+                            <constraint firstItem="gEY-pL-3ui" firstAttribute="top" secondItem="bwr-ed-P5O" secondAttribute="bottom" constant="35" id="9wX-84-4Mf"/>
                             <constraint firstItem="guB-Dj-7jj" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="10" id="Cfa-uX-0Dw"/>
-                            <constraint firstItem="guB-Dj-7jj" firstAttribute="top" secondItem="8IT-zd-yZD" secondAttribute="bottom" constant="20" id="T7X-Uj-gYA"/>
-                            <constraint firstItem="6kw-uv-UEZ" firstAttribute="top" secondItem="guB-Dj-7jj" secondAttribute="bottom" constant="20" id="YVE-Ix-evV"/>
-                            <constraint firstAttribute="trailing" secondItem="8IT-zd-yZD" secondAttribute="trailing" constant="20" id="gdO-Zz-Vzb"/>
-                            <constraint firstItem="8IT-zd-yZD" firstAttribute="top" secondItem="MOl-nr-1Pw" secondAttribute="bottom" constant="150" id="umO-CM-dsE"/>
+                            <constraint firstAttribute="trailing" secondItem="gEY-pL-3ui" secondAttribute="trailing" constant="68" id="DBl-UA-mhj"/>
+                            <constraint firstAttribute="trailing" secondItem="bwr-ed-P5O" secondAttribute="trailing" id="lJL-QU-MOt"/>
+                            <constraint firstItem="gEY-pL-3ui" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="67" id="mWS-iV-Pvq"/>
+                            <constraint firstItem="guB-Dj-7jj" firstAttribute="top" secondItem="gEY-pL-3ui" secondAttribute="bottom" constant="35" id="mhz-Yy-zST"/>
+                            <constraint firstItem="bwr-ed-P5O" firstAttribute="top" secondItem="Pj9-RX-CRw" secondAttribute="top" id="o6i-lh-8D9"/>
                             <constraint firstAttribute="trailing" secondItem="guB-Dj-7jj" secondAttribute="trailing" constant="10" id="yjb-oa-buT"/>
                         </constraints>
                     </view>
@@ -90,46 +104,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Enter Lotteries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLu-oK-FA0">
-                                <rect key="frame" x="10" y="100" width="355" height="41"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHo-uF-JMc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-Dx-2jX">
+                                        <rect key="frame" x="147" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="VMv-yL-8I8"/>
+                                            <constraint firstAttribute="width" constant="80" id="omI-hw-Lj7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="v8M-Dx-2jX" firstAttribute="centerX" secondItem="DHo-uF-JMc" secondAttribute="centerX" id="1fV-TX-6IS"/>
+                                    <constraint firstAttribute="height" constant="100" id="4VY-wS-vcv"/>
+                                    <constraint firstItem="v8M-Dx-2jX" firstAttribute="centerY" secondItem="DHo-uF-JMc" secondAttribute="centerY" id="7FH-qt-ymd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Notified" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhB-g0-g4B">
+                                <rect key="frame" x="114" y="515" width="147" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Suw-2z-6hZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Select a show from the lottery list" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-4B-AzZ">
-                                <rect key="frame" x="25" y="186" width="325" height="60"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Fill out the form on the lottery website" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-MA-62Y">
-                                <rect key="frame" x="25" y="271" width="325" height="60"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Hit submit! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejn-Et-tfi">
-                                <rect key="frame" x="25" y="356" width="325" height="30"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-08-07 at 5.00.56 PM" translatesAutoresizingMaskIntoConstraints="NO" id="i72-tX-fdY">
+                                <rect key="frame" x="2.5" y="130" width="369" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="TcQ-oy-bZB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gLu-oK-FA0" secondAttribute="trailing" constant="10" id="5fG-Ew-ZiN"/>
-                            <constraint firstItem="gLu-oK-FA0" firstAttribute="top" secondItem="lxR-JW-9jw" secondAttribute="bottom" constant="80" id="9gA-Vi-G5w"/>
-                            <constraint firstItem="zhO-4B-AzZ" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="J0b-Rt-eKp"/>
-                            <constraint firstAttribute="trailing" secondItem="Qxk-MA-62Y" secondAttribute="trailing" constant="25" id="Q85-sf-TUF"/>
-                            <constraint firstAttribute="trailing" secondItem="zhO-4B-AzZ" secondAttribute="trailing" constant="25" id="Vxx-d0-Q9U"/>
-                            <constraint firstItem="gLu-oK-FA0" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="10" id="X0L-ee-Lzy"/>
-                            <constraint firstAttribute="trailing" secondItem="Ejn-Et-tfi" secondAttribute="trailing" constant="25" id="XGm-0a-uVZ"/>
-                            <constraint firstItem="Ejn-Et-tfi" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="bpu-Z3-Igu"/>
-                            <constraint firstItem="Qxk-MA-62Y" firstAttribute="top" secondItem="zhO-4B-AzZ" secondAttribute="bottom" constant="25" id="dyw-Ht-EwZ"/>
-                            <constraint firstItem="Qxk-MA-62Y" firstAttribute="top" secondItem="zhO-4B-AzZ" secondAttribute="bottom" constant="25" id="haX-0X-kl4"/>
-                            <constraint firstItem="Ejn-Et-tfi" firstAttribute="top" secondItem="Qxk-MA-62Y" secondAttribute="bottom" constant="25" id="woo-qJ-4eZ"/>
-                            <constraint firstItem="zhO-4B-AzZ" firstAttribute="top" secondItem="gLu-oK-FA0" secondAttribute="bottom" constant="45" id="xwf-cz-cZp"/>
-                            <constraint firstItem="Qxk-MA-62Y" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="25" id="zDr-t0-tff"/>
+                            <constraint firstAttribute="trailing" secondItem="DHo-uF-JMc" secondAttribute="trailing" id="9TQ-Ek-alj"/>
+                            <constraint firstItem="DHo-uF-JMc" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" id="DOZ-fH-XdD"/>
+                            <constraint firstItem="DHo-uF-JMc" firstAttribute="top" secondItem="nKH-GT-EXE" secondAttribute="top" id="MgF-x9-AcY"/>
+                            <constraint firstItem="IhB-g0-g4B" firstAttribute="centerX" secondItem="nKH-GT-EXE" secondAttribute="centerX" id="ZCk-02-0BM"/>
+                            <constraint firstItem="i72-tX-fdY" firstAttribute="top" secondItem="DHo-uF-JMc" secondAttribute="bottom" constant="30" id="a0f-ad-mlg"/>
+                            <constraint firstItem="i72-tX-fdY" firstAttribute="centerX" secondItem="nKH-GT-EXE" secondAttribute="centerX" id="bPP-Ok-EPh"/>
+                            <constraint firstItem="IhB-g0-g4B" firstAttribute="top" secondItem="i72-tX-fdY" secondAttribute="bottom" constant="35" id="yN0-LL-CGE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -149,48 +166,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Set Notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36o-gs-XEU">
-                                <rect key="frame" x="10" y="100" width="355" height="82"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get notified when show lotteries open and close. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYp-AR-EFF">
-                                <rect key="frame" x="25" y="217" width="325" height="105"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-Zi-szG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-6a-kzu">
+                                        <rect key="frame" x="147" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="WMp-XH-fOG"/>
+                                            <constraint firstAttribute="height" constant="80" id="odO-FZ-bMi"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="jw7-ku-FI0"/>
+                                    <constraint firstItem="8bY-6a-kzu" firstAttribute="centerY" secondItem="hKk-Zi-szG" secondAttribute="centerY" id="TrB-cD-Jec"/>
+                                    <constraint firstAttribute="height" constant="100" id="XS0-Fz-33j"/>
+                                    <constraint firstItem="8bY-6a-kzu" firstAttribute="centerX" secondItem="hKk-Zi-szG" secondAttribute="centerX" id="kFV-64-fzV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get emailed your results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-hJ-Z2F">
+                                <rect key="frame" x="40" y="515" width="296" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VjJ-8m-D8q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When a lottery closes, be sure to check your email within 60 minutes to check if you've won. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-Qf-0pU">
-                                <rect key="frame" x="25" y="452" width="325" height="90"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Settings to pick which shows you are notified about. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGB-hu-LPy">
-                                <rect key="frame" x="25" y="357" width="325" height="60"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-08-07 at 5.00.56 PM" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-ra-S3j">
+                                <rect key="frame" x="3" y="130" width="369" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="qF0-x1-GMw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.73725490199999999" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="36o-gs-XEU" firstAttribute="top" secondItem="sNu-lQ-ITi" secondAttribute="bottom" constant="80" id="1Tl-rc-mlb"/>
-                            <constraint firstItem="CYp-AR-EFF" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" constant="25" id="8Ha-MF-bBM"/>
-                            <constraint firstItem="jdP-Qf-0pU" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" constant="25" id="Ypp-Fc-8l8"/>
-                            <constraint firstAttribute="trailing" secondItem="jdP-Qf-0pU" secondAttribute="trailing" constant="25" id="ZZI-Yw-s9e"/>
-                            <constraint firstAttribute="trailing" secondItem="CYp-AR-EFF" secondAttribute="trailing" constant="25" id="ZsL-v5-LkI"/>
-                            <constraint firstItem="jdP-Qf-0pU" firstAttribute="top" secondItem="cGB-hu-LPy" secondAttribute="bottom" constant="35" id="bzv-tJ-Ls5"/>
-                            <constraint firstItem="cGB-hu-LPy" firstAttribute="top" secondItem="CYp-AR-EFF" secondAttribute="bottom" constant="35" id="cBg-Jr-ARn"/>
-                            <constraint firstItem="CYp-AR-EFF" firstAttribute="top" secondItem="36o-gs-XEU" secondAttribute="bottom" constant="35" id="hcR-gY-zwe"/>
-                            <constraint firstItem="36o-gs-XEU" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" constant="10" id="oKY-kR-xLf"/>
-                            <constraint firstAttribute="trailing" secondItem="36o-gs-XEU" secondAttribute="trailing" constant="10" id="oPo-cD-YW4"/>
-                            <constraint firstAttribute="trailing" secondItem="cGB-hu-LPy" secondAttribute="trailing" constant="25" id="p2L-Lx-7w3"/>
-                            <constraint firstItem="cGB-hu-LPy" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" constant="25" id="pYx-pJ-Jmm"/>
+                            <constraint firstItem="eaX-hJ-Z2F" firstAttribute="centerX" secondItem="4O7-1T-QcF" secondAttribute="centerX" id="1g0-O5-wpv"/>
+                            <constraint firstItem="eaX-hJ-Z2F" firstAttribute="top" secondItem="bdf-ra-S3j" secondAttribute="bottom" constant="35" id="27s-PU-UMu"/>
+                            <constraint firstItem="bdf-ra-S3j" firstAttribute="centerX" secondItem="4O7-1T-QcF" secondAttribute="centerX" id="a1G-qR-xNj"/>
+                            <constraint firstItem="bdf-ra-S3j" firstAttribute="top" secondItem="hKk-Zi-szG" secondAttribute="bottom" constant="30" id="aNm-6b-Hkb"/>
+                            <constraint firstItem="hKk-Zi-szG" firstAttribute="top" secondItem="4O7-1T-QcF" secondAttribute="top" id="c44-xG-GaZ"/>
+                            <constraint firstItem="hKk-Zi-szG" firstAttribute="leading" secondItem="4O7-1T-QcF" secondAttribute="leading" id="d1p-0X-E8E"/>
+                            <constraint firstAttribute="trailing" secondItem="hKk-Zi-szG" secondAttribute="trailing" id="xL1-Cx-791"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -250,4 +268,9 @@
             <point key="canvasLocation" x="2600.8000000000002" y="149.77511244377811"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2017-08-07 at 4.52.03 PM" width="374" height="669"/>
+        <image name="Screen Shot 2017-08-07 at 5.00.56 PM" width="369" height="662"/>
+        <image name="bigB_3-qq-512" width="505" height="505"/>
+    </resources>
 </document>
