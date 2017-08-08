@@ -58,7 +58,6 @@ class Show{
     
     //determine if lottery is currently open
     func checkLottery(currentHour: Int, currentMinute: Int, lotteryOpenHour: Int, lotteryOpenMinute: Int, lotteryCloseHour: Int, lotteryCloseMinute: Int) -> Bool{
-        
         var lotteryIsOpen: Bool
         
         if currentHour >= lotteryCloseHour && currentHour < lotteryOpenHour {

@@ -10,4 +10,5 @@ target 'BroadwayLotteryApp' do
   pod 'SwiftKeychainWrapper'
   pod 'SideMenu'
   pod 'SideMenuController'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 end

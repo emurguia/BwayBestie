@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-210" y="891"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Page View Controller-->
         <scene sceneID="Xc1-5e-LyE">
             <objects>
-                <viewController storyboardIdentifier="WelcomeOneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m5Y-Na-pgV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeOneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m5Y-Na-pgV" customClass="WelcomePageViewController" customModule="BroadwayLotteryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MOl-nr-1Pw"/>
                         <viewControllerLayoutGuide type="bottom" id="gAE-eK-XxS"/>
@@ -125,15 +125,18 @@
                             <constraint firstAttribute="trailing" secondItem="guB-Dj-7jj" secondAttribute="trailing" constant="10" id="yjb-oa-buT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeImage" destination="gEY-pL-3ui" id="RhZ-rm-rQV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlK-GM-AvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="485.60000000000002" y="150.67466266866569"/>
         </scene>
-        <!--View Controller-->
+        <!--Lottery Page Two View Controller-->
         <scene sceneID="n41-yR-oAc">
             <objects>
-                <viewController storyboardIdentifier="WelcomeTwoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hMe-b5-mbk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeTwoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hMe-b5-mbk" customClass="LotteryPageTwoViewController" customModule="BroadwayLotteryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lxR-JW-9jw"/>
                         <viewControllerLayoutGuide type="bottom" id="hpq-sV-yvF"/>
@@ -189,6 +192,9 @@
                             <constraint firstItem="IhB-g0-g4B" firstAttribute="leading" secondItem="nKH-GT-EXE" secondAttribute="leading" constant="10" id="uMv-N8-VDX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeImage" destination="i72-tX-fdY" id="32m-OQ-iCR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="198-Mg-2cF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,6 +319,6 @@
     <resources>
         <image name="Screen Shot 2017-08-07 at 4.52.03 PM" width="374" height="669"/>
         <image name="Screen Shot 2017-08-07 at 5.00.56 PM" width="369" height="662"/>
-        <image name="bigB_3-qq-512" width="505" height="505"/>
+        <image name="bigB_3-qq-512" width="512" height="512"/>
     </resources>
 </document>

@@ -9,9 +9,10 @@
 import UIKit
 
 class LotteryHomeTableViewController: UITableViewController {
+    
+    //MARK -- Properties
 
     @IBOutlet weak var backgroundView: UIView!
-    //MARK -- Properties 
     let shows = ShowService.getShows()
     let cacheIdentifier = "LotteryHomeViewController"
 
@@ -23,13 +24,6 @@ class LotteryHomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let height: CGFloat = 25 //whatever height you want
-//        let bounds = self.navigationController!.navigationBar.bounds
-//        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,28 +112,14 @@ class LotteryHomeTableViewController: UITableViewController {
     
     func configureLotteryLabels(openLabel: UILabel, closeLabel: UILabel, with show: Show){
 
-        print("configuring label for \(show.title)")
-        //get date components
         var openDateComponents = DateComponents()
         openDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryOpen)
         openDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryOpen)
-
+        configureTime(dateComponents: openDateComponents, label: openLabel)
 
         var closeDateComponents = DateComponents()
         closeDateComponents.hour = Calendar.current.component(.hour, from: show.lotteryCloseEve)
         closeDateComponents.minute = Calendar.current.component(.minute, from: show.lotteryCloseEve)
-        
-        //configure labels
-//        if let convertedOpenDateComponents = ShowService.convertToLocalTime(dateComponents: openDateComponents), let convertedCloseDateComponentes = ShowService.convertToLocalTime(dateComponents: closeDateComponents){
-//            configureTime(dateComponents: convertedOpenDateComponents, label: openLabel)
-//            configureTime(dateComponents: convertedCloseDateComponentes, label: closeLabel)
-//        }else{
-//            //conversion failed - default to EST labels
-//            configureTime(dateComponents: openDateComponents, label: openLabel)
-//            configureTime(dateComponents: closeDateComponents, label: closeLabel)
-//        }
-        
-        configureTime(dateComponents: openDateComponents, label: openLabel)
         configureTime(dateComponents: closeDateComponents, label: closeLabel)
     }
     
@@ -180,20 +160,14 @@ class LotteryHomeTableViewController: UITableViewController {
         label.text = time
     }
     
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //print("performing segue")
         if segue.identifier == "showSettings" {
             let destVC = segue.destination as! SettingsTableViewController
             destVC.navigationItem.title = "Settings"
         }
     }
- 
-
 }
 
 
