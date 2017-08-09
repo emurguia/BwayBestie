@@ -13,7 +13,7 @@ class LotteryPageTwoViewController: UIViewController{
     @IBOutlet weak var welcomeImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeImage.image = UIImage.gif(name: "notifications_on")
+        welcomeImage.image = UIImage.gif(name: "setting_notifications")
 
     }
 }

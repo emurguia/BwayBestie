@@ -15,6 +15,6 @@ class WelcomePageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeImage.image = UIImage.gif(name: "yp3AUK")
+        welcomeImage.image = UIImage.gif(name: "enter_lottery_short_compressed")
     }
 }

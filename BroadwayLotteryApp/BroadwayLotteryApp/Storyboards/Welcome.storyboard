@@ -16,9 +16,6 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
-        <array key="OpenSans-Semibold.ttf">
-            <string>OpenSans-Semibold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Welcome Main View Controller-->
@@ -80,7 +77,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-ed-P5O">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="MVS-L6-EZd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B_icon" translatesAutoresizingMaskIntoConstraints="NO" id="MVS-L6-EZd">
                                         <rect key="frame" x="147" y="10" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="hPr-Tr-hHD"/>
@@ -100,14 +97,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="pcs-a2-jqy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-08-07 at 4.52.03 PM" translatesAutoresizingMaskIntoConstraints="NO" id="gEY-pL-3ui">
-                                <rect key="frame" x="67" y="185" width="240" height="350"/>
+                                <rect key="frame" x="0.5" y="185" width="374" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="0ic-mH-GnO"/>
+                                    <constraint firstAttribute="height" constant="350" id="qeD-Xd-Iht"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -115,11 +112,10 @@
                         <constraints>
                             <constraint firstItem="bwr-ed-P5O" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" id="7wd-qj-C71"/>
                             <constraint firstItem="guB-Dj-7jj" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="10" id="Cfa-uX-0Dw"/>
-                            <constraint firstAttribute="trailing" secondItem="gEY-pL-3ui" secondAttribute="trailing" constant="68" id="DBl-UA-mhj"/>
-                            <constraint firstItem="gEY-pL-3ui" firstAttribute="top" secondItem="guB-Dj-7jj" secondAttribute="bottom" constant="5" id="X1K-SE-MZT"/>
+                            <constraint firstItem="gEY-pL-3ui" firstAttribute="centerX" secondItem="Pj9-RX-CRw" secondAttribute="centerX" id="Q3k-N4-tzW"/>
+                            <constraint firstItem="gEY-pL-3ui" firstAttribute="top" secondItem="guB-Dj-7jj" secondAttribute="bottom" constant="5" id="Tx1-Vx-kBJ"/>
                             <constraint firstItem="guB-Dj-7jj" firstAttribute="centerX" secondItem="Pj9-RX-CRw" secondAttribute="centerX" id="fop-iu-iae"/>
                             <constraint firstAttribute="trailing" secondItem="bwr-ed-P5O" secondAttribute="trailing" id="lJL-QU-MOt"/>
-                            <constraint firstItem="gEY-pL-3ui" firstAttribute="leading" secondItem="Pj9-RX-CRw" secondAttribute="leading" constant="67" id="mWS-iV-Pvq"/>
                             <constraint firstItem="bwr-ed-P5O" firstAttribute="top" secondItem="Pj9-RX-CRw" secondAttribute="top" id="o6i-lh-8D9"/>
                             <constraint firstItem="guB-Dj-7jj" firstAttribute="top" secondItem="bwr-ed-P5O" secondAttribute="bottom" constant="20" id="ya9-na-ZhR"/>
                             <constraint firstAttribute="trailing" secondItem="guB-Dj-7jj" secondAttribute="trailing" constant="10" id="yjb-oa-buT"/>
@@ -148,7 +144,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHo-uF-JMc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-Dx-2jX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B_icon" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-Dx-2jX">
                                         <rect key="frame" x="147" y="10" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="VMv-yL-8I8"/>
@@ -168,7 +164,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Suw-2z-6hZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -200,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1181.5999999999999" y="152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Page Three View Controller-->
         <scene sceneID="4r4-wa-wV2">
             <objects>
-                <viewController storyboardIdentifier="WelcomeThreeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b3J-1s-CEH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeThreeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b3J-1s-CEH" customClass="WelcomePageThreeViewController" customModule="BroadwayLotteryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sNu-lQ-ITi"/>
                         <viewControllerLayoutGuide type="bottom" id="inL-Xn-P9O"/>
@@ -215,7 +211,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-Zi-szG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigB_3-qq-512" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-6a-kzu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B_icon" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-6a-kzu">
                                         <rect key="frame" x="147" y="10" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="WMp-XH-fOG"/>
@@ -230,12 +226,12 @@
                                     <constraint firstItem="8bY-6a-kzu" firstAttribute="centerX" secondItem="hKk-Zi-szG" secondAttribute="centerX" id="kFV-64-fzV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get emailed your results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-hJ-Z2F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Email for Results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-hJ-Z2F">
                                 <rect key="frame" x="26" y="120" width="323" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VjJ-8m-D8q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -259,6 +255,9 @@
                             <constraint firstAttribute="trailing" secondItem="hKk-Zi-szG" secondAttribute="trailing" id="xL1-Cx-791"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeImage" destination="bdf-ra-S3j" id="yDj-wj-Pu2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yE-Xv-EGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,8 +316,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="B_icon" width="512" height="512"/>
         <image name="Screen Shot 2017-08-07 at 4.52.03 PM" width="374" height="669"/>
         <image name="Screen Shot 2017-08-07 at 5.00.56 PM" width="369" height="662"/>
-        <image name="bigB_3-qq-512" width="512" height="512"/>
     </resources>
 </document>

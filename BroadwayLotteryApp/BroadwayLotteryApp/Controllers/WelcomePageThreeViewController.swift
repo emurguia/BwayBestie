@@ -6,4 +6,14 @@
 //  Copyright © 2017 Eleanor Murguia. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class WelcomePageThreeViewController: UIViewController{
+    
+    @IBOutlet weak var welcomeImage: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        welcomeImage.image = UIImage.gif(name: "email_short")
+    }
+}

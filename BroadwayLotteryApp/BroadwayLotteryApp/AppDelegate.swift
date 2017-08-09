@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
                 if found == false{
-                    print("removing notification for notifcation id: \(id)")
                     center.removePendingNotificationRequests(withIdentifiers: [id])
                 }
             }
@@ -85,9 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.isTranslucent = true
         navigationBarAppearace.barTintColor = UIColor(red:0.46, green:0.00, blue:0.00, alpha:1.0)
         navigationBarAppearace.tintColor = UIColor.white
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "OpenSans", size: 16)!]
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Avenir", size: 16)!]
 
-        let attr = NSDictionary(object: UIFont(name: "OpenSans", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
+        let attr = NSDictionary(object: UIFont(name: "Avenir", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
         UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
         //configure side menu
@@ -135,7 +134,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func timeZoneDidChange(){
         //remove all notifications and reset with new timezone
-        print("time zone changed")
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
             for request in requests{
                 //remove notification with time in previous time zone
