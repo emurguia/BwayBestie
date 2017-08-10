@@ -109,7 +109,11 @@ h2{
 }
 
 
-/* MEDIA QUERIES */ 
+/* MOBILE */ 
+
+#autofill-mobile{
+	display: none;
+}
 
 @media all and (max-width: 425px) {
 	.features-item h1{
@@ -126,9 +130,25 @@ h2{
 	.features-item img{
 		padding-top: 50px;
 	}
+
+	#autofill .features-item h2{
+		padding-bottom: 0px;
+	}
+
+	#autofill .features-item img{
+		padding-bottom: 50px;
+	}
 	/*HEADER */ 
 	#header-text{
 		margin-top: 100px;
+	}
+
+	#autofill-mobile{
+		display: block;
+	}
+
+	#autofill{
+		display: none;
 	}
 
 	}
