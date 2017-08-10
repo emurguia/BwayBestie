@@ -1,5 +1,57 @@
+/* APP COLORS: 
+	white: #F2F2F2;
+	yellow (buttons): #F7B538;
+	light red: #BC2525;
+	dark red: #AA0000;
+	maroon (nav): #750000;
+*/
+
+/* DOCUMENT */ 
 body{
-    background-color: #120f14;
+    background-color: #AA0000;
     color: #eef0f2;
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Avenir', Arial, sans-serif;
+}
+
+img{
+	/*max-height: 90%;
+	max-width: 90%;*/
+	height: 500px;
+	padding-left: 50px;
+	margin-top: 0px;
+}
+
+.flex-container{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-around;
+}
+
+.flex-item{
+	margin: auto;
+}
+
+.highlight{
+/*	font-style: italic;
+	letter-spacing: 3px;*/
+	text-decoration: underline;
+	text-decoration-color: #F7B538;
+	-webkit-text-decoration-color: #F7B538;
+}
+
+/* HEADER */ 
+
+
+#header{
+	margin-top: 175px;
+	text-align: center;
+}
+
+#header h1{
+	font-size: 50px;
+	font-weight: 700;
+}
+
+#header h2{
+	line-height: 1.5;
 }
