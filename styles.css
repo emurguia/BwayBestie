@@ -114,6 +114,12 @@ h2{
 	text-align: center;
 }
 
+#header a{
+	font-size: 20px;
+	line-height: 1.5;
+/*	text-transform: uppercase;
+*/}
+
 /* SHOWS */
 
 /*#shows{
