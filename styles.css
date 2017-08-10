@@ -17,8 +17,17 @@ img{
 	/*max-height: 90%;
 	max-width: 90%;*/
 	height: 500px;
-	padding-left: 50px;
-	margin-top: 0px;
+/*	padding-left: 50px;
+*/	margin-top: 0px;
+}
+
+h1{
+	font-size: 50px;
+	font-weight: 700;
+}
+
+h2{
+	line-height: 1.5;
 }
 
 .flex-container{
@@ -42,16 +51,66 @@ img{
 /* HEADER */ 
 
 
-#header{
+#header-text{
 	margin-top: 175px;
 	text-align: center;
 }
-
-#header h1{
-	font-size: 50px;
-	font-weight: 700;
+#header-text h1{
+	letter-spacing: -1px;
+	font-size: 70px;
 }
 
-#header h2{
-	line-height: 1.5;
+#header-image{
+	text-align: center;
 }
+
+/* SHOWS */
+
+#shows{
+	background-color: #F7B538;
+	text-align: center;
+
+}
+
+/* AUTOFILL */
+
+#autofill{
+	text-align: center;
+}
+
+.features-item{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.features-item h1{
+	padding-top: 100px;
+}
+
+/* NOTIFS */
+
+#notifs{
+	text-align: center;
+	background-color: #F7B538;
+
+}
+
+
+/* MEDIA QUERIES */ 
+
+@media all and (max-width: 768px) {
+	.features-item h1{
+		padding-top: 10px;
+	}
+	.features-item{
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.features-item h2{
+		padding-bottom: 50px;
+	}
+
+	.features-item img{
+		padding-top: 50px;
+	}
+
+	}
