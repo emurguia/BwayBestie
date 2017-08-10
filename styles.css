@@ -30,6 +30,11 @@ h2{
 	line-height: 1.5;
 }
 
+.container-fluid{
+	padding-right:0;
+    padding-left:0;
+}
+
 .flex-container{
 	display: flex;
 	display: -webkit-flex;
@@ -50,6 +55,9 @@ h2{
 
 /* HEADER */ 
 
+#header{
+	background-color: #AA0000;
+}
 
 #header-text{
 	margin-top: 175px;
