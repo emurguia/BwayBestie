@@ -60,6 +60,9 @@ class Show{
     func checkLottery(currentHour: Int, currentMinute: Int, lotteryOpenHour: Int, lotteryOpenMinute: Int, lotteryCloseHour: Int, lotteryCloseMinute: Int) -> Bool{
         var lotteryIsOpen: Bool
         
+        //issue: open: 5:00 pm, close 11:00 am, currently: 10:00 am
+        //issue: open: 8:00 pm, close 2:00 pm, currently: 1:00 pm
+        
         if currentHour >= lotteryCloseHour && currentHour < lotteryOpenHour {
             //lottery is closed
             lotteryIsOpen = false
@@ -76,8 +79,14 @@ class Show{
             }
         }else if currentHour < lotteryCloseHour && currentHour < lotteryOpenHour{
             //ex. currently 2:00, opens at 4, closes at 6
-            lotteryIsOpen = false
-            return lotteryIsOpen
+            if lotteryOpenHour > lotteryCloseHour{
+                //ex. open at 8:00 pm, closes at 1:00 pm the following day 
+                lotteryIsOpen = true
+                return lotteryIsOpen
+            }else{
+                lotteryIsOpen = false
+                return lotteryIsOpen
+            }
         }else{
             //lottery is open
             lotteryIsOpen = true
