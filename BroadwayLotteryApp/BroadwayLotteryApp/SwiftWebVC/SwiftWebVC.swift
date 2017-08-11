@@ -325,7 +325,6 @@ extension SwiftWebVC: WKNavigationDelegate {
             if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{
                 
                 let urlString = String(describing: url)
-                print(urlString)
                 if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
                     
                     webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
@@ -337,12 +336,10 @@ extension SwiftWebVC: WKNavigationDelegate {
                 }
                 
                 if urlString.hasPrefix(Constants.LotteryURLs.broadwayDirectEntry){
-                    //https://lottery.broadwaydirect.com/enter-lottery/success/?lottery=251089&window=popup&target=to
-                    print("bway direct")
                     webView.evaluateJavaScript("document.getElementById('dlslot_name_first').value = '\(firstName)'; document.getElementById('dlslot_name_last').value = '\(lastName)'; document.getElementById('dlslot_email').value = '\(email)'; document.getElementById('dlslot_dob_month').value = '\(birthMonth)'; document.getElementById('dlslot_dob_day').value = '\(birthDate)'; document.getElementById('dlslot_dob_year').value = '\(birthYear)'; document.getElementById('dlslot_zip').value = '\(zipCode)'; if(\(numberTickets) == 2){ document.getElementById('dlslot_ticket_qty').options[2].selected = true; }else{ document.getElementById('dlslot_ticket_qty').options[1].selected = true;}"){ (result, error) in
                         guard error == nil else{
                             print ("Error executing JS")
-                            print(error! as Any)
+                           // print(error! as Any)
                             return
                         }
                     }
@@ -363,10 +360,11 @@ extension SwiftWebVC: WKNavigationDelegate {
         let url = navigationAction.request.url
         
         let hostAddress = navigationAction.request.url?.host
-        print(hostAddress as Any)
+       // print(hostAddress as Any)
         if (navigationAction.targetFrame == nil) {
             if UIApplication.shared.canOpenURL(url!) {
-                UIApplication.shared.openURL(url!)
+                //UIApplication.shared.openURL(url!)
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
             }
         }
         decisionHandler(.allow)
@@ -374,7 +372,8 @@ extension SwiftWebVC: WKNavigationDelegate {
         // To connnect app store
         if hostAddress == "itunes.apple.com" {
             if UIApplication.shared.canOpenURL(navigationAction.request.url!) {
-                UIApplication.shared.openURL(navigationAction.request.url!)
+                //UIApplication.shared.openURL(navigationAction.request.url!)
+                UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
                 decisionHandler(.cancel)
                 return
             }
@@ -382,7 +381,7 @@ extension SwiftWebVC: WKNavigationDelegate {
         
         // To connect to Facebook App 
         if hostAddress == "m.facebook.com" {
-            print("clicked facebook link")
+          //  print("clicked facebook link")
 //            print(navigationAction.request.url! as Any)
 //            
 //            //check if fb app installed 
@@ -446,7 +445,8 @@ extension SwiftWebVC: WKNavigationDelegate {
         if let requestUrl: URL = URL(string:"\(urlScheme)"+"\(additional_info)") {
             let application:UIApplication = UIApplication.shared
             if application.canOpenURL(requestUrl) {
-                application.openURL(requestUrl)
+                //application.openURL(requestUrl)
+                application.open(requestUrl, options: [:], completionHandler: nil)
             }
         }
     }

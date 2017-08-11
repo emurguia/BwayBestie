@@ -20,10 +20,8 @@ struct NotificationService{
         for show in shows{
             if identifer.contains(show.title){
                 if identifer.contains("close"){
-                    print("setting close notification for \(show.title)")
                     setCloseShowNotification(currentShow: show)
                 }else{
-                    print("setting open notification for \(show.title)")
                     setOpenShowNotification(currentShow: show)
                 }
             }
@@ -49,7 +47,6 @@ struct NotificationService{
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
       
         //schedule
-        //change back to + "open"
         let id = currentShow.title
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
@@ -104,7 +101,6 @@ struct NotificationService{
         for show in shows{
             setOpenShowNotification(currentShow: show)
             if UserDefaults.standard.bool(forKey: Constants.UserDefaults.closeNotificationsOn){
-                print("close notifs on -- setting them up ")
                 setCloseShowNotification(currentShow: show)
             }
         }

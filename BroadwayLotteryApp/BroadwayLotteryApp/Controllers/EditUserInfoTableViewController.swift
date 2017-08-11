@@ -81,7 +81,6 @@ class EditUserInfoTableViewController: UITableViewController {
         
         //get values entered by user
         guard let firstName = firstNameField.text, let lastName = lastNameField.text, let email = emailAddressField.text, let zipCode = zipCodeField.text, let birthMonth = birthMonthField.text, let birthDate = birthDateField.text, let birthYear = birthYearField.text else{
-            //print("User details not saved -- all fields not filled out")
             return
         }
         //get number tickets

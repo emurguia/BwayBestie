@@ -58,23 +58,18 @@ class LotteryHomeTableViewController: UITableViewController {
         if let lotteryIsOpen = currentShow.lotteryIsOpen(){
             if currentShow.canEnterWeekly == false{
                 if lotteryIsOpen == false {
-                    //print("setting label to lottery closed")
                     cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
                     cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
                     cell.enterNowButton.layer.backgroundColor = UIColor(red:0.38, green:0.38, blue:0.38, alpha:1.0).cgColor
                 }else if lotteryIsOpen == true{
                     cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                    //cell.enterNowButton.layer.backgroundColor = UIColor(red:1.00, green:0.67, blue:0.06, alpha:1.0).cgColor
                     cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
                     cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
-                        //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
                 }
             }else{
                 cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                //cell.enterNowButton.layer.backgroundColor = UIColor(red:1.00, green:0.67, blue:0.06, alpha:1.0).cgColor
                 cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
                 cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
-                    //UIColor(red:0.18, green:0.58, blue:0.23, alpha:1.0).cgColor
             }
             
         }
@@ -160,14 +155,6 @@ class LotteryHomeTableViewController: UITableViewController {
         label.text = time
     }
     
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSettings" {
-            let destVC = segue.destination as! SettingsTableViewController
-            destVC.navigationItem.title = "Settings"
-        }
-    }
 }
 
 

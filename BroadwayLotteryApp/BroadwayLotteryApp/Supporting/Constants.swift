@@ -96,7 +96,7 @@ struct Constants{
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
             
             //convert to local time
-            if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+            if let sourceTimeZone = TimeZone(identifier: "America/New_York"){
                 let userTimeZone = TimeZone.current
                 let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
                 let userGMTOffset = userTimeZone.secondsFromGMT()
@@ -105,6 +105,7 @@ struct Constants{
                 let destinationDate = Date(timeInterval: interval, since: nextOccurance)
                 return destinationDate
             }else{
+                print("local time conversion failed")
                 return nextOccurance
             }
         }
@@ -137,7 +138,7 @@ struct Constants{
             let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
             
             //convert to local time
-            if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+            if let sourceTimeZone = TimeZone(identifier: "America/New_York"){
                 let userTimeZone = TimeZone.current
                 let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
                 let userGMTOffset = userTimeZone.secondsFromGMT()
@@ -177,7 +178,7 @@ struct Constants{
                 let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
                 
                 //convert to local time
-                if let sourceTimeZone = TimeZone(abbreviation: "EDT"){
+                if let sourceTimeZone = TimeZone(identifier: "America/New_York"){
                     let userTimeZone = TimeZone.current
                     let sourceGMTOffset = sourceTimeZone.secondsFromGMT()
                     let userGMTOffset = userTimeZone.secondsFromGMT()

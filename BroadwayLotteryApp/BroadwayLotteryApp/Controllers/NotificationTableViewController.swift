@@ -39,9 +39,7 @@ class NotificationTableViewController: UITableViewController {
     func notificationsDisabledAlert(){
         let alertController = UIAlertController(title: "Notifications Disabled", message: "Go to Settings -> Notifications -> BroadwayLotteryApp to enable notifications", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            //go back to settings page 
-//            self.navigationController?.popViewController(animated: true)
-            
+            //go back to lottery home
             self.sideMenuController?.performSegue(withIdentifier: "lotteryHomeSegue", sender: nil)
 
         }
@@ -100,13 +98,13 @@ class NotificationTableViewController: UITableViewController {
                 cell.index = indexPath.row
                 return cell
             default:
-                fatalError("Error: unexpected indexPath")
+                let cell = tableView.dequeueReusableCell(withIdentifier: "allShowsNotificationCell", for: indexPath) as! AllShowsNotificationCell
+                return cell
             }
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
             let index = indexPath.row
             let currentShow = shows[index]
-            //let defaults = UserDefaults.standard
             
             cell.index = index
             cell.showTitleLabel.text = currentShow.title
@@ -115,10 +113,10 @@ class NotificationTableViewController: UITableViewController {
             }
             
             cell.delegate = self
-            
             return cell
         default:
-            fatalError("Error: unexpected indexPath")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "showNotificationCell", for: indexPath) as! ShowNotificationCell
+            return cell
         }
     }
 

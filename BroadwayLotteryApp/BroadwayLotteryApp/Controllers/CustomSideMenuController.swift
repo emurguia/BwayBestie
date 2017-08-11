@@ -27,7 +27,6 @@ class CustomSideMenuController: SideMenuController{
         performSegue(withIdentifier: "lotteryHomeSegue", sender: nil)
         //side menu
         performSegue(withIdentifier: "sideMenuSegue", sender: nil)
-        //embed(centerViewController: UINavigationController(rootViewController: LotteryNavigationViewController()), cacheIdentifier: "LotteryHomeViewController")
-        //embed(centerViewController: UINavigationController(rootViewController:FCViewController()), cacheIdentifier: FCViewController.cacheIdentifier)
+
     }
 }
