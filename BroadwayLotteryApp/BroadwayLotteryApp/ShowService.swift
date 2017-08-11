@@ -35,7 +35,7 @@ struct ShowService{
         case hamilton
         case kinkyBoots
         case lionKing
-        case onYourFeet
+        //case onYourFeet
         //case oslo
         case phantom
         case schoolOfRock
@@ -78,8 +78,8 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.kinkyBoots, lotteryOpen: Constants.LotteryOpen.kinkyBootsOpen, lotteryCloseEve: Constants.LotteryCloseEve.kinkyBootsCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.kinkyBootsCloseMat, lotteryURL: Constants.LotteryURLs.kinkyBootsURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.kinkyBootsCanEnterWeekly)
             case .lionKing:
                 return Show(title: Constants.ShowTitle.lionKing, lotteryOpen: Constants.LotteryOpen.lionKingOpen, lotteryCloseEve: Constants.LotteryCloseEve.lionKingCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.lionKingCloseMat, lotteryURL: Constants.LotteryURLs.lionKingURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.lionKingCanEnterWeekly)
-            case .onYourFeet:
-                return Show(title: Constants.ShowTitle.onYourFeet, lotteryOpen: Constants.LotteryOpen.onYourFeetOpen, lotteryCloseEve: Constants.LotteryCloseEve.onYourFeetCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.onYourFeetCloseMat, lotteryURL: Constants.LotteryURLs.onYourFeetURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.onYourFeetCanEnterWeekly)
+//            case .onYourFeet:
+//                return Show(title: Constants.ShowTitle.onYourFeet, lotteryOpen: Constants.LotteryOpen.onYourFeetOpen, lotteryCloseEve: Constants.LotteryCloseEve.onYourFeetCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.onYourFeetCloseMat, lotteryURL: Constants.LotteryURLs.onYourFeetURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.onYourFeetCanEnterWeekly)
             /*case .oslo:
                 return Show(title: Constants.ShowTitle.oslo, lotteryOpen: Constants.LotteryOpen.osloOpen, lotteryCloseEve: Constants.LotteryCloseEve.osloCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.osloCloseMat, lotteryURL: Constants.LotteryURLs.osloURL, notificationsOn: notifications)*/
             case .phantom:
