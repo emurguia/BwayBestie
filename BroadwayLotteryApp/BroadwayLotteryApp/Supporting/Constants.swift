@@ -46,6 +46,7 @@ struct Constants{
         static let schoolOfRockNotifications = "schoolOfRockNotifications"
         static let warPaintNotifications = "warPaintNotifications"
         static let wickedNotifications = "wickedNotifications"
+        static let charlieNotifications = "charlieNotifications"
     }
     
     struct ShowTitle{
@@ -65,6 +66,7 @@ struct Constants{
         static let schoolOfRock = "School of Rock"
         static let warPaint = "War Paint"
         static let wicked = "Wicked"
+        static let charlie = "Charlie and the Chocolate Factory"
     }
     /* 
      * lottery times
@@ -88,6 +90,7 @@ struct Constants{
         static let schoolOfRockOpen: Date  = setDate(hour: 0, minutes: 1)!
         static let warPaintOpen: Date  = setDate(hour: 8, minutes: 0)! //might be 9 sometimes
         static let wickedOpen: Date  = setDate(hour: 20, minutes: 0)!
+        static let charlieOpen: Date = setDate(hour: 10, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -129,6 +132,7 @@ struct Constants{
         static let schoolOfRockCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let warPaintCloseEve: Date   = setDate(hour: 15, minutes: 0)!
         static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
+        static let charlieCloseEve: Date = setDate(hour: 14, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -169,6 +173,7 @@ struct Constants{
             static let schoolOfRockCloseMat: Date  = setDate(hour: 9, minutes: 0)!
             static let warPaintCloseMat: Date   = setDate(hour: 15, minutes: 0)!//
             static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
+            static let charlieCloseMat: Date = setDate(hour: 9, minutes: 30)!
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
                 var dateComponents = DateComponents()
@@ -209,7 +214,10 @@ struct Constants{
         static let schoolOfRockCanEnterWeekly = false
         static let warPaintCanEnterWeekly = false
         static let wickedCanEnterWeekly = false
+        static let charlieCanEnterWeekly = false
     }
+    
+    // if HTTP, make sure to add to Info.plist
     
     struct LotteryURLs{
         static let aladdinURL = "https://lottery.broadwaydirect.com/show/aladdin/"
@@ -228,6 +236,7 @@ struct Constants{
         static let schoolOfRockURL = "http://schoolofrocklottery.com"
         static let warPaintURL = "https://lottery.broadwaydirect.com/show/war-paint/"
         static let wickedURL = "https://lottery.broadwaydirect.com/show/wicked/"
+        static let charlieURL = "https://lottery.broadwaydirect.com/show/charlie/"
         
         //lottery entry page for broadway direct lotteries 
         static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"
