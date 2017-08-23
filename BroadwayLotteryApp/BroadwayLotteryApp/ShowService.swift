@@ -29,6 +29,7 @@ struct ShowService{
         case anastasia
         case bookOfMormon
         case cats
+        case charlie
         case dearEvanHansen
         //case greatComet
         case groundhogDay
@@ -41,7 +42,6 @@ struct ShowService{
         case schoolOfRock
         case warPaint
         case wicked
-        case charlie
         
         //get number of currently available shows
         static let count: Int = {
@@ -67,6 +67,8 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.bookOfMormon, lotteryOpen: Constants.LotteryOpen.bookOfMormonOpen, lotteryCloseEve: Constants.LotteryCloseEve.bookOfMormonCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.bookOfMormonCloseMat, lotteryURL: Constants.LotteryURLs.bookOfMoromonURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.bookOfMormonCanEnterWeekly)
             case .cats:
                 return Show(title: Constants.ShowTitle.cats, lotteryOpen: Constants.LotteryOpen.catsOpen, lotteryCloseEve: Constants.LotteryCloseEve.catsCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.catsCloseMat, lotteryURL: Constants.LotteryURLs.catsURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.catsCanEnterWeekly)
+            case .charlie:
+                return Show(title: Constants.ShowTitle.charlie, lotteryOpen: Constants.LotteryOpen.charlieOpen, lotteryCloseEve: Constants.LotteryCloseEve.charlieCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.charlieCloseMat, lotteryURL: Constants.LotteryURLs.charlieURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.charlieCanEnterWeekly)
             case .dearEvanHansen:
                 return Show(title: Constants.ShowTitle.dearEvanHansen, lotteryOpen: Constants.LotteryOpen.dearEvanHansenOpen, lotteryCloseEve: Constants.LotteryCloseEve.dearEvanHansenCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.dearEvanHansenCloseMat, lotteryURL: Constants.LotteryURLs.dearEvanHansenURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.dearEvanHansenCanEnterWeekly)
 //            case .greatComet:
@@ -91,8 +93,6 @@ struct ShowService{
                 return Show(title: Constants.ShowTitle.warPaint, lotteryOpen: Constants.LotteryOpen.warPaintOpen, lotteryCloseEve: Constants.LotteryCloseEve.warPaintCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.warPaintCloseMat, lotteryURL: Constants.LotteryURLs.warPaintURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.warPaintCanEnterWeekly)
             case .wicked:
                 return Show(title: Constants.ShowTitle.wicked, lotteryOpen: Constants.LotteryOpen.wickedOpen, lotteryCloseEve: Constants.LotteryCloseEve.wickedCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.wickedCloseMat, lotteryURL: Constants.LotteryURLs.wickedURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.wickedCanEnterWeekly)
-            case .charlie:
-                return Show(title: Constants.ShowTitle.charlie, lotteryOpen: Constants.LotteryOpen.charlieOpen, lotteryCloseEve: Constants.LotteryCloseEve.charlieCloseEve, lotteryCloseMat: Constants.LotteryCloseMat.charlieCloseMat, lotteryURL: Constants.LotteryURLs.charlieURL, notificationsOn: notifications, canEnterWeekly: Constants.canEnterWeekly.charlieCanEnterWeekly)
 //            default:
 //                return Show(title: "Broadway Baby!", lotteryOpen: 0, lotteryCloseEve: 0, lotteryCloseMat: 0, lotteryURL: "wwww.broadway.com")
             }

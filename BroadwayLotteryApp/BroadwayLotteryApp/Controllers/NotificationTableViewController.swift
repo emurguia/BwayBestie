@@ -157,6 +157,8 @@ class NotificationTableViewController: UITableViewController {
             return defaults.bool(forKey: Constants.UserDefaults.warPaintNotifications)
         case Constants.ShowTitle.wicked:
             return defaults.bool(forKey: Constants.UserDefaults.wickedNotifications)
+        case Constants.ShowTitle.charlie:
+            return defaults.bool(forKey: Constants.UserDefaults.charlieNotifications)
         default:
             print("error - show not found")
         }

@@ -22,8 +22,12 @@ class CollectUserInfoViewController: UITableViewController {
     @IBOutlet weak var getStartedButton: UIButton!
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        print("no user info saved")
+        //set user as logged in
+        UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isLoggedIn)
+        //show home storyboard
         let storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)
         let initialViewController = storyboard.instantiateInitialViewController()
         self.view.window?.rootViewController = initialViewController
