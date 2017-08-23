@@ -21,6 +21,15 @@ class CollectUserInfoViewController: UITableViewController {
     @IBOutlet weak var numberTicketsSegment: UISegmentedControl!
     @IBOutlet weak var getStartedButton: UIButton!
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        print("no user info saved")
+        let storyboard = UIStoryboard(name: "LotteryHome", bundle: nil)
+        let initialViewController = storyboard.instantiateInitialViewController()
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

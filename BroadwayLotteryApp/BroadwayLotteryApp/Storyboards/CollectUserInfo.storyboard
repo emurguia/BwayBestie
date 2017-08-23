@@ -293,12 +293,19 @@
                             <outlet property="delegate" destination="fs2-Ze-1iF" id="NDX-pb-QcI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Entry Information" id="di3-Bs-gbK"/>
+                    <navigationItem key="navigationItem" title="Entry Information" id="di3-Bs-gbK">
+                        <barButtonItem key="rightBarButtonItem" title="X" id="5Mg-Vg-Z5o">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="fs2-Ze-1iF" id="52C-MS-jcy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="birthDateField" destination="E5f-FI-fAo" id="aD2-eo-cNj"/>
                         <outlet property="birthMonthField" destination="l9f-6B-J8T" id="Vxu-W7-cm9"/>
                         <outlet property="birthYearField" destination="Phx-m4-Lg4" id="ZBE-ct-3SW"/>
+                        <outlet property="cancelButton" destination="5Mg-Vg-Z5o" id="SH9-zy-CJo"/>
                         <outlet property="emailAddressField" destination="UFW-oh-XvU" id="8BA-8W-46h"/>
                         <outlet property="firstNameField" destination="NVT-6j-hiC" id="RP5-fr-FUq"/>
                         <outlet property="getStartedButton" destination="1ZR-TK-WRw" id="YE9-qc-FY8"/>
