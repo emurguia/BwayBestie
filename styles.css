@@ -183,6 +183,10 @@ h2{
 	margin-bottom: 5px;
 }
 
+#footer a{
+	color: #AA0000;
+}
+
 /* MOBILE */ 
 
 #autofill-mobile{
