@@ -104,6 +104,20 @@ class LotteryHomeTableViewController: UITableViewController {
             }
         
             if getEnteredDefault(currentShow: currentShow) == true{
+                let currentDate = Date();
+                let userCalendar = Calendar.current
+                let dateComponents = userCalendar.dateComponents([.hour, .minute], from: currentDate)
+                let lotteryOpenTime = currentShow.lotteryOpen
+                let dateComponentsOpen = userCalendar.dateComponents([.hour, .minute], from: lotteryOpenTime)
+                if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = dateComponentsOpen.hour, let lotteryOpenMinute = dateComponentsOpen.minute{
+                    if currentHour == lotteryOpenHour && currentMinute == lotteryOpenMinute{
+                        //lottery has opened again ("the next day") -- reset has entered
+                        cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_outline"), for: UIControlState.normal)
+                        setEnteredDefault(currentShow: currentShow, value: false)
+                    }
+                }
+                
+               
                 cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_filled"), for: UIControlState.normal)
             }else{
                 cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_outline"), for: UIControlState.normal)
