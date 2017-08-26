@@ -21,6 +21,7 @@ public class SwiftWebVC: UIViewController {
     var buttonColor: UIColor? = nil
     var titleColor: UIColor? = nil
     var closing: Bool! = false
+    var currentShow: Show? = nil
     
     lazy var backBarButtonItem: UIBarButtonItem =  {
         var tempBackBarButtonItem = UIBarButtonItem(image: SwiftWebVC.bundledImage(named: "SwiftWebVCBack"),
@@ -110,7 +111,7 @@ public class SwiftWebVC: UIViewController {
     override public func loadView() {
         view = webView
         loadRequest(request)
-       // print(webView.url as Any)
+        getShow()
     }
     
     override public func viewDidLoad() {
@@ -158,6 +159,53 @@ public class SwiftWebVC: UIViewController {
         super.viewDidDisappear(true)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
+    
+    
+    public func getShow(){
+        let shows = ShowService.getShows()
+        print("the request:")
+        print(request)
+        if let requestUnWrapped = request{
+            let requestString = String(describing: requestUnWrapped)
+            print("the request string is \(requestString)")
+            
+            for show in shows{
+                if show.lotteryURL == requestString{
+                    currentShow = show
+                }
+            }
+//            if requestString == Constants.LotteryURLs.aladdinURL{
+//                currentShow = shows[0]
+//            }else if requestString == Constants.LotteryURLs.anastasiaURL{
+//                currentShow = shows[1]
+//            }else if requestString == Constants.LotteryURLs.bookOfMoromonURL{
+//                currentShow = shows[2]
+//            }else if requestString == Constants.LotteryURLs.catsURL{
+//                currentShow = shows[3]
+//            }else if requestString == Constants.LotteryURLs.charlieURL{
+//                currentShow = shows[4]
+//            }else if requestString == Constants.LotteryURLs.dearEvanHansenURL{
+//                currentShow = shows[5]
+//            }else if requestString == Constants.LotteryURLs.groundhogDayURL{
+//                currentShow = shows[6]
+//            }else if requestString == Constants.LotteryURLs.hamiltonURL{
+//                currentShow = shows[7]
+//            }else if requestString == Constants.LotteryURLs.kinkyBootsURL{
+//                currentShow = shows[8]
+//            }else if requestString == Constants.LotteryURLs.lionKingURL{
+//                currentShow = shows[9]
+//            }else if requestString == Constants.LotteryURLs.phantomURL{
+//                currentShow = shows[10]
+//            }else if requestString == Constants.LotteryURLs.schoolOfRockURL{
+//                currentShow = shows[11]
+//            }else if requestString == Constants.LotteryURLs.warPaintURL{
+//                currentShow = shows[12]
+//            }else if requestString == Constants.LotteryURLs.wickedURL{
+//                currentShow[13]
+//            }
+        }
+    }
+    
     
     ////////////////////////////////////////////////
     // Toolbar
@@ -292,6 +340,7 @@ extension SwiftWebVC: WKNavigationDelegate {
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print(webView.url)
         self.delegate?.didFinishLoading(success: true)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
@@ -302,6 +351,7 @@ extension SwiftWebVC: WKNavigationDelegate {
         })
         
         autofill()
+        hasEntered()
     }
     
     
@@ -347,6 +397,58 @@ extension SwiftWebVC: WKNavigationDelegate {
             }
        // }
     }
+    
+    public func hasEntered(){
+        if let url = webView.url{
+            let urlString = String(describing: url)
+            
+            if urlString.contains("thankyou.html") || urlString.contains("enter-lottery/success/"){
+                if let show = currentShow{
+                    setEnteredDefault(currentShow: show, value: true)
+                }
+            }
+        }
+    }
+    
+    
+    func setEnteredDefault(currentShow: Show, value: Bool ){
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+            defaults.set(value, forKey: Constants.UserDefaults.aladdinEntered)
+        case Constants.ShowTitle.anastasia:
+            defaults.set(value, forKey: Constants.UserDefaults.anastasiaEntered)
+        case Constants.ShowTitle.bookOfMormon:
+            defaults.set(value, forKey: Constants.UserDefaults.bookOfMormonEntered)
+        case Constants.ShowTitle.cats:
+            defaults.set(value, forKey: Constants.UserDefaults.catsEntered)
+        case Constants.ShowTitle.dearEvanHansen:
+            defaults.set(value,forKey: Constants.UserDefaults.dearEvanHansenEntered)
+        case Constants.ShowTitle.groundhogDay:
+            defaults.set(value,forKey: Constants.UserDefaults.groundhogDayEntered)
+        case Constants.ShowTitle.hamilton:
+            defaults.set(value,forKey: Constants.UserDefaults.hamiltonEntered)
+        case Constants.ShowTitle.kinkyBoots:
+            defaults.set(value,forKey: Constants.UserDefaults.kinkyBootsEntered)
+        case Constants.ShowTitle.lionKing:
+            defaults.set(value,forKey: Constants.UserDefaults.lionKingEntered)
+        case Constants.ShowTitle.phantom:
+            defaults.set(value,forKey: Constants.UserDefaults.phantomEntered)
+        case Constants.ShowTitle.schoolOfRock:
+            defaults.set(value,forKey: Constants.UserDefaults.schoolOfRockEntered)
+        case Constants.ShowTitle.warPaint:
+            defaults.set(value,forKey: Constants.UserDefaults.warPaintEntered)
+        case Constants.ShowTitle.wicked:
+            defaults.set(value,forKey: Constants.UserDefaults.wickedEntered)
+        case Constants.ShowTitle.charlie:
+            defaults.set(value,forKey: Constants.UserDefaults.charlieEntered)
+        default:
+            print("error - show not found")
+        }
+        
+    }
+
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         self.delegate?.didFinishLoading(success: false)

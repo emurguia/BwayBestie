@@ -62,6 +62,21 @@ struct Constants{
         static let warPaintFavorite = "warPaintFavorite"
         static let wickedFavorite = "wickedFavorite"
         static let charlieFavorite = "charlieFavorite"
+        
+        static let aladdinEntered = "aladdinEntered"
+        static let anastasiaEntered = "anastasiaEntered"
+        static let bookOfMormonEntered = "bookOfMormonEntered"
+        static let catsEntered = "catsEntered"
+        static let dearEvanHansenEntered = "dearEvanHansenEntered"
+        static let groundhogDayEntered = "groundhogDayEntered"
+        static let hamiltonEntered = "hamiltonEntered"
+        static let kinkyBootsEntered = "kinkyBootsEntered"
+        static let lionKingEntered = "lionKingEntered"
+        static let phantomEntered = "phantomEntered"
+        static let schoolOfRockEntered = "schoolOfRockEntered"
+        static let warPaintEntered = "warPaintEntered"
+        static let wickedEntered = "wickedEntered"
+        static let charlieEntered = "charlieEntered"
     }
     
     struct ShowTitle{

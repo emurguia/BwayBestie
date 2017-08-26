@@ -103,6 +103,12 @@ class LotteryHomeTableViewController: UITableViewController {
                 cell.favoriteButton.setImage(UIImage(named: "yellow_star_outline")!, for: UIControlState.normal)
             }
         
+            if getEnteredDefault(currentShow: currentShow) == true{
+                cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_filled"), for: UIControlState.normal)
+            }else{
+                cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_outline"), for: UIControlState.normal)
+            }
+        
             return cell
         
     }
@@ -172,6 +178,84 @@ class LotteryHomeTableViewController: UITableViewController {
         label.text = time
     }
     
+    
+    func getEnteredDefault(currentShow: Show) -> Bool?{
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+            return defaults.bool(forKey: Constants.UserDefaults.aladdinEntered)
+        case Constants.ShowTitle.anastasia:
+            return defaults.bool(forKey: Constants.UserDefaults.anastasiaEntered)
+        case Constants.ShowTitle.bookOfMormon:
+            return defaults.bool(forKey: Constants.UserDefaults.bookOfMormonEntered)
+        case Constants.ShowTitle.cats:
+            return defaults.bool(forKey: Constants.UserDefaults.catsEntered)
+        case Constants.ShowTitle.dearEvanHansen:
+            return defaults.bool(forKey: Constants.UserDefaults.dearEvanHansenEntered)
+        case Constants.ShowTitle.groundhogDay:
+            return defaults.bool(forKey: Constants.UserDefaults.groundhogDayEntered)
+        case Constants.ShowTitle.hamilton:
+            return defaults.bool(forKey: Constants.UserDefaults.hamiltonEntered)
+        case Constants.ShowTitle.kinkyBoots:
+            return defaults.bool(forKey: Constants.UserDefaults.kinkyBootsEntered)
+        case Constants.ShowTitle.lionKing:
+            return defaults.bool(forKey: Constants.UserDefaults.lionKingEntered)
+        case Constants.ShowTitle.phantom:
+            return defaults.bool(forKey: Constants.UserDefaults.phantomEntered)
+        case Constants.ShowTitle.schoolOfRock:
+            return defaults.bool(forKey: Constants.UserDefaults.schoolOfRockEntered)
+        case Constants.ShowTitle.warPaint:
+            return defaults.bool(forKey: Constants.UserDefaults.warPaintEntered)
+        case Constants.ShowTitle.wicked:
+            return defaults.bool(forKey: Constants.UserDefaults.wickedEntered)
+        case Constants.ShowTitle.charlie:
+            return defaults.bool(forKey: Constants.UserDefaults.charlieEntered)
+        default:
+            print("error - show not found")
+        }
+        
+        return nil
+    }
+    
+    func setEnteredDefault(currentShow: Show, value: Bool ){
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+            defaults.set(value, forKey: Constants.UserDefaults.aladdinEntered)
+        case Constants.ShowTitle.anastasia:
+            defaults.set(value, forKey: Constants.UserDefaults.anastasiaEntered)
+        case Constants.ShowTitle.bookOfMormon:
+            defaults.set(value, forKey: Constants.UserDefaults.bookOfMormonEntered)
+        case Constants.ShowTitle.cats:
+            defaults.set(value, forKey: Constants.UserDefaults.catsEntered)
+        case Constants.ShowTitle.dearEvanHansen:
+            defaults.set(value,forKey: Constants.UserDefaults.dearEvanHansenEntered)
+        case Constants.ShowTitle.groundhogDay:
+            defaults.set(value,forKey: Constants.UserDefaults.groundhogDayEntered)
+        case Constants.ShowTitle.hamilton:
+            defaults.set(value,forKey: Constants.UserDefaults.hamiltonEntered)
+        case Constants.ShowTitle.kinkyBoots:
+            defaults.set(value,forKey: Constants.UserDefaults.kinkyBootsEntered)
+        case Constants.ShowTitle.lionKing:
+            defaults.set(value,forKey: Constants.UserDefaults.lionKingEntered)
+        case Constants.ShowTitle.phantom:
+            defaults.set(value,forKey: Constants.UserDefaults.phantomEntered)
+        case Constants.ShowTitle.schoolOfRock:
+            defaults.set(value,forKey: Constants.UserDefaults.schoolOfRockEntered)
+        case Constants.ShowTitle.warPaint:
+            defaults.set(value,forKey: Constants.UserDefaults.warPaintEntered)
+        case Constants.ShowTitle.wicked:
+            defaults.set(value,forKey: Constants.UserDefaults.wickedEntered)
+        case Constants.ShowTitle.charlie:
+            defaults.set(value,forKey: Constants.UserDefaults.charlieEntered)
+        default:
+            print("error - show not found")
+        }
+        
+    }
+    
 }
 
 
@@ -192,7 +276,6 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
             setFavoriteDefault(currentShow: currentShow, value: true)
             cell.favoriteButton.setImage(UIImage(named: "yellow_filled_star")!, for: UIControlState.normal)
         }
-        
     }
     
     func getFavoriteDefault(currentShow: Show) -> Bool?{
@@ -271,6 +354,8 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
         }
         
     }
+    
+
 
 }
 

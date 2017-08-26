@@ -134,7 +134,7 @@
                                     <outlet property="enterNowButton" destination="DdV-R3-xBz" id="VZ9-Xj-v9N"/>
                                     <outlet property="entryPeriodLabel" destination="Aat-gR-N3w" id="0Pm-gN-sWd"/>
                                     <outlet property="favoriteButton" destination="eeU-4i-f19" id="uQZ-WC-fld"/>
-                                    <outlet property="hasEnteredButton" destination="elS-Mv-6ZK" id="UK7-Ln-o7e"/>
+                                    <outlet property="hasEnteredButton" destination="elS-Mv-6ZK" id="5Tn-jh-dki"/>
                                     <outlet property="lotteryCloseLabel" destination="Dk2-fX-iQd" id="Gpl-l3-yqu"/>
                                     <outlet property="lotteryOpenLabel" destination="yKG-vE-XcK" id="KOs-gn-b00"/>
                                     <outlet property="showTitleLabel" destination="i42-DV-0vf" id="fiC-Yd-Qkd"/>
