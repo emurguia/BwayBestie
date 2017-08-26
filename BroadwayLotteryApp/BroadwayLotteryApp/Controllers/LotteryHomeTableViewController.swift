@@ -32,62 +32,79 @@ class LotteryHomeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return shows.count
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return shows.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
-        let index = indexPath.row
-        let currentShow = shows[index]
-        cell.showTitleLabel.text = currentShow.title
-        cell.delegate = self
-        cell.index = index
         
-        //set lottery time labels
-        configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
-
-        cell.backgroundColor = getAltColor(index: index)
-        cell.enterNowButton.layer.cornerRadius = 2
-        
-        if let lotteryIsOpen = currentShow.lotteryIsOpen(){
-            if currentShow.canEnterWeekly == false{
-                if lotteryIsOpen == false {
-                    cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
-                    cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
-                    cell.enterNowButton.layer.backgroundColor = UIColor(red:0.38, green:0.38, blue:0.38, alpha:1.0).cgColor
-                }else if lotteryIsOpen == true{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
+            let index = indexPath.section
+            let currentShow = shows[index]
+            cell.showTitleLabel.text = currentShow.title
+            cell.delegate = self
+            cell.index = index
+            
+            //set lottery time labels
+            configureLotteryLabels(openLabel: cell.lotteryOpenLabel, closeLabel: cell.lotteryCloseLabel, with: currentShow)
+            
+            cell.backgroundColor = getAltColor(index: index)
+            cell.enterNowButton.layer.cornerRadius = 2
+            
+            if let lotteryIsOpen = currentShow.lotteryIsOpen(){
+                if currentShow.canEnterWeekly == false{
+                    if lotteryIsOpen == false {
+                        cell.enterNowButton.setTitle("Lottery Closed", for: .normal)
+                        cell.enterNowButton.setTitleColor(UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0), for: .normal)
+                        cell.enterNowButton.layer.backgroundColor = UIColor(red:0.38, green:0.38, blue:0.38, alpha:1.0).cgColor
+                    }else if lotteryIsOpen == true{
+                        cell.enterNowButton.setTitle("Enter Now", for: .normal)
+                        cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
+                        cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
+                    }
+                }else{
                     cell.enterNowButton.setTitle("Enter Now", for: .normal)
                     cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
                     cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
                 }
-            }else{
-                cell.enterNowButton.setTitle("Enter Now", for: .normal)
-                cell.enterNowButton.layer.backgroundColor = UIColor(red:0.94, green:0.61, blue:0.23, alpha:1.0).cgColor
-                cell.enterNowButton.setTitleColor(UIColor.white, for: .normal)
+                
             }
-            
-        }
-        if currentShow.canEnterWeekly{
-            cell.entryPeriodLabel.text = "Enter up to a week in advance"
-            cell.lotteryCloseLabel.isHidden = true
-            cell.lotteryOpenLabel.isHidden = true
-            cell.toLabel.isHidden = true
-            cell.enterLabel.isHidden = true
-        }else{
-            cell.entryPeriodLabel.text = "Daily"
-            cell.lotteryCloseLabel.isHidden = false
-            cell.lotteryOpenLabel.isHidden = false
-            cell.toLabel.isHidden = false
-            cell.enterLabel.isHidden = false
-        }
+            if currentShow.canEnterWeekly{
+                cell.entryPeriodLabel.text = "Enter up to a week in advance"
+                cell.lotteryCloseLabel.isHidden = true
+                cell.lotteryOpenLabel.isHidden = true
+                cell.toLabel.isHidden = true
+                cell.enterLabel.isHidden = true
+            }else{
+                cell.entryPeriodLabel.text = "Daily"
+                cell.lotteryCloseLabel.isHidden = false
+                cell.lotteryOpenLabel.isHidden = false
+                cell.toLabel.isHidden = false
+                cell.enterLabel.isHidden = false
+            }
         
-        return cell
+        
+            if getFavoriteDefault(currentShow: currentShow) == true{
+                cell.favoriteButton.setImage(UIImage(named: "yellow_filled_star")!, for: UIControlState.normal)
+            
+            }else{
+                cell.favoriteButton.setImage(UIImage(named: "yellow_star_outline")!, for: UIControlState.normal)
+            }
+        
+            return cell
+        
     }
     
     
@@ -164,7 +181,99 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
         let webVC = SwiftWebVC(urlString: currentShow.lotteryURL)
         self.navigationController?.pushViewController(webVC, animated: true)
     }
+    
+    func didPressFavoriteButton(_ favoriteButton: UIButton, on cell: ShowTestCell) {
+        let currentShow = shows[cell.index]
+        if getFavoriteDefault(currentShow: currentShow) == true{
+            setFavoriteDefault(currentShow: currentShow, value: false)
+            cell.favoriteButton.setImage(UIImage(named: "yellow_star_outline")!, for: UIControlState.normal)
+            
+        }else{
+            setFavoriteDefault(currentShow: currentShow, value: true)
+            cell.favoriteButton.setImage(UIImage(named: "yellow_filled_star")!, for: UIControlState.normal)
+        }
+        
+    }
+    
+    func getFavoriteDefault(currentShow: Show) -> Bool?{
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+            return defaults.bool(forKey: Constants.UserDefaults.aladdinFavorite)
+        case Constants.ShowTitle.anastasia:
+            return defaults.bool(forKey: Constants.UserDefaults.anastasiaFavorite)
+        case Constants.ShowTitle.bookOfMormon:
+            return defaults.bool(forKey: Constants.UserDefaults.bookOfMormonFavorite)
+        case Constants.ShowTitle.cats:
+            return defaults.bool(forKey: Constants.UserDefaults.catsFavorite)
+        case Constants.ShowTitle.dearEvanHansen:
+            return defaults.bool(forKey: Constants.UserDefaults.dearEvanHansenFavorite)
+        case Constants.ShowTitle.groundhogDay:
+            return defaults.bool(forKey: Constants.UserDefaults.groundhogDayFavorite)
+        case Constants.ShowTitle.hamilton:
+            return defaults.bool(forKey: Constants.UserDefaults.hamiltonFavorite)
+        case Constants.ShowTitle.kinkyBoots:
+            return defaults.bool(forKey: Constants.UserDefaults.kinkyBootsFavorite)
+        case Constants.ShowTitle.lionKing:
+            return defaults.bool(forKey: Constants.UserDefaults.lionKingFavorite)
+        case Constants.ShowTitle.phantom:
+            return defaults.bool(forKey: Constants.UserDefaults.phantomFavorite)
+        case Constants.ShowTitle.schoolOfRock:
+            return defaults.bool(forKey: Constants.UserDefaults.schoolOfRockFavorite)
+        case Constants.ShowTitle.warPaint:
+            return defaults.bool(forKey: Constants.UserDefaults.warPaintFavorite)
+        case Constants.ShowTitle.wicked:
+            return defaults.bool(forKey: Constants.UserDefaults.wickedFavorite)
+        case Constants.ShowTitle.charlie:
+            return defaults.bool(forKey: Constants.UserDefaults.charlieFavorite)
+        default:
+            print("error - show not found")
+        }
+        
+        return nil
+    }
+    
+    func setFavoriteDefault(currentShow: Show, value: Bool ){
+        let defaults = UserDefaults.standard
+        
+        switch currentShow.title {
+        case Constants.ShowTitle.aladdin:
+             defaults.set(value, forKey: Constants.UserDefaults.aladdinFavorite)
+        case Constants.ShowTitle.anastasia:
+             defaults.set(value, forKey: Constants.UserDefaults.anastasiaFavorite)
+        case Constants.ShowTitle.bookOfMormon:
+             defaults.set(value, forKey: Constants.UserDefaults.bookOfMormonFavorite)
+        case Constants.ShowTitle.cats:
+             defaults.set(value, forKey: Constants.UserDefaults.catsFavorite)
+        case Constants.ShowTitle.dearEvanHansen:
+             defaults.set(value,forKey: Constants.UserDefaults.dearEvanHansenFavorite)
+        case Constants.ShowTitle.groundhogDay:
+             defaults.set(value,forKey: Constants.UserDefaults.groundhogDayFavorite)
+        case Constants.ShowTitle.hamilton:
+             defaults.set(value,forKey: Constants.UserDefaults.hamiltonFavorite)
+        case Constants.ShowTitle.kinkyBoots:
+             defaults.set(value,forKey: Constants.UserDefaults.kinkyBootsFavorite)
+        case Constants.ShowTitle.lionKing:
+             defaults.set(value,forKey: Constants.UserDefaults.lionKingFavorite)
+        case Constants.ShowTitle.phantom:
+             defaults.set(value,forKey: Constants.UserDefaults.phantomFavorite)
+        case Constants.ShowTitle.schoolOfRock:
+             defaults.set(value,forKey: Constants.UserDefaults.schoolOfRockFavorite)
+        case Constants.ShowTitle.warPaint:
+             defaults.set(value,forKey: Constants.UserDefaults.warPaintFavorite)
+        case Constants.ShowTitle.wicked:
+             defaults.set(value,forKey: Constants.UserDefaults.wickedFavorite)
+        case Constants.ShowTitle.charlie:
+             defaults.set(value,forKey: Constants.UserDefaults.charlieFavorite)
+        default:
+            print("error - show not found")
+        }
+        
+    }
 
 }
+
+
 
 

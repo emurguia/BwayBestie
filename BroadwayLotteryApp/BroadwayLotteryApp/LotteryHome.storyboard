@@ -14,20 +14,20 @@
         <scene sceneID="Yth-SS-aAk">
             <objects>
                 <tableViewController id="GXQ-7I-vcz" customClass="LotteryHomeTableViewController" customModule="BroadwayLotteryApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBX-W8-r6y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBX-W8-r6y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.73725490196078436" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showTestCell" rowHeight="160" id="q8o-DI-dUH" customClass="ShowTestCell" customModule="BroadwayLotteryApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showTestCell" rowHeight="165" id="q8o-DI-dUH" customClass="ShowTestCell" customModule="BroadwayLotteryApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8o-DI-dUH" id="y8C-pI-Tql">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" axis="vertical" alignment="center" spacing="40" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnh-vu-a9c">
-                                            <rect key="frame" x="10" y="24" width="355" height="113.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" axis="vertical" alignment="center" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnh-vu-a9c">
+                                            <rect key="frame" x="10" y="23.5" width="355" height="118.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Show Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i42-DV-0vf">
                                                     <rect key="frame" x="108" y="0.0" width="139" height="38.5"/>
@@ -35,24 +35,49 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-R3-xBz">
-                                                    <rect key="frame" x="77.5" y="44.5" width="200.5" height="35"/>
-                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.60784313725490191" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="W67-yD-ksY">
+                                                    <rect key="frame" x="7.5" y="53" width="340.5" height="35"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-4i-f19">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="mW8-1G-ZDB"/>
+                                                            </constraints>
+                                                            <state key="normal" image="yellow_star_outline"/>
+                                                            <connections>
+                                                                <action selector="favoriteButtonPressed:" destination="q8o-DI-dUH" eventType="touchUpInside" id="BsR-dj-0vX"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-R3-xBz">
+                                                            <rect key="frame" x="70" y="0.0" width="200.5" height="35"/>
+                                                            <color key="backgroundColor" red="0.93725490196078431" green="0.60784313725490191" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="9Jv-yC-Fyd"/>
+                                                                <constraint firstAttribute="width" constant="200" id="wTh-5K-ZMB"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                                            <size key="titleShadowOffset" width="1" height="1"/>
+                                                            <state key="normal" title="Enter Now">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="enterNowButtonPressed:" destination="q8o-DI-dUH" eventType="touchUpInside" id="ZFh-X6-F2r"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elS-Mv-6ZK">
+                                                            <rect key="frame" x="305.5" y="0.0" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="DIP-Dy-p3W"/>
+                                                            </constraints>
+                                                            <state key="normal" image="yellow_check_outline"/>
+                                                        </button>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="9Jv-yC-Fyd"/>
-                                                        <constraint firstAttribute="width" constant="200" id="wTh-5K-ZMB"/>
+                                                        <constraint firstAttribute="height" constant="35" id="rtK-jl-4Zp"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
-                                                    <size key="titleShadowOffset" width="1" height="1"/>
-                                                    <state key="normal" title="Enter Now">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="enterNowButtonPressed:" destination="q8o-DI-dUH" eventType="touchUpInside" id="ZFh-X6-F2r"/>
-                                                    </connections>
-                                                </button>
+                                                </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-YS-nET">
-                                                    <rect key="frame" x="43" y="94" width="269" height="19.5"/>
+                                                    <rect key="frame" x="43" y="99" width="269" height="19.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lottery Open:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62c-FB-Kax">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.5" height="19.5"/>
@@ -108,6 +133,8 @@
                                     <outlet property="enterLabel" destination="VTA-XU-YgL" id="kwN-hq-fdR"/>
                                     <outlet property="enterNowButton" destination="DdV-R3-xBz" id="VZ9-Xj-v9N"/>
                                     <outlet property="entryPeriodLabel" destination="Aat-gR-N3w" id="0Pm-gN-sWd"/>
+                                    <outlet property="favoriteButton" destination="eeU-4i-f19" id="uQZ-WC-fld"/>
+                                    <outlet property="hasEnteredButton" destination="elS-Mv-6ZK" id="UK7-Ln-o7e"/>
                                     <outlet property="lotteryCloseLabel" destination="Dk2-fX-iQd" id="Gpl-l3-yqu"/>
                                     <outlet property="lotteryOpenLabel" destination="yKG-vE-XcK" id="KOs-gn-b00"/>
                                     <outlet property="showTitleLabel" destination="i42-DV-0vf" id="fiC-Yd-Qkd"/>
@@ -121,8 +148,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="JmD-Hu-FRd"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="SSd-sv-ZLr" id="lSp-LC-87O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfC-sm-Icr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SSd-sv-ZLr">
+                    <connections>
+                        <outlet property="delegate" destination="GXQ-7I-vcz" id="1bw-df-bEA"/>
+                        <outlet property="searchContentsController" destination="GXQ-7I-vcz" id="R9P-UX-Sf8"/>
+                        <outlet property="searchResultsDataSource" destination="GXQ-7I-vcz" id="7Dr-G9-0Lb"/>
+                        <outlet property="searchResultsDelegate" destination="GXQ-7I-vcz" id="TgL-dx-YBq"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="5068" y="-911.69415292353835"/>
         </scene>
@@ -655,7 +693,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A06-PQ-8zm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hMT-wC-lrh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hMT-wC-lrh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -673,7 +711,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p0D-I4-Aic" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qXG-43-EHB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qXG-43-EHB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -691,7 +729,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFe-jm-bJK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="n9W-pb-9f9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9W-pb-9f9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -705,4 +743,8 @@
             <point key="canvasLocation" x="4129" y="-133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="yellow_check_outline" width="64" height="64"/>
+        <image name="yellow_star_outline" width="64" height="64"/>
+    </resources>
 </document>
