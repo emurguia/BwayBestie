@@ -15,6 +15,10 @@ class LotteryHomeTableViewController: UITableViewController {
     @IBOutlet weak var backgroundView: UIView!
     let shows = ShowService.getShows()
     let cacheIdentifier = "LotteryHomeViewController"
+    var favoriteFilter: Bool?
+    var openFilter: Bool?
+    var weeklyFilter: Bool?
+    var dailyFilter: Bool?
 
     @IBAction func settingsBarButtonPressed(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
@@ -32,26 +36,31 @@ class LotteryHomeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return shows.count
-//    }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return shows.count
+        return 2
+        //  return shows.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return shows.count
+        default:
+            return shows.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        switch indexPath.section{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FilterCell
+            cell.delegate = self
+            return cell
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
-            let index = indexPath.section
+            let index = indexPath.row
             let currentShow = shows[index]
             cell.showTitleLabel.text = currentShow.title
             cell.delegate = self
@@ -94,15 +103,15 @@ class LotteryHomeTableViewController: UITableViewController {
                 cell.toLabel.isHidden = false
                 cell.enterLabel.isHidden = false
             }
-        
-        
+            
+            
             if getFavoriteDefault(currentShow: currentShow) == true{
                 cell.favoriteButton.setImage(UIImage(named: "yellow_filled_star")!, for: UIControlState.normal)
-            
+                
             }else{
                 cell.favoriteButton.setImage(UIImage(named: "yellow_star_outline")!, for: UIControlState.normal)
             }
-        
+            
             if getEnteredDefault(currentShow: currentShow) == true{
                 let currentDate = Date();
                 let userCalendar = Calendar.current
@@ -117,16 +126,69 @@ class LotteryHomeTableViewController: UITableViewController {
                     }
                 }
                 
-               
+                
                 cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_filled"), for: UIControlState.normal)
             }else{
                 cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_outline"), for: UIControlState.normal)
             }
-        
+            
             return cell
-        
+        default:
+            fatalError()
+        }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        switch indexPath.section{
+        case 0:
+            return 100
+        case 1:
+            //performing filtering 
+            let index = indexPath.row
+            let currentShow = shows[index]
+            
+            //weekly filter
+            if weeklyFilter == true{
+                if currentShow.canEnterWeekly == true{
+                    return 165
+                }else{
+                    return 0
+                }
+            }
+            
+            //daily filter 
+            if dailyFilter == true{
+                if currentShow.canEnterWeekly == false{
+                    return 165
+                }else{
+                    return 0
+                }
+            }
+            
+            //open filter
+            if openFilter == true{
+                if currentShow.lotteryIsOpen() == true{
+                    return 165
+                }else{
+                    return 0
+                }
+            }
+            
+            //favorites filter 
+            if favoriteFilter == true{
+                if getFavoriteDefault(currentShow: currentShow) == true{
+                    return 165
+                }else{
+                    return 0
+                }
+            }
+            return 165
+        default:
+            fatalError()
+        }
+    }
+    
+
     
     func getAltColor(index: Int) -> UIColor{
         if index == 0{
@@ -371,6 +433,98 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
     
 
 
+}
+
+extension LotteryHomeTableViewController: FilterCellDelegate{
+    
+    func didPressEnterDaily(_ button: UIButton, on cell: FilterCell){
+        //set all other filters to false
+        favoriteFilter = false
+        weeklyFilter = false
+        openFilter = false
+        cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+
+        
+        //set filter
+        cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
+        dailyFilter = true
+        tableView.reloadData()
+
+        
+    }
+        
+    func didPressEnterWeekly(_ button: UIButton, on cell: FilterCell){
+        //set all other filters to false
+        favoriteFilter = false
+        dailyFilter = false
+        openFilter = false
+        cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+
+        //set filter
+        cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
+        weeklyFilter = true
+        tableView.reloadData()
+
+        
+    }
+        
+    func didPressLotteriesOpen(_ button: UIButton, on cell: FilterCell){
+        cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+
+
+        //set all other filters to false
+        favoriteFilter = false
+        weeklyFilter = false
+        dailyFilter = false
+        
+        //set filter
+        cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
+        openFilter = true
+        tableView.reloadData()
+        
+    }
+        
+    func didPressFavorites(_ button: UIButton, on cell: FilterCell){
+        //set all other filters to false
+        dailyFilter = false
+        weeklyFilter = false
+        openFilter = false
+        cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        
+        //set favorite filter to true
+        cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
+        favoriteFilter = true
+        tableView.reloadData()
+
+        
+    }
+    
+    func didPressNone(_ button: UIButton, on cell: FilterCell){
+        dailyFilter = false
+        weeklyFilter = false
+        openFilter = false
+        favoriteFilter = false
+
+        cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        
+        cell.noneButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
+
+        tableView.reloadData()
+
+
+    }
+    
 }
 
 

@@ -19,8 +19,100 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.73725490196078436" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="filterCell" rowHeight="100" id="svt-C9-QYr" customClass="FilterCell" customModule="BroadwayLotteryApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="svt-C9-QYr" id="gG6-RR-lVH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DP8-ha-ACH">
+                                            <rect key="frame" x="120" y="15" width="208" height="36"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIs-tp-ct9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="Favorites">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="favoritesButtonPressed:" destination="svt-C9-QYr" eventType="touchUpInside" id="vQe-RG-gsL"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-k8-sce">
+                                                    <rect key="frame" x="91" y="0.0" width="117" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="Open Lotteries">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="openLotteriesButtonPressed:" destination="svt-C9-QYr" eventType="touchUpInside" id="8kq-fY-xq4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dFc-BV-6SF">
+                                            <rect key="frame" x="57" y="56" width="271" height="36"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-p9-9Gh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="None">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="noneButtonPressed:" destination="svt-C9-QYr" eventType="touchUpInside" id="h9I-Ro-sCU"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSg-hR-lyt">
+                                                    <rect key="frame" x="63" y="0.0" width="103" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="Enter Weekly">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="enterWeeklyButtonPressed:" destination="svt-C9-QYr" eventType="touchUpInside" id="vTd-4t-eSU"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZ0-tb-9A6">
+                                                    <rect key="frame" x="186" y="0.0" width="85" height="36"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <state key="normal" title="Enter Daily">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="enterDailyButtonPressed:" destination="svt-C9-QYr" eventType="touchUpInside" id="HzH-Gq-2bc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qF-5c-44c">
+                                            <rect key="frame" x="20" y="20" width="80" height="26"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dFc-BV-6SF" firstAttribute="leading" secondItem="gG6-RR-lVH" secondAttribute="leading" constant="57" id="TrU-O3-QHe"/>
+                                        <constraint firstItem="DP8-ha-ACH" firstAttribute="top" secondItem="gG6-RR-lVH" secondAttribute="top" constant="15" id="UyH-iZ-Sp6"/>
+                                        <constraint firstItem="dFc-BV-6SF" firstAttribute="top" secondItem="DP8-ha-ACH" secondAttribute="bottom" constant="5" id="dK7-2Q-Y8c"/>
+                                        <constraint firstItem="DP8-ha-ACH" firstAttribute="leading" secondItem="2qF-5c-44c" secondAttribute="trailing" constant="20" id="dyT-gT-iG4"/>
+                                        <constraint firstItem="2qF-5c-44c" firstAttribute="top" secondItem="gG6-RR-lVH" secondAttribute="top" constant="20" id="inr-0n-0ws"/>
+                                        <constraint firstItem="2qF-5c-44c" firstAttribute="leading" secondItem="gG6-RR-lVH" secondAttribute="leading" constant="20" id="xAx-27-MuQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="enterDailyButton" destination="FZ0-tb-9A6" id="Yq6-ue-yLF"/>
+                                    <outlet property="enterWeeklyButton" destination="DSg-hR-lyt" id="J31-In-HL5"/>
+                                    <outlet property="favoritesButton" destination="wIs-tp-ct9" id="9MK-7k-z2b"/>
+                                    <outlet property="noneButton" destination="ovO-p9-9Gh" id="fc8-yz-Pic"/>
+                                    <outlet property="openLotteriesButton" destination="9d0-k8-sce" id="Re9-hd-pDt"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="showTestCell" rowHeight="165" id="q8o-DI-dUH" customClass="ShowTestCell" customModule="BroadwayLotteryApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8o-DI-dUH" id="y8C-pI-Tql">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
@@ -147,7 +239,9 @@
                             <outlet property="delegate" destination="GXQ-7I-vcz" id="EHT-IB-iuY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JmD-Hu-FRd"/>
+                    <navigationItem key="navigationItem" id="JmD-Hu-FRd">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="1d7-F0-4E7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="SSd-sv-ZLr" id="lSp-LC-87O"/>
                     </connections>

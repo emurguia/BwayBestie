@@ -211,7 +211,6 @@ struct Constants{
                 dateComponents.minute = minutes
                 
                 let nextOccurance = Calendar.current.nextDate(after: Date(), matching: dateComponents, matchingPolicy: .nextTime)!
-                
                 //convert to local time
                 if let sourceTimeZone = TimeZone(identifier: "America/New_York"){
                     let userTimeZone = TimeZone.current

@@ -47,6 +47,10 @@ class Show{
         lotteryCloseDateComponents.hour = Calendar.current.component(.hour, from: lotteryCloseEve)
         lotteryCloseDateComponents.minute = Calendar.current.component(.minute, from: lotteryCloseEve)
         
+        //lotteries are always open for weekly lotteries
+        if canEnterWeekly == true{
+            return true
+        }
         
         if let currentHour = dateComponents.hour, let currentMinute = dateComponents.minute, let lotteryOpenHour = lotteryOpenDateComponents.hour, let lotteryOpenMinute = lotteryOpenDateComponents.minute, let lotteryCloseHour = lotteryCloseDateComponents.hour, let lotteryCloseMinute = lotteryCloseDateComponents.minute{
             
