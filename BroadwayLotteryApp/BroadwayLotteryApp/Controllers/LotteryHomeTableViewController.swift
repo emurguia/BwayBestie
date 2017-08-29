@@ -55,7 +55,6 @@ class LotteryHomeTableViewController: UITableViewController {
     }
     
     @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
-        print("filter")
         if filterOn == true{
             filterOn = false
             tableView.reloadData()
@@ -74,6 +73,7 @@ class LotteryHomeTableViewController: UITableViewController {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "showTestCell", for: indexPath) as! ShowTestCell
+           // print(tableView.rowHeight)
             let index = indexPath.row
             let currentShow = shows[index]
             cell.showTitleLabel.text = currentShow.title
@@ -105,7 +105,7 @@ class LotteryHomeTableViewController: UITableViewController {
                 
             }
             if currentShow.canEnterWeekly{
-                cell.entryPeriodLabel.text = "Enter up to a week in advance"
+                cell.entryPeriodLabel.text = "Up to a week in advance"
                 cell.lotteryCloseLabel.isHidden = true
                 cell.lotteryOpenLabel.isHidden = true
                 cell.toLabel.isHidden = true
@@ -115,7 +115,7 @@ class LotteryHomeTableViewController: UITableViewController {
                 cell.lotteryCloseLabel.isHidden = false
                 cell.lotteryOpenLabel.isHidden = false
                 cell.toLabel.isHidden = false
-                cell.enterLabel.isHidden = false
+                cell.enterLabel.isHidden = true
             }
             
             
@@ -146,6 +146,16 @@ class LotteryHomeTableViewController: UITableViewController {
                 cell.hasEnteredButton.setImage(UIImage(named: "yellow_check_outline"), for: UIControlState.normal)
             }
             
+            if dailyFilter == true{
+                if currentShow.canEnterWeekly == false{
+                    cell.isHidden = false
+                }else{
+                    cell.isHidden = true
+                }
+            }
+
+            let height = tableView.estimatedRowHeight
+            //print(height)
             return cell
         default:
             fatalError()
@@ -174,7 +184,7 @@ class LotteryHomeTableViewController: UITableViewController {
                 }
             }
             
-            //daily filter 
+            //daily filter
             if dailyFilter == true{
                 if currentShow.canEnterWeekly == false{
                     return 165
@@ -186,6 +196,7 @@ class LotteryHomeTableViewController: UITableViewController {
             //open filter
             if openFilter == true{
                 if currentShow.lotteryIsOpen() == true{
+                    
                     return 165
                 }else{
                     return 0
@@ -195,6 +206,13 @@ class LotteryHomeTableViewController: UITableViewController {
             //favorites filter 
             if favoriteFilter == true{
                 if getFavoriteDefault(currentShow: currentShow) == true{
+//                    getAltColorFilter(cell: , index: <#T##Int#>)
+//                    if colorIndex == 0{
+//                        colorIndex = 1
+//                    }else{
+//                        colorIndex = 0
+//                    }
+                    
                     return 165
                 }else{
                     return 0
@@ -219,6 +237,10 @@ class LotteryHomeTableViewController: UITableViewController {
                 return UIColor(red:0.67, green:0.00, blue:0.00, alpha:1.0)
             }
         }
+    }
+    
+    func getAltColorFilter(cell: ShowTestCell, index: Int){
+        cell.backgroundColor = getAltColor(index: index)
     }
     
     
@@ -463,6 +485,7 @@ extension LotteryHomeTableViewController: FilterCellDelegate{
         cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.noneButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
 
         
         //set filter
@@ -481,6 +504,7 @@ extension LotteryHomeTableViewController: FilterCellDelegate{
         cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.noneButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
 
         //set filter
         cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
@@ -494,6 +518,7 @@ extension LotteryHomeTableViewController: FilterCellDelegate{
         cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+        cell.noneButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
 
 
         //set all other filters to false
@@ -516,7 +541,8 @@ extension LotteryHomeTableViewController: FilterCellDelegate{
         cell.enterDailyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.enterWeeklyButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
         cell.openLotteriesButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
-        
+        cell.noneButton.titleLabel?.font = UIFont(name:"Avenir", size: 17.0)
+
         //set favorite filter to true
         cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
         favoriteFilter = true
