@@ -240,9 +240,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="JmD-Hu-FRd">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="1d7-F0-4E7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="1d7-F0-4E7">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="GXQ-7I-vcz" id="z1C-1g-cu5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="1d7-F0-4E7" id="qMa-jS-ug8"/>
                         <outlet property="searchDisplayController" destination="SSd-sv-ZLr" id="lSp-LC-87O"/>
                     </connections>
                 </tableViewController>

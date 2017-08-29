@@ -19,7 +19,9 @@ class LotteryHomeTableViewController: UITableViewController {
     var openFilter: Bool?
     var weeklyFilter: Bool?
     var dailyFilter: Bool?
+    var filterOn: Bool?
 
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBAction func settingsBarButtonPressed(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
     }
@@ -51,6 +53,18 @@ class LotteryHomeTableViewController: UITableViewController {
             return shows.count
         }
     }
+    
+    @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
+        print("filter")
+        if filterOn == true{
+            filterOn = false
+            tableView.reloadData()
+        }else{
+            filterOn = true
+            tableView.reloadData()
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
@@ -141,7 +155,11 @@ class LotteryHomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         switch indexPath.section{
         case 0:
-            return 100
+            if filterOn == true{
+                return 100
+            }else{
+                return 0
+            }
         case 1:
             //performing filtering 
             let index = indexPath.row
@@ -503,7 +521,6 @@ extension LotteryHomeTableViewController: FilterCellDelegate{
         cell.favoritesButton.titleLabel?.font = UIFont(name:"Avenir-Black", size: 17.0)
         favoriteFilter = true
         tableView.reloadData()
-
         
     }
     
