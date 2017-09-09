@@ -153,9 +153,6 @@ class LotteryHomeTableViewController: UITableViewController {
                     cell.isHidden = true
                 }
             }
-
-            let height = tableView.estimatedRowHeight
-            //print(height)
             return cell
         default:
             fatalError()
