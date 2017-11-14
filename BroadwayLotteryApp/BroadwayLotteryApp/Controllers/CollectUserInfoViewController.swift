@@ -66,7 +66,7 @@ class CollectUserInfoViewController: UITableViewController {
         }
         
         //form validation
-        if firstName == "" || lastName == "" || email == "" || zipCode == "" || birthMonth == "" || birthDate == "" || birthYear == ""{
+       /* if firstName == "" || lastName == "" || email == "" || zipCode == "" || birthMonth == "" || birthDate == "" || birthYear == ""{
             let alertController = UIAlertController(title: "Fields Left Empty", message: "Please make sure you fill out every field (they're required to enter the lotteries!)", preferredStyle: .alert)
             
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -74,7 +74,7 @@ class CollectUserInfoViewController: UITableViewController {
             alertController.addAction(OKAction)
             present(alertController, animated: true)
             return
-        }
+        }*/
         
             
         //get number tickets

@@ -47,6 +47,7 @@ struct Constants{
         static let warPaintNotifications = "warPaintNotifications"
         static let wickedNotifications = "wickedNotifications"
         static let charlieNotifications = "charlieNotifications"
+        static let springsteenNotifications = "springsteenNotifications"
         
         static let aladdinFavorite = "aladdinFavorite"
         static let anastasiaFavorite = "anastasiaFavorite"
@@ -62,6 +63,7 @@ struct Constants{
         static let warPaintFavorite = "warPaintFavorite"
         static let wickedFavorite = "wickedFavorite"
         static let charlieFavorite = "charlieFavorite"
+        static let springsteenFavorite = "springsteenFavorite"
         
         static let aladdinEntered = "aladdinEntered"
         static let anastasiaEntered = "anastasiaEntered"
@@ -77,6 +79,7 @@ struct Constants{
         static let warPaintEntered = "warPaintEntered"
         static let wickedEntered = "wickedEntered"
         static let charlieEntered = "charlieEntered"
+        static let springsteenisEnter = "springsteenisEnter"
     }
     
     struct ShowTitle{
@@ -97,6 +100,7 @@ struct Constants{
         static let warPaint = "War Paint"
         static let wicked = "Wicked"
         static let charlie = "Charlie and the Chocolate Factory"
+        static let springsteen = "Springsteen on Broadway"
     }
     /* 
      * lottery times
@@ -121,6 +125,7 @@ struct Constants{
         static let warPaintOpen: Date  = setDate(hour: 8, minutes: 0)! //might be 9 sometimes
         static let wickedOpen: Date  = setDate(hour: 20, minutes: 0)!
         static let charlieOpen: Date = setDate(hour: 10, minutes: 0)!
+        static let springsteenOpen: Date = setDate(hour: 0, minutes: 0)! //week in advance
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -163,6 +168,7 @@ struct Constants{
         static let warPaintCloseEve: Date   = setDate(hour: 15, minutes: 0)!
         static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let charlieCloseEve: Date = setDate(hour: 14, minutes: 0)!
+        static let springsteenCloseEve: Date = setDate(hour: 16, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -204,6 +210,7 @@ struct Constants{
             static let warPaintCloseMat: Date   = setDate(hour: 15, minutes: 0)!//
             static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
             static let charlieCloseMat: Date = setDate(hour: 9, minutes: 30)!
+            static let springsteenCloseMat: Date = setDate(hour: 16, minutes:0)!
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
                 var dateComponents = DateComponents()
@@ -244,6 +251,7 @@ struct Constants{
         static let warPaintCanEnterWeekly = false
         static let wickedCanEnterWeekly = false
         static let charlieCanEnterWeekly = false
+        static let springsteenCanEnterWeekly = true
     }
     
     // if HTTP, make sure to add to Info.plist
@@ -255,7 +263,7 @@ struct Constants{
         static let catsURL = "https://lottery.broadwaydirect.com/show/cats/"
         static let dearEvanHansenURL = "http://www.dearevanhansenlottery.com"
         static let groundhogDayURL = "http://www.luckyseat.com/groundhog-day/"
-        static let hamiltonURL = "https://lottery.broadwaydirect.com/show/hamilton/"
+        static let hamiltonURL = "http://www.luckyseat.com/hamilton-ny/"
         static let kinkyBootsURL = "http://www.luckyseat.com/kinky-boots/"
         static let lionKingURL = "https://lottery.broadwaydirect.com/show/the-lion-king/"
         static let greatCometURL = "http://greatcometbroadway.com/lottery.php"
@@ -266,6 +274,7 @@ struct Constants{
         static let warPaintURL = "https://lottery.broadwaydirect.com/show/war-paint/"
         static let wickedURL = "https://lottery.broadwaydirect.com/show/wicked/"
         static let charlieURL = "https://lottery.broadwaydirect.com/show/charlie/"
+        static let springsteenURL = "http://www.luckyseat.com/springsteen-broadway/"
         
         //lottery entry page for broadway direct lotteries 
         static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"

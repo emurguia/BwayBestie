@@ -375,7 +375,8 @@ extension SwiftWebVC: WKNavigationDelegate {
             if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{
                 
                 let urlString = String(describing: url)
-                if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL{
+//                 if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL || urlString == Constants.LotteryURLs.hamiltonURL || urlString == Constants.LotteryURLs.springsteenURL
+                if urlString.hasPrefix("http://www.luckyseat.com/"){
                     
                     webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
                         guard error == nil else{
@@ -456,7 +457,7 @@ extension SwiftWebVC: WKNavigationDelegate {
         updateToolbarItems()
     }
     
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    /*public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         
         let url = navigationAction.request.url
@@ -533,7 +534,7 @@ extension SwiftWebVC: WKNavigationDelegate {
         
         decisionHandler(.allow)
         
-    }
+    }*/
     
     func schemeAvailable(scheme: String) -> Bool {
         if let url = URL(string: scheme) {

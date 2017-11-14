@@ -14,8 +14,6 @@
 		FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */; };
 		FD2B1FEA1F3B7736008BFDA4 /* WelcomePageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B1FE91F3B7736008BFDA4 /* WelcomePageThreeViewController.swift */; };
 		FD2B1FFE1F3B8D95008BFDA4 /* notifications_short.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */; };
-		FD2B20021F3BC2DC008BFDA4 /* enter_lottery_short_compressed.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B20011F3BC2DB008BFDA4 /* enter_lottery_short_compressed.gif */; };
-		FD2B20041F3BC39C008BFDA4 /* email_short.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B20031F3BC39C008BFDA4 /* email_short.gif */; };
 		FD2B20061F3BC63A008BFDA4 /* setting_notifications.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */; };
 		FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */; };
 		FD4C7F0A1F2BEAEC0038A093 /* ShowTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */; };
@@ -40,6 +38,8 @@
 		FDB3FB3F1F1D7CF70073FD3D /* SwiftWebVCActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB381F1D7CF70073FD3D /* SwiftWebVCActivity.swift */; };
 		FDB3FB401F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB391F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift */; };
 		FDB3FB411F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3FB3A1F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift */; };
+		FDBF78681F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif in Resources */ = {isa = PBXBuildFile; fileRef = FDBF78671F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif */; };
+		FDBF786A1F9ADACF005C6D1B /* email_short.gif in Resources */ = {isa = PBXBuildFile; fileRef = FDBF78691F9ADACF005C6D1B /* email_short.gif */; };
 		FDE60C611F29348F008E2BF9 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */; };
 		FDF39C681F3A7F8700CC3729 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF39C671F3A7F8700CC3729 /* WelcomePageViewController.swift */; };
 		FDF39C6C1F3A851B00CC3729 /* LotteryPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF39C6B1F3A851B00CC3729 /* LotteryPageTwoViewController.swift */; };
@@ -61,8 +61,6 @@
 		FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Storyboards/Welcome.storyboard; sourceTree = "<group>"; };
 		FD2B1FE91F3B7736008BFDA4 /* WelcomePageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageThreeViewController.swift; path = Controllers/WelcomePageThreeViewController.swift; sourceTree = "<group>"; };
 		FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = notifications_short.gif; path = ../../../../../../Downloads/notifications_short.gif; sourceTree = "<group>"; };
-		FD2B20011F3BC2DB008BFDA4 /* enter_lottery_short_compressed.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = enter_lottery_short_compressed.gif; path = ../../../../../enter_lottery_short_compressed.gif; sourceTree = "<group>"; };
-		FD2B20031F3BC39C008BFDA4 /* email_short.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = email_short.gif; path = ../../../../../email_short.gif; sourceTree = "<group>"; };
 		FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = setting_notifications.gif; path = ../../../../../../Downloads/setting_notifications.gif; sourceTree = "<group>"; };
 		FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UYLNotificationDelegate.swift; sourceTree = "<group>"; };
 		FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowTestCell.swift; path = Views/ShowTestCell.swift; sourceTree = "<group>"; };
@@ -97,6 +95,9 @@
 		FDB3FB381F1D7CF70073FD3D /* SwiftWebVCActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivity.swift; sourceTree = "<group>"; };
 		FDB3FB391F1D7CF70073FD3D /* SwiftWebVCActivityChrome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivityChrome.swift; sourceTree = "<group>"; };
 		FDB3FB3A1F1D7CF70073FD3D /* SwiftWebVCActivitySafari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftWebVCActivitySafari.swift; sourceTree = "<group>"; };
+		FDBF78641F9AD994005C6D1B /* lotteryscroll_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lotteryscroll_small.gif; path = ../../../../lotteryscroll_small.gif; sourceTree = "<group>"; };
+		FDBF78671F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = enter_lottery_short_compressed.gif; path = ../../../../enter_lottery_short_compressed.gif; sourceTree = "<group>"; };
+		FDBF78691F9ADACF005C6D1B /* email_short.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = email_short.gif; path = ../../../../email_short.gif; sourceTree = "<group>"; };
 		FDE60C601F29348F008E2BF9 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationTableViewController.swift; path = Controllers/NotificationTableViewController.swift; sourceTree = "<group>"; };
 		FDF39C671F3A7F8700CC3729 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = Controllers/WelcomePageViewController.swift; sourceTree = "<group>"; };
 		FDF39C6B1F3A851B00CC3729 /* LotteryPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryPageTwoViewController.swift; path = Controllers/LotteryPageTwoViewController.swift; sourceTree = "<group>"; };
@@ -220,10 +221,11 @@
 		FD980C901F3536FB00F3DDF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD2B20011F3BC2DB008BFDA4 /* enter_lottery_short_compressed.gif */,
+				FDBF78691F9ADACF005C6D1B /* email_short.gif */,
+				FDBF78671F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif */,
 				FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */,
+				FDBF78641F9AD994005C6D1B /* lotteryscroll_small.gif */,
 				FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */,
-				FD2B20031F3BC39C008BFDA4 /* email_short.gif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -354,11 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */,
+				FDBF786A1F9ADACF005C6D1B /* email_short.gif in Resources */,
+				FDBF78681F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif in Resources */,
 				FD2B20061F3BC63A008BFDA4 /* setting_notifications.gif in Resources */,
 				FD2B1FFE1F3B8D95008BFDA4 /* notifications_short.gif in Resources */,
 				FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */,
-				FD2B20041F3BC39C008BFDA4 /* email_short.gif in Resources */,
-				FD2B20021F3BC2DC008BFDA4 /* enter_lottery_short_compressed.gif in Resources */,
 				FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */,
 				FDFEE7451F14318B00FE59E4 /* CollectUserInfo.storyboard in Resources */,
 				FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */,
