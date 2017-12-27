@@ -48,6 +48,7 @@ struct Constants{
         static let wickedNotifications = "wickedNotifications"
         static let charlieNotifications = "charlieNotifications"
         static let springsteenNotifications = "springsteenNotifications"
+        static let spongebobNotifications = "spongebobNotifications"
         
         static let aladdinFavorite = "aladdinFavorite"
         static let anastasiaFavorite = "anastasiaFavorite"
@@ -64,6 +65,7 @@ struct Constants{
         static let wickedFavorite = "wickedFavorite"
         static let charlieFavorite = "charlieFavorite"
         static let springsteenFavorite = "springsteenFavorite"
+        static let spongebobFavorite = "spongebobFavorite"
         
         static let aladdinEntered = "aladdinEntered"
         static let anastasiaEntered = "anastasiaEntered"
@@ -79,7 +81,8 @@ struct Constants{
         static let warPaintEntered = "warPaintEntered"
         static let wickedEntered = "wickedEntered"
         static let charlieEntered = "charlieEntered"
-        static let springsteenisEnter = "springsteenisEnter"
+        static let springsteenEntered = "springsteenEntered"
+        static let spongebobEntered = "spongebobEntered"
     }
     
     struct ShowTitle{
@@ -101,6 +104,7 @@ struct Constants{
         static let wicked = "Wicked"
         static let charlie = "Charlie and the Chocolate Factory"
         static let springsteen = "Springsteen on Broadway"
+        static let spongebob = "SpongeBob SquarePants, The New Musical"
     }
     /* 
      * lottery times
@@ -114,7 +118,7 @@ struct Constants{
         static let catsOpen: Date  = setDate(hour: 10, minutes: 0)!
         static let dearEvanHansenOpen: Date  = setDate(hour: 0, minutes: 1)!//change to 12:01
         static let groundhogDayOpen: Date  = setDate(hour: 0, minutes: 0)! //week in advance
-        static let hamiltonOpen: Date  = setDate(hour: 8, minutes: 0)!
+        static let hamiltonOpen: Date  = setDate(hour: 11, minutes: 0)!
         static let kinkyBootsOpen: Date  = setDate(hour: 0, minutes: 0)! // week in advance
         static let lionKingOpen: Date  = setDate(hour: 20, minutes: 0)!
         static let greatCometOpen: Date  = setDate(hour: 0, minutes: 1)!
@@ -126,6 +130,7 @@ struct Constants{
         static let wickedOpen: Date  = setDate(hour: 20, minutes: 0)!
         static let charlieOpen: Date = setDate(hour: 10, minutes: 0)!
         static let springsteenOpen: Date = setDate(hour: 0, minutes: 0)! //week in advance
+        static let spongebobOpen: Date = setDate(hour: 7, minutes:0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -157,7 +162,7 @@ struct Constants{
         static let catsCloseEve: Date  = setDate(hour: 15, minutes: 0)!
         static let dearEvanHansenCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let groundhogDayCloseEve: Date = setDate(hour: 12, minutes: 30)!
-        static let hamiltonCloseEve: Date = setDate(hour: 13, minutes: 0)!
+        static let hamiltonCloseEve: Date = setDate(hour: 9, minutes: 0)!
         static let kinkyBootsCloseEve: Date   = setDate(hour: 12, minutes: 30)!
         static let lionKingCloseEve: Date  = setDate(hour: 9, minutes: 0)!
         static let greatCometCloseEve: Date  = setDate(hour: 14, minutes: 0)!
@@ -169,6 +174,7 @@ struct Constants{
         static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let charlieCloseEve: Date = setDate(hour: 14, minutes: 0)!
         static let springsteenCloseEve: Date = setDate(hour: 16, minutes: 0)!
+        static let spongebobCloseEve: Date = setDate(hour: 14, minutes: 0)! //unsure about this
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -211,6 +217,7 @@ struct Constants{
             static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
             static let charlieCloseMat: Date = setDate(hour: 9, minutes: 30)!
             static let springsteenCloseMat: Date = setDate(hour: 16, minutes:0)!
+            static let spongebobCloseMat: Date = setDate(hour: 12, minutes: 0)!//unsure about this
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
                 var dateComponents = DateComponents()
@@ -252,6 +259,7 @@ struct Constants{
         static let wickedCanEnterWeekly = false
         static let charlieCanEnterWeekly = false
         static let springsteenCanEnterWeekly = true
+        static let spongebobCanEnterWeekly = false
     }
     
     // if HTTP, make sure to add to Info.plist
@@ -275,6 +283,7 @@ struct Constants{
         static let wickedURL = "https://lottery.broadwaydirect.com/show/wicked/"
         static let charlieURL = "https://lottery.broadwaydirect.com/show/charlie/"
         static let springsteenURL = "http://www.luckyseat.com/springsteen-broadway/"
+        static let spongebobURL = "https://lottery.broadwaydirect.com/show/sponge/"
         
         //lottery entry page for broadway direct lotteries 
         static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"

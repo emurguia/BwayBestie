@@ -236,6 +236,10 @@ struct NotificationService{
             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.wickedNotifications)
         case Constants.ShowTitle.charlie:
             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.charlieNotifications)
+        case Constants.ShowTitle.springsteen:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.springsteenNotifications)
+        case Constants.ShowTitle.spongebob:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.springsteenNotifications)
         default:
             print("error - show not found")
         }

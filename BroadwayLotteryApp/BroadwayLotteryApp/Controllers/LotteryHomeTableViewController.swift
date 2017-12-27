@@ -55,6 +55,9 @@ class LotteryHomeTableViewController: UITableViewController {
     }
     
     @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
+        //scroll to top
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
         if filterOn == true{
             filterOn = false
             tableView.reloadData()
@@ -324,6 +327,10 @@ class LotteryHomeTableViewController: UITableViewController {
             return defaults.bool(forKey: Constants.UserDefaults.wickedEntered)
         case Constants.ShowTitle.charlie:
             return defaults.bool(forKey: Constants.UserDefaults.charlieEntered)
+        case Constants.ShowTitle.springsteen:
+            return defaults.bool(forKey: Constants.UserDefaults.springsteenEntered)
+        case Constants.ShowTitle.spongebob:
+            return defaults.bool(forKey: Constants.UserDefaults.spongebobEntered)
         default:
             print("error - show not found")
         }
@@ -363,6 +370,10 @@ class LotteryHomeTableViewController: UITableViewController {
             defaults.set(value,forKey: Constants.UserDefaults.wickedEntered)
         case Constants.ShowTitle.charlie:
             defaults.set(value,forKey: Constants.UserDefaults.charlieEntered)
+        case Constants.ShowTitle.springsteen:
+             defaults.set(value, forKey: Constants.UserDefaults.springsteenEntered)
+        case Constants.ShowTitle.spongebob:
+             defaults.set(value, forKey: Constants.UserDefaults.spongebobEntered)
         default:
             print("error - show not found")
         }
@@ -423,6 +434,10 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
             return defaults.bool(forKey: Constants.UserDefaults.wickedFavorite)
         case Constants.ShowTitle.charlie:
             return defaults.bool(forKey: Constants.UserDefaults.charlieFavorite)
+        case Constants.ShowTitle.springsteen:
+            return defaults.bool(forKey: Constants.UserDefaults.springsteenFavorite)
+        case Constants.ShowTitle.spongebob:
+            return defaults.bool(forKey: Constants.UserDefaults.spongebobFavorite)
         default:
             print("error - show not found")
         }
@@ -462,6 +477,10 @@ extension LotteryHomeTableViewController: ShowCellTestDelegate{
              defaults.set(value,forKey: Constants.UserDefaults.wickedFavorite)
         case Constants.ShowTitle.charlie:
              defaults.set(value,forKey: Constants.UserDefaults.charlieFavorite)
+        case Constants.ShowTitle.springsteen:
+            defaults.set(value, forKey: Constants.UserDefaults.springsteenFavorite)
+        case Constants.ShowTitle.spongebob:
+            defaults.set(value, forKey: Constants.UserDefaults.spongebobFavorite)
         default:
             print("error - show not found")
         }
