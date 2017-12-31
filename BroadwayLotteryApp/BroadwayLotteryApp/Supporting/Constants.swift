@@ -174,7 +174,7 @@ struct Constants{
         static let wickedCloseEve: Date  = setDate(hour: 14, minutes: 0)!
         static let charlieCloseEve: Date = setDate(hour: 14, minutes: 0)!
         static let springsteenCloseEve: Date = setDate(hour: 16, minutes: 0)!
-        static let spongebobCloseEve: Date = setDate(hour: 14, minutes: 0)! //unsure about this
+        static let spongebobCloseEve: Date = setDate(hour: 15, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -217,7 +217,7 @@ struct Constants{
             static let wickedCloseMat: Date  = setDate(hour: 10, minutes: 30)!
             static let charlieCloseMat: Date = setDate(hour: 9, minutes: 30)!
             static let springsteenCloseMat: Date = setDate(hour: 16, minutes:0)!
-            static let spongebobCloseMat: Date = setDate(hour: 12, minutes: 0)!//unsure about this
+            static let spongebobCloseMat: Date = setDate(hour: 15, minutes: 0)!
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
                 var dateComponents = DateComponents()
