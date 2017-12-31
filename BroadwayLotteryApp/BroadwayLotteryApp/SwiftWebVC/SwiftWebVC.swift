@@ -163,11 +163,11 @@ public class SwiftWebVC: UIViewController {
     
     public func getShow(){
         let shows = ShowService.getShows()
-        print("the request:")
-        print(request)
+        //print("the request:")
+        //print(request)
         if let requestUnWrapped = request{
             let requestString = String(describing: requestUnWrapped)
-            print("the request string is \(requestString)")
+           // print("the request string is \(requestString)")
             
             for show in shows{
                 if show.lotteryURL == requestString{
