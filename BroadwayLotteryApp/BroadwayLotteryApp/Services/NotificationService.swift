@@ -240,6 +240,26 @@ struct NotificationService{
             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.springsteenNotifications)
         case Constants.ShowTitle.spongebob:
             defaults.set(notificationsStatus, forKey: Constants.UserDefaults.springsteenNotifications)
+        case Constants.ShowTitle.frozen:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.frozenNotifications)
+        case Constants.ShowTitle.bronx:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.bronxNotifications)
+        case Constants.ShowTitle.fairLady:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.fairLadyNotifications)
+        case Constants.ShowTitle.meanGirls:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.meanGirlsNotifcations)
+        case Constants.ShowTitle.summer:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.summerNotifications)
+        case Constants.ShowTitle.bandsVisit:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.bandsVisitNotifications)
+        case Constants.ShowTitle.beautiful:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.beautifulNotifcations)
+        case Constants.ShowTitle.cher:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.cherNotifications)
+        case Constants.ShowTitle.kong:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.kongNotifications)
+        case Constants.ShowTitle.prettyWoman:
+            defaults.set(notificationsStatus, forKey: Constants.UserDefaults.prettyWomanNotifications)
         default:
             print("error - show not found")
         }

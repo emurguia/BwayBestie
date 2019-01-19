@@ -370,6 +370,7 @@ extension SwiftWebVC: WKNavigationDelegate {
             let birthMonthTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthMonth)
             let birthDateTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthDate)
             let birthYearTemp: String? = KeychainWrapper.standard.string(forKey: Constants.Keychain.birthYear)
+        
             
             //only fills out info user has inputted
             if let url = webView.url, let firstName = firstNameTemp, let lastName = lastNameTemp, let zipCode = zipCodeTemp, let age = ageTemp, let email = emailTemp, let numberTickets = numberTicketsTemp, let birthMonth = birthMonthTemp, let birthDate = birthDateTemp, let birthYear = birthYearTemp{

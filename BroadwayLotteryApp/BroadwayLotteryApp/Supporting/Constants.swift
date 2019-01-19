@@ -49,6 +49,16 @@ struct Constants{
         static let charlieNotifications = "charlieNotifications"
         static let springsteenNotifications = "springsteenNotifications"
         static let spongebobNotifications = "spongebobNotifications"
+        static let frozenNotifications = "frozenNotifications"
+        static let meanGirlsNotifcations = "meanGirlsNotifcations"
+        static let summerNotifications = "summerNotifications"
+        static let bronxNotifications = "bronxNotifications"
+        static let fairLadyNotifications = "fairLadyNotifications"
+        static let bandsVisitNotifications = "bandsVisitNotifications"
+        static let beautifulNotifcations = "beautifulNotifcations"
+        static let cherNotifications = "cherNotifications"
+        static let kongNotifications = "kongNotifications"
+        static let prettyWomanNotifications = "prettyWomanNotifications"
         
         static let aladdinFavorite = "aladdinFavorite"
         static let anastasiaFavorite = "anastasiaFavorite"
@@ -66,6 +76,17 @@ struct Constants{
         static let charlieFavorite = "charlieFavorite"
         static let springsteenFavorite = "springsteenFavorite"
         static let spongebobFavorite = "spongebobFavorite"
+        static let frozenFavorite = "frozenFavorite"
+        static let meanGirlsFavorite = "meanGirlsFavorite"
+        static let summerFavorite = "summerFavorite"
+        static let bronxFavorite = "bronxFavorite"
+        static let fairLadyFavorite = "fairLadyFavorite"
+        static let bandsVisitFavorite = "bandsVisitFavorite"
+        static let beautifulFavorite = "beautifulFavorite"
+        static let cherFavorite = "beautifulFavorite"
+        static let kongFavorite = "kongFavorite"
+        static let prettyWomanFavorite = "prettyWomanFavorite"
+        
         
         static let aladdinEntered = "aladdinEntered"
         static let anastasiaEntered = "anastasiaEntered"
@@ -83,6 +104,16 @@ struct Constants{
         static let charlieEntered = "charlieEntered"
         static let springsteenEntered = "springsteenEntered"
         static let spongebobEntered = "spongebobEntered"
+        static let frozenEntered = "frozenEntered"
+        static let meanGirlsEntered = "meanGirlsEntered"
+        static let summerEntered = "summerEntered"
+        static let bronxEntered  = "bronxEntered"
+        static let fairLadyEntered = "fairLadyEntered"
+        static let bandsVisitEntered = "bandsVisitEntered"
+        static let beautifulEntered = "beautifulEntered"
+        static let cherEntered = "cherEntered"
+        static let kongEntered = "kongEntered"
+        static let prettyWomanEntered = "prettyWomanEntered"
     }
     
     struct ShowTitle{
@@ -105,6 +136,16 @@ struct Constants{
         static let charlie = "Charlie and the Chocolate Factory"
         static let springsteen = "Springsteen on Broadway"
         static let spongebob = "SpongeBob SquarePants, The New Musical"
+        static let frozen = "Frozen"
+        static let meanGirls = "Mean Girls"
+        static let summer = "Summer: The Donna Summer Musical"
+        static let bronx = "A Bronx Tale"
+        static let fairLady = "My Fair Lady"
+        static let bandsVisit = "The Band's Visit"
+        static let beautiful = "Beautiful: A Carole King Musical"
+        static let cher = "The Cher Show"
+        static let kong = "King Kong"
+        static let prettyWoman = "Pretty Woman: The Musical"
     }
     /* 
      * lottery times
@@ -131,6 +172,16 @@ struct Constants{
         static let charlieOpen: Date = setDate(hour: 10, minutes: 0)!
         static let springsteenOpen: Date = setDate(hour: 0, minutes: 0)! //week in advance
         static let spongebobOpen: Date = setDate(hour: 7, minutes:0)!
+        static let frozen: Date = setDate(hour: 0, minutes: 0)!//week in advance
+        static let meanGirlsOpen: Date = setDate(hour: 0, minutes: 0)! //week
+        static let summerOpen: Date = setDate(hour: 8, minutes: 0)!
+        static let bronxOpen: Date = setDate(hour: 0, minutes: 0)!
+        static let fairLadyOpen: Date = setDate(hour: 0, minutes: 0)!
+        static let bandsVisitOpen: Date = setDate(hour: 0, minutes: 0)!
+        static let beautifulOpen: Date = setDate(hour: 0, minutes: 0)!
+        static let cherOpen: Date = setDate(hour: 8, minutes: 0)!
+        static let kongOpen: Date = setDate(hour: 0, minutes: 0)!
+        static let prettyWomanOpen: Date = setDate(hour: 9, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -175,6 +226,16 @@ struct Constants{
         static let charlieCloseEve: Date = setDate(hour: 14, minutes: 0)!
         static let springsteenCloseEve: Date = setDate(hour: 16, minutes: 0)!
         static let spongebobCloseEve: Date = setDate(hour: 15, minutes: 0)!
+        static let forzenCloseEve: Date = setDate(hour: 11, minutes: 0)!
+        static let meanGirlsClose: Date = setDate(hour: 11, minutes: 0)! //week
+        static let summerClose: Date = setDate(hour: 15, minutes: 0)!
+        static let bronxClose: Date = setDate(hour: 14, minutes: 0)!
+        static let fairLadyClose: Date = setDate(hour: 14, minutes: 0)!
+        static let bandsVisitClose: Date = setDate(hour: 14, minutes: 0)!
+        static let beautifulCloseEve: Date = setDate(hour: 14, minutes: 0)!
+        static let cherCloseEve: Date = setDate(hour: 14, minutes: 0)!
+        static let kongCloseEve: Date = setDate(hour: 14, minutes: 0)!
+        static let prettyWomanCloseEve: Date = setDate(hour: 14, minutes: 0)!
         
         static func setDate(hour: Int, minutes: Int) -> Date?{
             var dateComponents = DateComponents()
@@ -218,6 +279,16 @@ struct Constants{
             static let charlieCloseMat: Date = setDate(hour: 9, minutes: 30)!
             static let springsteenCloseMat: Date = setDate(hour: 16, minutes:0)!
             static let spongebobCloseMat: Date = setDate(hour: 15, minutes: 0)!
+            static let frozenCloseMat: Date = setDate(hour: 11, minutes: 0)!
+            static let meanGirlsClose: Date = setDate(hour: 11, minutes: 0)! //week
+            static let summerClose: Date = setDate(hour: 15, minutes: 0)!
+            static let bronxClose: Date = setDate(hour: 14, minutes: 0)!
+            static let fairLadyClose: Date = setDate(hour: 14, minutes: 0)!
+            static let bandsVisitClose: Date = setDate(hour: 14, minutes: 0)!
+            static let beautifulCloseMat: Date = setDate(hour: 14, minutes: 0)!
+            static let cherCloseMat: Date = setDate(hour: 14, minutes: 0)!
+            static let kongCloseMat: Date = setDate(hour: 14, minutes: 0)!
+            static let prettyWomanCloseMat: Date = setDate(hour: 14, minutes: 0)!
             
             static func setDate(hour: Int, minutes: Int) -> Date?{
                 var dateComponents = DateComponents()
@@ -260,6 +331,16 @@ struct Constants{
         static let charlieCanEnterWeekly = false
         static let springsteenCanEnterWeekly = true
         static let spongebobCanEnterWeekly = false
+        static let frozenCanEnterWeekly = true
+        static let meanGirlsCanEnterWeekly = true
+        static let summerCanEnterWeekly = false
+        static let bronxCanEnterWeekly = false
+        static let fairLadyCanEnterWeekly = false
+        static let bandsVisitCanEnterWeekly = false
+        static let beautifulCanEnterWeekly = false
+        static let cherCanEnterWeekly = false
+        static let kongCanEnterWeekly = false
+        static let prettyWomanCanEnterWeekly = false
     }
     
     // if HTTP, make sure to add to Info.plist
@@ -284,6 +365,16 @@ struct Constants{
         static let charlieURL = "https://lottery.broadwaydirect.com/show/charlie/"
         static let springsteenURL = "http://www.luckyseat.com/springsteen-broadway/"
         static let spongebobURL = "https://lottery.broadwaydirect.com/show/sponge/"
+        static let frozenURL = "https://www.luckyseat.com/frozen/"
+        static let meanGirlsURL = "https://www.luckyseat.com/mean-girls/"
+        static let summerURL = "https://lottery.broadwaydirect.com/show/summer/"
+        static let fairLadyURL = "https://myfairladylottery.com"
+        static let bronxURL = "http://www.abronxtalethemusical.com/lottery/"
+        static let bandsVisitURL = "https://thebandsvisitlottery.com"
+        static let beautifulURL = "https://beautifullottery.com/"
+        static let cherURL = "https://lottery.broadwaydirect.com/show/cher/"
+        static let kongURL = "https://kingkonglottery.com/"
+        static let prettyWomanURL = "https://lottery.broadwaydirect.com/show/pretty/"
         
         //lottery entry page for broadway direct lotteries 
         static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"

@@ -13,8 +13,6 @@
 		FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */; };
 		FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */; };
 		FD2B1FEA1F3B7736008BFDA4 /* WelcomePageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B1FE91F3B7736008BFDA4 /* WelcomePageThreeViewController.swift */; };
-		FD2B1FFE1F3B8D95008BFDA4 /* notifications_short.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */; };
-		FD2B20061F3BC63A008BFDA4 /* setting_notifications.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */; };
 		FD3D13AB1F2122B50004C07E /* UYLNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */; };
 		FD4C7F0A1F2BEAEC0038A093 /* ShowTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */; };
 		FD63B8961F3A274E002FD83A /* WelcomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63B8951F3A274E002FD83A /* WelcomeMainViewController.swift */; };
@@ -60,8 +58,6 @@
 		FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD1A90591F0EED91005EDBC9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = Storyboards/Welcome.storyboard; sourceTree = "<group>"; };
 		FD2B1FE91F3B7736008BFDA4 /* WelcomePageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageThreeViewController.swift; path = Controllers/WelcomePageThreeViewController.swift; sourceTree = "<group>"; };
-		FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = notifications_short.gif; path = ../../../../../../Downloads/notifications_short.gif; sourceTree = "<group>"; };
-		FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = setting_notifications.gif; path = ../../../../../../Downloads/setting_notifications.gif; sourceTree = "<group>"; };
 		FD3D13AA1F2122B50004C07E /* UYLNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UYLNotificationDelegate.swift; sourceTree = "<group>"; };
 		FD4C7F091F2BEAEC0038A093 /* ShowTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowTestCell.swift; path = Views/ShowTestCell.swift; sourceTree = "<group>"; };
 		FD63B8951F3A274E002FD83A /* WelcomeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeMainViewController.swift; sourceTree = "<group>"; };
@@ -223,9 +219,7 @@
 			children = (
 				FDBF78691F9ADACF005C6D1B /* email_short.gif */,
 				FDBF78671F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif */,
-				FD2B20051F3BC63A008BFDA4 /* setting_notifications.gif */,
 				FDBF78641F9AD994005C6D1B /* lotteryscroll_small.gif */,
-				FD2B1FFD1F3B8D95008BFDA4 /* notifications_short.gif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -358,8 +352,6 @@
 				FD1A905A1F0EED91005EDBC9 /* Welcome.storyboard in Resources */,
 				FDBF786A1F9ADACF005C6D1B /* email_short.gif in Resources */,
 				FDBF78681F9ADAC2005C6D1B /* enter_lottery_short_compressed.gif in Resources */,
-				FD2B20061F3BC63A008BFDA4 /* setting_notifications.gif in Resources */,
-				FD2B1FFE1F3B8D95008BFDA4 /* notifications_short.gif in Resources */,
 				FDB3FB3B1F1D7CF70073FD3D /* Media.xcassets in Resources */,
 				FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */,
 				FDFEE7451F14318B00FE59E4 /* CollectUserInfo.storyboard in Resources */,
@@ -579,7 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MC46RY65PT;
 				INFOPLIST_FILE = BroadwayLotteryApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.eleanormurguia.BwayBestie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -594,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MC46RY65PT;
 				INFOPLIST_FILE = BroadwayLotteryApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.eleanormurguia.BwayBestie;
 				PRODUCT_NAME = "$(TARGET_NAME)";

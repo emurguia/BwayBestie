@@ -163,6 +163,26 @@ class NotificationTableViewController: UITableViewController {
             return defaults.bool(forKey: Constants.UserDefaults.springsteenNotifications)
         case Constants.ShowTitle.spongebob:
             return defaults.bool(forKey: Constants.UserDefaults.spongebobNotifications)
+        case Constants.ShowTitle.frozen:
+            return defaults.bool(forKey: Constants.UserDefaults.frozenNotifications)
+        case Constants.ShowTitle.bronx:
+            return defaults.bool(forKey: Constants.UserDefaults.bronxNotifications)
+        case Constants.ShowTitle.fairLady:
+            return defaults.bool(forKey: Constants.UserDefaults.fairLadyNotifications)
+        case Constants.ShowTitle.meanGirls:
+            return defaults.bool(forKey: Constants.UserDefaults.meanGirlsNotifcations)
+        case Constants.ShowTitle.summer:
+            return defaults.bool(forKey: Constants.UserDefaults.summerNotifications)
+        case Constants.ShowTitle.bandsVisit:
+            return defaults.bool(forKey: Constants.UserDefaults.bandsVisitNotifications)
+        case Constants.ShowTitle.beautiful:
+            return defaults.bool(forKey: Constants.UserDefaults.beautifulNotifcations)
+        case Constants.ShowTitle.cher:
+            return defaults.bool(forKey: Constants.UserDefaults.cherNotifications)
+        case Constants.ShowTitle.kong:
+            return defaults.bool(forKey: Constants.UserDefaults.kongNotifications)
+        case Constants.ShowTitle.prettyWoman:
+            return defaults.bool(forKey: Constants.UserDefaults.prettyWomanNotifications)
         default:
             print("error - show not found")
         }
