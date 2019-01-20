@@ -6,7 +6,7 @@ target 'BroadwayLotteryApp' do
   use_frameworks!
 
   # Pods for BroadwayLotteryApp
-  pod 'IQKeyboardManagerSwift', '4.0.10'
+#  pod 'IQKeyboardManagerSwift', '4.0.10'
   pod 'SwiftKeychainWrapper'
   pod 'SideMenu'
   pod 'SideMenuController'

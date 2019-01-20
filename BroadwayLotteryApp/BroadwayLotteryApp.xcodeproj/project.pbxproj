@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E31D522CBFF92ADEEAD65D3 /* Pods_BroadwayLotteryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4DF05A42DD723B51E69897 /* Pods_BroadwayLotteryApp.framework */; };
+		1E1C76568C25ED6F3504F58A /* Pods_BroadwayLotteryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2238E2D9B32B4BDA38667692 /* Pods_BroadwayLotteryApp.framework */; };
 		FD1A90401F0EEA6F005EDBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A903F1F0EEA6F005EDBC9 /* AppDelegate.swift */; };
 		FD1A90471F0EEA6F005EDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90461F0EEA6F005EDBC9 /* Assets.xcassets */; };
 		FD1A90551F0EEB1C005EDBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A90531F0EEB1C005EDBC9 /* LaunchScreen.storyboard */; };
@@ -48,9 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B8ED6A06531E4EF5DA8963B3 /* Pods-BroadwayLotteryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadwayLotteryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp.release.xcconfig"; sourceTree = "<group>"; };
-		DD4DF05A42DD723B51E69897 /* Pods_BroadwayLotteryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadwayLotteryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC259AD19211CC676F50D5A0 /* Pods-BroadwayLotteryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadwayLotteryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		0B8E85DE56F1750396B412CE /* Pods-BroadwayLotteryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadwayLotteryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp.release.xcconfig"; sourceTree = "<group>"; };
+		2238E2D9B32B4BDA38667692 /* Pods_BroadwayLotteryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadwayLotteryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4193A9750C937FEF79B2B388 /* Pods-BroadwayLotteryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadwayLotteryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FD1A903C1F0EEA6F005EDBC9 /* BroadwayLotteryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroadwayLotteryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1A903F1F0EEA6F005EDBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD1A90461F0EEA6F005EDBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,28 +108,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E31D522CBFF92ADEEAD65D3 /* Pods_BroadwayLotteryApp.framework in Frameworks */,
+				1E1C76568C25ED6F3504F58A /* Pods_BroadwayLotteryApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0272CFD4EF3C1577325ED2D9 /* Frameworks */ = {
+		3034BBF865D28C1A80FA1F97 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD4DF05A42DD723B51E69897 /* Pods_BroadwayLotteryApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3F1A8BE0132B296770D553AF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FC259AD19211CC676F50D5A0 /* Pods-BroadwayLotteryApp.debug.xcconfig */,
-				B8ED6A06531E4EF5DA8963B3 /* Pods-BroadwayLotteryApp.release.xcconfig */,
+				4193A9750C937FEF79B2B388 /* Pods-BroadwayLotteryApp.debug.xcconfig */,
+				0B8E85DE56F1750396B412CE /* Pods-BroadwayLotteryApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		97B5C15314953A7338CB018B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2238E2D9B32B4BDA38667692 /* Pods_BroadwayLotteryApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FD1A90331F0EEA6F005EDBC9 = {
@@ -137,8 +137,8 @@
 			children = (
 				FD1A903E1F0EEA6F005EDBC9 /* BroadwayLotteryApp */,
 				FD1A903D1F0EEA6F005EDBC9 /* Products */,
-				3F1A8BE0132B296770D553AF /* Pods */,
-				0272CFD4EF3C1577325ED2D9 /* Frameworks */,
+				3034BBF865D28C1A80FA1F97 /* Pods */,
+				97B5C15314953A7338CB018B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,12 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD1A904E1F0EEA6F005EDBC9 /* Build configuration list for PBXNativeTarget "BroadwayLotteryApp" */;
 			buildPhases = (
-				817C99D2F66DC5A3DFD45E6A /* [CP] Check Pods Manifest.lock */,
+				7737E5538F42DFEF44EC1D06 /* [CP] Check Pods Manifest.lock */,
 				FD1A90381F0EEA6F005EDBC9 /* Sources */,
 				FD1A90391F0EEA6F005EDBC9 /* Frameworks */,
 				FD1A903A1F0EEA6F005EDBC9 /* Resources */,
-				5AF508BA245C3C884CE03864 /* [CP] Embed Pods Frameworks */,
-				92A96F2183C39F121F046AE9 /* [CP] Copy Pods Resources */,
+				97F30BA3FCF56DD21F7FC1ED /* [CP] Embed Pods Frameworks */,
+				EC8094E59140D55315A8CBA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,37 +364,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AF508BA245C3C884CE03864 /* [CP] Embed Pods Frameworks */ = {
+		7737E5538F42DFEF44EC1D06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BroadwayLotteryApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97F30BA3FCF56DD21F7FC1ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BroadwayLotteryApp/Pods-BroadwayLotteryApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		817C99D2F66DC5A3DFD45E6A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		92A96F2183C39F121F046AE9 /* [CP] Copy Pods Resources */ = {
+		EC8094E59140D55315A8CBA6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -566,7 +578,7 @@
 		};
 		FD1A904F1F0EEA6F005EDBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC259AD19211CC676F50D5A0 /* Pods-BroadwayLotteryApp.debug.xcconfig */;
+			baseConfigurationReference = 4193A9750C937FEF79B2B388 /* Pods-BroadwayLotteryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MC46RY65PT;
@@ -581,7 +593,7 @@
 		};
 		FD1A90501F0EEA6F005EDBC9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8ED6A06531E4EF5DA8963B3 /* Pods-BroadwayLotteryApp.release.xcconfig */;
+			baseConfigurationReference = 0B8E85DE56F1750396B412CE /* Pods-BroadwayLotteryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MC46RY65PT;
