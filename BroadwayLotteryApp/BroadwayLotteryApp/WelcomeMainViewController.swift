@@ -34,7 +34,7 @@ class WelcomeMainViewController: UIViewController{
         }
         
         //change page view height to show get started button
-        pageViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 75)
+        pageViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 125)
         self.view.addSubview(pageViewController.view)
     }
 

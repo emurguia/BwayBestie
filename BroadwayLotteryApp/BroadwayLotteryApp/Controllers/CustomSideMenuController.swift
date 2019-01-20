@@ -13,7 +13,7 @@ class CustomSideMenuController: SideMenuController{
     
     //initialize controller bar with preferences
     required init?(coder aDecoder: NSCoder) {
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "Hamburger_Menusidespace")
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
         SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 250
         SideMenuController.preferences.drawing.centerPanelShadow = true

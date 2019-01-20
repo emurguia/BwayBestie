@@ -142,7 +142,7 @@ struct Constants{
         static let bronx = "A Bronx Tale"
         static let fairLady = "My Fair Lady"
         static let bandsVisit = "The Band's Visit"
-        static let beautiful = "Beautiful: A Carole King Musical"
+        static let beautiful = "Beautiful: The Carole King Musical"
         static let cher = "The Cher Show"
         static let kong = "King Kong"
         static let prettyWoman = "Pretty Woman: The Musical"
@@ -378,6 +378,7 @@ struct Constants{
         
         //lottery entry page for broadway direct lotteries 
         static let broadwayDirectEntry = "https://lottery.broadwaydirect.com/enter-lottery/?lottery"
+        static let luckySeatEntry = "https://www.luckyseat.com/"
     }
     
 }

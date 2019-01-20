@@ -377,7 +377,7 @@ extension SwiftWebVC: WKNavigationDelegate {
                 
                 let urlString = String(describing: url)
 //                 if urlString == Constants.LotteryURLs.bookOfMoromonURL || urlString == Constants.LotteryURLs.groundhogDayURL || urlString == Constants.LotteryURLs.kinkyBootsURL || urlString == Constants.LotteryURLs.hamiltonURL || urlString == Constants.LotteryURLs.springsteenURL
-                if urlString.hasPrefix("http://www.luckyseat.com/"){
+                if urlString.hasPrefix(Constants.LotteryURLs.luckySeatEntry){
                     
                     webView.evaluateJavaScript("document.getElementById('firstname').value = '\(firstName)'; document.getElementById('lastname').value = '\(lastName)'; document.getElementById('email').value = '\(email)'; document.getElementById('zipcode').value = '\(zipCode)'; document.getElementById('age').value = '\(age)'; if(\(numberTickets) == '2'){document.getElementById('two_tickets').checked = true;} else{document.getElementById('one_ticket').checked = true;} ") { (result, error) in
                         guard error == nil else{

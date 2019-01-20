@@ -134,12 +134,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework"

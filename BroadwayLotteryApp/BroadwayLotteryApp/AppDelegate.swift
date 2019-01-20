@@ -90,9 +90,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
         //configure side menu
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "Hamburger_Menusidespace")
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
-        SideMenuController.preferences.drawing.sidePanelWidth = 300
+        SideMenuController.preferences.drawing.sidePanelWidth = 250
         SideMenuController.preferences.drawing.centerPanelShadow = true
         SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
         
